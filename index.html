@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Light - Global Art & Humanitarian Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Italianno for a distinct, elegant signature style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chosen Palette: "Deep Space" (True Black Base, Faint Starlight, Gold Accent) -->
+
+    <style>
+        /* --- Starry Background & Light Effects --- */
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 40px 70px, rgba(255, 255, 255, 0.15), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 50px 160px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 90px 40px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 130px 80px, rgba(255, 255, 255, 0.1), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 160px 120px, rgba(255, 255, 255, 0.25), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px; 
+            animation: starsMove 150s linear infinite;
+        }
+        @keyframes starsMove { from { background-position: 0 0; } to { background-position: 0 300px; } }
+
+        /* Light Effects */
+        .ambient-light {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+            background: radial-gradient(circle at 50% 30%, rgba(30, 58, 138, 0.08), transparent 70%),
+                        radial-gradient(circle at 80% 10%, rgba(234, 179, 8, 0.03), transparent 50%);
+            z-index: 0;
+        }
+        .hero-beam {
+            position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+            width: 1px; height: 70vh;
+            box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.03);
+            background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+            opacity: 0.7; z-index: 0;
+        }
+        /* Footer Beam */
+        .footer-beam {
+            position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%);
+            width: 1px; height: 50vh;
+            box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.02); 
+            background: linear-gradient(to top, rgba(255,255,255,0.4), transparent);
+            opacity: 0.5; pointer-events: none;
+        }
+
+        /* Utilities */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        .card-hover:hover { transform: translateY(-4px); transition: transform 0.3s ease; border-color: rgba(251, 191, 36, 0.3); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8); }
+        .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.2); }
+        
+        /* Script Font Class */
+        .font-script {
+            font-family: 'Italianno', cursive;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-200 leading-relaxed antialiased relative">
+
+    <div class="ambient-light"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-black/95 border-b border-white/5 w-full">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <span class="text-yellow-400 text-2xl leading-none transform translate-y-[-1px]">✦</span>
+                <span class="text-xl font-normal tracking-wide text-white">Echoes of Light</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
+                <a href="#home" data-target="home" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">HOME</a>
+                <a href="#projects" data-target="projects" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">PROJECTS</a>
+                <a href="#tiers" data-target="tiers" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">ENERGY FLOW</a>
+            </div>
+            <div class="flex items-center">
+                <a href="#tiers" data-target="tiers" class="hidden md:inline-block px-6 py-2.5 bg-[#222] hover:bg-[#333] text-white text-sm font-normal rounded-full border border-transparent hover:border-white/10 transition-all duration-300 tracking-wide uppercase">
+                    Fuel the Light
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[90vh] flex items-center justify-center text-center px-4 relative overflow-hidden">
+            <div class="hero-beam"></div>
+            <div class="max-w-4xl relative z-20">
+                <div class="flex flex-col items-center justify-center gap-1 mb-12 opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    <span class="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.25em] mb-1">Produced by</span>
+                    <div class="font-script text-6xl md:text-7xl text-yellow-400 drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] tracking-wide leading-none pt-2">
+                        Flower Angel
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-thin text-white tracking-tight mb-8 text-glow opacity-95">
+                    Echoes <span class="text-gray-500 font-thin italic tracking-normal mx-1">of</span> Light
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto leading-relaxed tracking-wide">
+                    Be the Light that Breaks the Silence.<br>
+                    <span class="text-sm text-gray-500 uppercase tracking-widest mt-3 block">Global Art & Humanitarian Project</span>
+                </p>
+                <div class="mt-16 flex flex-col md:flex-row gap-6 justify-center items-center">
+                    <a href="#philosophy" data-target="philosophy" class="group bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)]">
+                        <span class="tracking-wider text-sm uppercase">Read Message</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    <a href="#tiers" data-target="tiers" class="text-gray-400 hover:text-white text-sm tracking-widest border-b border-transparent hover:border-white/50 pb-1 transition-all duration-300 uppercase">
+                        Join the Movement
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="py-32 border-t border-white/5 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-2xl md:text-3xl font-extralight text-white mb-16 tracking-[0.1em] text-glow">Harmony from Japan</h2>
+                <div class="space-y-12 text-base md:text-lg text-gray-400 leading-loose font-light">
+                    <p>
+                        In an era of division and isolation,<br>
+                        we need the spirit of "Harmony" (Wa) cherished by Japan since ancient times.
+                    </p>
+                    <div class="py-12 relative">
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent"></div>
+                        <div class="bg-black/60 border border-white/5 p-8 rounded-lg relative z-10 backdrop-blur-sm max-w-xl mx-auto shadow-2xl">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black p-2 border border-white/10 rounded-full">
+                                <svg class="w-3 h-3 text-yellow-500/80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" /></svg>
+                            </div>
+                            <p class="text-gray-300 mb-8 text-lg font-light leading-relaxed">
+                                <span class="text-2xl text-yellow-400/90 font-normal tracking-wide block mb-4">Flower Angel</span>
+                                has guided<br>
+                                <strong>"Angels"</strong> destined to bloom billions of flowers.
+                            </p>
+                            <p class="text-gray-500 text-sm leading-relaxed tracking-wide uppercase">
+                                Upholding "World peace in equity",<br>
+                                we serve as a <strong>"Divine Guidance"</strong> from above,<br>
+                                to bring the flower of harmony to this world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-32 bg-black/40 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-24">
+                    <h2 class="text-3xl md:text-4xl font-thin text-white mb-4 text-glow">Featured Echoes</h2>
+                    <p class="text-gray-600 uppercase tracking-[0.2em] text-xs">The Two Pillars of Light</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-16">
+                    
+                    <!-- Pillar A: Documentary Film -->
+                    <div class="flex flex-col">
+                        <!-- Header -->
+                        <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
+                            <h3 class="text-xl font-light text-white tracking-widest uppercase">DOCUMENTARY FILM</h3>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Project 01</span>
+                        </div>
+
+                        <!-- Visual Card (Vimeo Embed) -->
+                        <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative group">
+                            <iframe src="https://player.vimeo.com/video/1128199118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="A Sacred Lie"></iframe>
+                        </div>
+
+                        <!-- Details -->
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-extralight text-white leading-tight">A Sacred Lie</h3>
+                                <div class="text-[10px] text-yellow-200/80 bg-yellow-900/20 border border-yellow-500/20 px-2 py-1 rounded-full tracking-widest uppercase backdrop-blur-md">
+                                    TIFF 2025
+                                </div>
+                            </div>
+                            
+                            <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+                                A Film by <a href="https://k-zone.tokyo/" target="_blank" class="hover:text-yellow-400 border-b border-transparent hover:border-yellow-400 transition-colors duration-300">Kentaro Kishi</a>
+                            </p>
+                            
+                            <p class="text-gray-400 mb-6 font-light leading-relaxed text-sm min-h-[60px]">
+                                A feature documentary film visualizing the "shadows" society ignores, themed around wrongful convictions in the Japanese justice system.
+                                A record of universal "salvation" that thrusts reality more vividly than fiction.
+                            </p>
+
+                            <!-- PDF Download Button -->
+                            <a href="HARE FILMPitchDfin0918(EN).pdf" target="_blank" class="inline-flex items-center gap-2 text-xs text-gray-300 hover:text-white border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-2 rounded transition-all duration-300 mb-8 group">
+                                <i class="fas fa-file-pdf text-yellow-500 group-hover:text-yellow-400"></i>
+                                <span class="tracking-wider uppercase">View Film Pitch Deck (PDF)</span>
+                            </a>
+                            
+                            <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6">
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Feature Documentary</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Social Justice</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Total Budget: $600k</span>
+                            </div>
+                            <p class="text-[10px] text-gray-600 italic">
+                                * Echoes of Light produces the "Making-of Documentary" of this film.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar B: Music Movement -->
+                    <div class="flex flex-col">
+                        <!-- Header -->
+                        <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
+                            <h3 class="text-xl font-light text-white tracking-widest uppercase">MUSIC MOVEMENT</h3>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Project 02</span>
+                        </div>
+
+                        <!-- Visual Card -->
+                        <div class="bg-gray-900/30 aspect-video rounded flex items-center justify-center relative group overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8">
+                            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-700"></div>
+                            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500 group-hover:border-white/60">
+                                <span class="text-white text-2xl pl-1 font-thin">▶</span>
+                            </div>
+                            <span class="absolute bottom-6 left-6 text-2xl font-thin text-white tracking-wide">Songs for Japan</span>
+                        </div>
+
+                        <!-- Details -->
+                        <div>
+                            <h3 class="text-2xl font-extralight text-white leading-tight mb-2">The Spirit of Harmony</h3>
+                            <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Feat. Harmony & Global Artists</p>
+
+                            <p class="text-gray-400 mb-8 font-light leading-relaxed text-sm min-h-[80px]">
+                                "Harmony", an artist from Africa.
+                                A documentary project following his figure as he continues to sing his love for Japan despite facing severe adversity.
+                                A record of a pure soul that transcends borders and ID cards.
+                            </p>
+                            
+                            <!-- NEW: Audio Player -->
+                            <div class="mb-8 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <button id="audio-control" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
+                                        <i class="fas fa-play ml-1" id="audio-icon"></i>
+                                    </button>
+                                    <div class="flex-grow min-w-0">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Thank You for Loving Japan</h4>
+                                            <span id="time-display" class="text-[10px] text-gray-400 font-mono">0:00</span>
+                                        </div>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
+                                        <!-- Progress Bar -->
+                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container">
+                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <audio id="audio-track" src="Mr Go thank you for loving japan.mp3" preload="metadata"></audio>
+                            </div>
+                            
+                            <div class="flex flex-wrap items-center gap-3 mt-auto pt-6 border-t border-white/5">
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Music</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Humanity</span>
+                                <span class="px-3 py-1 bg-yellow-900/20 text-yellow-500/70 border border-yellow-900/30 rounded-full text-[10px]">Global Movement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Borderless Support -->
+        <section id="payment" class="py-32 bg-black border-t border-white/5 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-2xl font-thin text-white mb-16 tracking-widest text-glow">FUEL THE LIGHT</h2>
+                
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    
+                    <!-- Row 1: Bank & Card -->
+                    <div class="w-full flex flex-col md:flex-row gap-6 md:gap-8 justify-center">
+                        <!-- Bank Transfer -->
+                        <a href="mailto:info@flowerangelhk.com?subject=Bank%20Transfer%20Inquiry" class="flex-1 bg-black border border-white/10 p-8 flex items-center justify-center gap-4 hover:border-white/30 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm group">
+                            <span class="text-3xl text-gray-500 group-hover:text-white transition-colors"><i class="fas fa-university"></i></span>
+                            <span class="text-xs font-light tracking-[0.2em] text-gray-300 group-hover:text-white uppercase transition-colors">Bank Transfer</span>
+                        </a>
+
+                        <!-- Credit Card -->
+                        <div class="flex-1 bg-black border border-white/10 p-8 flex items-center justify-center gap-4 hover:border-white/30 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm group" onclick="alert('Credit Card payment gateway coming soon. Please contact us for details.')">
+                            <span class="text-3xl text-gray-500 group-hover:text-white transition-colors"><i class="far fa-credit-card"></i></span>
+                            <span class="text-xs font-light tracking-[0.2em] text-gray-300 group-hover:text-white uppercase transition-colors">Credit Card</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row: Bitcoin (Gold) -->
+                    <div class="w-full md:w-2/3">
+                        <div class="bg-black border border-yellow-600/40 p-8 flex items-center justify-center gap-4 hover:border-yellow-500/80 hover:bg-yellow-900/5 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm w-full md:w-2/3 mx-auto group" onclick="prompt('Bitcoin Wallet Address (Copy below):', '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa')">
+                            <span class="text-3xl text-yellow-600 group-hover:text-yellow-400 transition-colors"><i class="fab fa-bitcoin"></i></span>
+                            <span class="text-xs font-light tracking-[0.2em] text-yellow-500 uppercase">Bitcoin / Crypto</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap & Energy Flow -->
+        <section id="support" class="py-32 bg-black relative border-t border-white/5">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-xl md:text-2xl font-light text-white mb-3">Roadmap & Allocation</h2>
+                    <p class="text-gray-500 text-xs tracking-widest">Realizing the Vision</p>
+                </div>
+
+                <div class="bg-gradient-to-b from-gray-900/40 to-black border border-white/5 p-10 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm shadow-2xl">
+                    <div class="text-center mb-10 border-b border-white/5 pb-8">
+                        <p class="text-gray-400 text-xs uppercase tracking-[0.2em] mb-2">Phase 1 Ignition Goal</p>
+                        <p class="text-white font-light text-xl tracking-wider">
+                            $100,000 <span class="text-xs text-gray-600 font-thin">USD</span>
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 text-sm">
+                        <div class="border-l border-blue-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                            <span class="text-blue-500/80 font-mono text-xs block mb-1">01</span>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Africa Expedition</h4>
+                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">Harmony Recording & Documentary</p>
+                        </div>
+                        <div class="border-l border-yellow-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                            <span class="text-yellow-500/80 font-mono text-xs block mb-1">02</span>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Philippines Production</h4>
+                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">
+                                "A Sacred Lie" Pre-production &<br>
+                                <span class="text-yellow-600/80">Making-of Filming</span>
+                            </p>
+                        </div>
+                        <div class="border-l border-gray-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                            <span class="text-gray-500/80 font-mono text-xs block mb-1">03</span>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Music & Editing</h4>
+                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">Orchestration & Editing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tiers Section -->
+        <section id="tiers" class="py-32 bg-black/80 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-2xl font-light text-white mb-4 text-glow">Energy Flow</h2>
+                    <p class="text-gray-500 text-xs tracking-widest">Become a First Believer and protect the light together.</p>
+                </div>
+
+                <!-- Standard Tiers -->
+                <div class="grid md:grid-cols-3 gap-8 items-end mb-24">
+                    <!-- Tier 3 -->
+                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
+                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Global Supporter</h3>
+                        <p class="text-3xl font-light text-white mt-6">$500<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank you Letter
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Name in End Credits
+                            </li>
+                        </ul>
+                        <button class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase">
+                            BECOME A SUPPORTER
+                        </button>
+                    </div>
+
+                    <!-- Tier 1 (Featured) -->
+                    <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 relative transform md:-translate-y-6 shadow-[0_0_60px_rgba(234,179,8,0.05)] flex flex-col group backdrop-blur-md">
+                        <div class="absolute top-0 right-0 bg-yellow-500/10 text-yellow-500 text-[9px] font-bold px-4 py-1 tracking-[0.2em] border-b border-l border-yellow-500/20">RECOMMENDED</div>
+                        <h3 class="text-lg font-light text-white flex items-center gap-3 tracking-widest uppercase">
+                            <span class="text-yellow-400 text-sm drop-shadow-md">✦</span> Founding Guardian
+                        </h3>
+                        <p class="text-4xl font-light text-white mt-6">$10,000<span class="text-xs font-normal text-gray-500 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-5 text-xs text-gray-300 flex-grow font-light">
+                            <li class="flex items-start gap-3">
+                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                <span>"Founding Guardian" Credit in Documentary</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                <span>"Special Support" Credit in Feature Film</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                <span>Access to Exclusive Production Reports</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                <span>Invitation to Premiere Screenings (VIP)</span>
+                            </li>
+                        </ul>
+                        <button class="w-full mt-10 py-4 bg-white text-black hover:bg-gray-200 transition-all duration-300 text-xs font-bold tracking-widest uppercase shadow-lg shadow-white/10">
+                            PARTNER WITH US
+                        </button>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
+                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Movement Partner</h3>
+                        <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank You Letter
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo / Name in End Credits
+                            </li>
+                             <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo Placement on Official Site
+                            </li>
+                        </ul>
+                        <button class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase">
+                            AMPLIFY THE ECHOES
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Special High Tiers -->
+                <div class="mt-24 pt-16 border-t border-white/10 relative">
+                    <div class="text-center mb-16">
+                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.3em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
+                        <h2 class="text-2xl font-light text-white mt-6 tracking-wide">Create a Legacy</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- $30k Storyteller -->
+                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 hover:border-yellow-500/30 transition-all duration-500 card-hover group flex flex-col">
+                            <h3 class="text-base font-light text-white tracking-widest uppercase mb-2">Storyteller</h3>
+                            <p class="text-3xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-8 min-h-[40px]">
+                                We will produce a <strong class="text-white">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
+                            </p>
+                            <ul class="space-y-3 text-xs text-gray-500 flex-grow">
+                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Short Documentary Production</li>
+                                <li class="flex items-center gap-2"><span class="text-gray-600">+</span> All "Founding Guardian" Benefits</li>
+                            </ul>
+                            <button class="w-full mt-8 py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase">TELL YOUR STORY</button>
+                        </div>
+
+                        <!-- $50k Legacy Partner -->
+                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 hover:border-yellow-500/50 transition-all duration-500 card-hover group flex flex-col relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
+                            <h3 class="text-base font-light text-white tracking-widest uppercase mb-2">Legacy Partner</h3>
+                            <p class="text-3xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-8 min-h-[40px]">
+                                A full-scale <strong class="text-white">30min+ Documentary</strong> preserving your achievements and vision for future generations.
+                            </p>
+                            <ul class="space-y-3 text-xs text-gray-500 flex-grow">
+                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> 30min+ Documentary Production</li>
+                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> "Legacy Partner" Solo Credit</li>
+                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Premiere Stage Greeting</li>
+                            </ul>
+                            <button class="w-full mt-8 py-3 bg-white/5 hover:bg-white hover:text-black text-white border border-white/10 transition-all text-xs tracking-widest uppercase">BUILD YOUR LEGACY</button>
+                        </div>
+
+                        <!-- $100k Executive Guardian -->
+                        <div class="bg-gradient-to-b from-yellow-900/20 to-black p-10 rounded-sm border border-yellow-500/40 hover:border-yellow-400 transition-all duration-500 card-hover group flex flex-col shadow-[0_0_50px_rgba(234,179,8,0.1)]">
+                            <h3 class="text-lg font-light text-yellow-400 tracking-widest uppercase mb-2 flex items-center gap-2">
+                                <span class="text-xl">♛</span> Executive Guardian
+                            </h3>
+                            <p class="text-4xl font-light text-white mb-6">$100,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-8 min-h-[40px]">
+                                The ultimate partnership. Become an integral part of the masterpiece's creation.
+                            </p>
+                            <ul class="space-y-4 text-xs text-gray-300 flex-grow">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-yellow-400 mt-0.5">✦</span> 
+                                    <span><strong class="text-white">"Executive Co-Producer" Credit</strong><br>in Feature Film & Documentary</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-yellow-400 mt-0.5">✦</span> 
+                                    <span><strong class="text-white">Full Documentary Production Rights</strong><br>(Includes Legacy Partner benefits)</span>
+                                </li>
+                            </ul>
+                            <button class="w-full mt-8 py-4 bg-yellow-500 text-black hover:bg-white transition-all text-xs font-bold tracking-widest uppercase shadow-lg shadow-yellow-500/20">
+                                LEAD THE MOVEMENT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer (Redesigned Final) -->
+        <footer class="bg-black py-24 border-t border-white/5 relative z-10">
+            <!-- Decorative Light Beam in Footer -->
+            <div class="footer-beam"></div>
+
+            <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+                
+                <!-- Produced by (Moved from Hero) -->
+                <div class="flex flex-col items-center justify-center gap-1 mb-12 opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    <span class="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.25em] mb-2">Produced by</span>
+                    <div class="font-script text-4xl md:text-5xl text-yellow-400 drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] tracking-wide leading-none pt-2">
+                        Flower Angel
+                    </div>
+                </div>
+
+                <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase mb-8 font-medium">PRODUCER / JAPAN REPRESENTATIVE</p>
+                <h3 class="text-3xl md:text-4xl text-white font-thin mb-6 tracking-widest text-glow">Nobuko Kotoyori</h3>
+                <p class="text-gray-500 text-xs uppercase tracking-[0.15em] mb-12">Contact</p>
+                
+                <div class="flex justify-center items-center gap-10 text-gray-400 text-lg mb-16">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="text-gray-800 text-[10px] tracking-widest uppercase">© 2025 Flower Angel / Echoes of Light Project</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll
+            document.querySelectorAll('a[data-target]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.getElementById(this.getAttribute('data-target'))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Audio Player Logic
+            const audioTrack = document.getElementById('audio-track');
+            const playBtn = document.getElementById('audio-control');
+            const playIcon = document.getElementById('audio-icon');
+            const progressBar = document.getElementById('progress-bar');
+            const progressContainer = document.getElementById('progress-container');
+            const timeDisplay = document.getElementById('time-display');
+
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            playBtn.addEventListener('click', () => {
+                if (audioTrack.paused) {
+                    audioTrack.play();
+                    playIcon.classList.remove('fa-play');
+                    playIcon.classList.add('fa-pause');
+                } else {
+                    audioTrack.pause();
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
+                }
+            });
+
+            audioTrack.addEventListener('timeupdate', () => {
+                const { duration, currentTime } = audioTrack;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                // Update time if duration is available
+                if(!isNaN(duration)) {
+                     timeDisplay.textContent = formatTime(currentTime);
+                }
+            });
+
+            // Click on progress bar to seek
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audioTrack.duration;
+                audioTrack.currentTime = (clickX / width) * duration;
+            });
+
+            // Reset on end
+            audioTrack.addEventListener('ended', () => {
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                progressBar.style.width = '0%';
+                timeDisplay.textContent = '0:00';
+            });
+        });
+    </script>
+</body>
+</html>
