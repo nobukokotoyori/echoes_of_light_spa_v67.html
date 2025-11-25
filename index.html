@@ -620,7 +620,7 @@
                         <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Movement Partner</h3>
                         <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
                         <!-- 1. flex-grow を追加して高さを合わせる -->
-                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
+                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow">
                             <li class="flex items-center gap-3">
                                 <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank You Letter
                             </li>
@@ -840,7 +840,7 @@
                 </div>
 
                 <!-- NEW: Nobuko Arigato Audio Player (Footer) -->
-                <div class="max-w-xs mx-auto mb-16">
+                <div class="max-w-xs mx-auto mb-4">
                     <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
                         <div class="flex items-center gap-4">
                             <button id="audio-control-nobukoarigato" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
@@ -859,6 +859,54 @@
                             </div>
                         </div>
                         <audio id="audio-track-nobukoarigato" src="nobukoarigato.mp3" preload="metadata"></audio>
+                    </div>
+                </div>
+                <!-- END NEW AUDIO PLAYER -->
+                
+                <!-- NEW: Nobuko Arigato Instrumental Trumpet ver -->
+                <div class="max-w-xs mx-auto mb-4">
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <button id="audio-control-nobukoarigatotrumpet" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
+                                <i class="fas fa-play ml-1" id="audio-icon-nobukoarigatotrumpet"></i>
+                            </button>
+                            <div class="flex-grow min-w-0">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nobuko Arigato (Instromental trumpet ver)</h4>
+                                    <span id="time-display-nobukoarigatotrumpet" class="text-[10px] text-gray-400 font-mono">0:00</span>
+                                </div>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nobukoarigatotrumpet">
+                                    <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nobukoarigatotrumpet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio-track-nobukoarigatotrumpet" src="nobukoarigatotrumpet.m4a" preload="metadata"></audio>
+                    </div>
+                </div>
+                <!-- END NEW AUDIO PLAYER -->
+                
+                <!-- NEW: Nobuko God bless you -->
+                <div class="max-w-xs mx-auto mb-16">
+                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <button id="audio-control-nobukogodbless" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
+                                <i class="fas fa-play ml-1" id="audio-icon-nobukogodbless"></i>
+                            </button>
+                            <div class="flex-grow min-w-0">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nobuko God bless you (feat. Jowie)</h4>
+                                    <span id="time-display-nobukogodbless" class="text-[10px] text-gray-400 font-mono">0:00</span>
+                                </div>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nobukogodbless">
+                                    <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nobukogodbless"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="audio-track-nobukogodbless" src="nobukogodbless.mp3" preload="metadata"></audio>
                     </div>
                 </div>
                 <!-- END NEW AUDIO PLAYER -->
@@ -940,8 +988,10 @@
             });
         };
         
-        // 新しいオーディオプレイヤーの情報を登録
-        const newTracks = [
+        // Music Player IDs (Project Section)
+        const projectTracks = [
+            { id: 'oneday', title: 'One day', src: 'oneday.mp3' },
+            { id: 'thankyoujapan', title: 'Thank you Japan', src: 'thankyoujapan.mp3' },
             { id: 'arigatojapan', title: 'Arigato Japan', src: 'arigatojapan.mp3' },
             { id: 'nihonarigato', title: 'Nihon Arigato', src: 'nihonarigato.mp3' }, 
             { id: 'molmolarigato', title: 'Mol Mol Arigato', src: 'molmolarigato.mp3' },
@@ -949,29 +999,13 @@
             { id: 'championsstory', title: "Champion's Story (feat. Jowie)", src: 'championsstory.mp3' }
         ];
 
-        // テンプレートHTMLを生成する関数 (HTML要素は変更なし)
-        const createPlayerHtml = (id, title, src) => `
-            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                <div class="flex items-center gap-4">
-                    <button id="audio-control-${id}" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                        <i class="fas fa-play ml-1" id="audio-icon-${id}"></i>
-                    </button>
-                    <div class="flex-grow min-w-0">
-                        <div class="flex justify-between items-center mb-1">
-                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">${title}</h4>
-                            <span id="time-display-${id}" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                        </div>
-                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                        <!-- Progress Bar -->
-                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-${id}">
-                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-${id}"></div>
-                        </div>
-                    </div>
-                </div>
-                <audio id="audio-track-${id}" src="${src}" preload="metadata"></audio>
-            </div>
-        `;
-
+        // Music Player IDs (Footer Section)
+        const footerTracks = [
+            { id: 'nobukoarigato', title: 'Nobuko Arigato', src: 'nobukoarigato.mp3' }, // 修正済み
+            { id: 'nobukoarigatotrumpet', title: 'Nobuko Arigato (Instromental trumpet ver)', src: 'nobukoarigatotrumpet.m4a' }, // 新規追加
+            { id: 'nobukogodbless', title: 'Nobuko God bless you (feat. Jowie)', src: 'nobukogodbless.mp3' } // 新規追加
+        ];
+        
         document.addEventListener('DOMContentLoaded', () => {
             // Smooth Scroll (既存)
             document.querySelectorAll('a[data-target]').forEach(anchor => {
@@ -981,21 +1015,8 @@
                 });
             });
 
-            // Music Player Logic
-            
-            // 既存のトラックの情報を取得
-            const existingTracks = [
-                { id: 'oneday', title: 'One day', src: 'oneday.mp3' },
-                { id: 'thankyoujapan', title: 'Thank you Japan', src: 'thankyoujapan.mp3' },
-            ];
-
-            // 既存のトラックと新しいトラックを統合
-            const allTracks = existingTracks.concat(newTracks);
-            
-            // HTMLに直接埋め込まれているオーディオプレーヤー要素をセットアップ
-            
-            // すべてのプレーヤーをセットアップ
-            allTracks.forEach(track => {
+            // Project Players Setup
+            projectTracks.forEach(track => {
                 const audioTrack = document.getElementById(`audio-track-${track.id}`);
                 const playBtn = document.getElementById(`audio-control-${track.id}`);
                 const playIcon = document.getElementById(`audio-icon-${track.id}`);
@@ -1004,23 +1025,25 @@
                 const timeDisplay = document.getElementById(`time-display-${track.id}`);
 
                 if (audioTrack && playBtn) {
-                    // HTML上の <audio> 要素の src 属性が、JavaScriptで定義された新しいパスと異なる場合があるため、JavaScriptで上書きします。
-                    audioTrack.src = track.src; // ** 重要な修正 **
-
+                    audioTrack.src = track.src;
                     setupAudioPlayer(audioTrack, playBtn, playIcon, progressBar, progressContainer, timeDisplay);
                 }
             });
 
-            // フッターの Nobuko Arigato プレーヤーのセットアップ
-            const audioTrackNobuko = document.getElementById('audio-track-nobukoarigato');
-            const playBtnNobuko = document.getElementById('audio-control-nobukoarigato');
-            const playIconNobuko = document.getElementById('audio-icon-nobukoarigato');
-            const progressBarNobuko = document.getElementById('progress-bar-nobukoarigato');
-            const progressContainerNobuko = document.getElementById('progress-container-nobukoarigato');
-            const timeDisplayNobuko = document.getElementById('time-display-nobukoarigato');
-            if (audioTrackNobuko && playBtnNobuko) {
-                setupAudioPlayer(audioTrackNobuko, playBtnNobuko, playIconNobuko, progressBarNobuko, progressContainerNobuko, timeDisplayNobuko);
-            }
+            // Footer Players Setup
+            footerTracks.forEach(track => {
+                const audioTrack = document.getElementById(`audio-track-${track.id}`);
+                const playBtn = document.getElementById(`audio-control-${track.id}`);
+                const playIcon = document.getElementById(`audio-icon-${track.id}`);
+                const progressBar = document.getElementById(`progress-bar-${track.id}`);
+                const progressContainer = document.getElementById(`progress-container-${track.id}`);
+                const timeDisplay = document.getElementById(`time-display-${track.id}`);
+
+                if (audioTrack && playBtn) {
+                    audioTrack.src = track.src;
+                    setupAudioPlayer(audioTrack, playBtn, playIcon, progressBar, progressContainer, timeDisplay);
+                }
+            });
         });
     </script>
 </body>
