@@ -6,76 +6,27 @@
     <title>Echoes of Light - Global Art & Humanitarian Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Italianno (Script) and Cinzel (Elegant Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Social Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Chosen Palette: "Deep Space" (True Black Base, Faint Starlight, Gold Accent) -->
-
     <style>
-        /* --- Starry Background & Light Effects --- */
-        body {
-            background-color: #050505;
-            background-image: 
-                radial-gradient(1.5px 1.5px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 40px 70px, rgba(255, 255, 255, 0.15), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 50px 160px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 90px 40px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 130px 80px, rgba(255, 255, 255, 0.1), rgba(0,0,0,0)),
-                radial-gradient(1.5px 1.5px at 160px 120px, rgba(255, 255, 255, 0.25), rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 300px 300px; 
-            animation: starsMove 150s linear infinite;
-        }
+        body { background-color: #050505; background-image: radial-gradient(1.5px 1.5px at 20px 30px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 40px 70px, rgba(255, 255, 255, 0.15), rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 50px 160px, rgba(255, 255, 255, 0.2), rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 90px 40px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 130px 80px, rgba(255, 255, 255, 0.1), rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 160px 120px, rgba(255, 255, 255, 0.25), rgba(0,0,0,0)); background-repeat: repeat; background-size: 300px 300px; animation: starsMove 150s linear infinite; }
         @keyframes starsMove { from { background-position: 0 0; } to { background-position: 0 300px; } }
-
-        /* Light Effects */
-        .ambient-light {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
-            background: radial-gradient(circle at 50% 30%, rgba(30, 58, 138, 0.08), transparent 70%),
-                        radial-gradient(circle at 80% 10%, rgba(234, 179, 8, 0.03), transparent 50%);
-            z-index: 0;
-        }
-        .hero-beam {
-            position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
-            width: 1px; height: 70vh;
-            box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.03);
-            background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
-            opacity: 0.7; z-index: 0;
-        }
-        /* Footer Beam */
-        .footer-beam {
-            position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%);
-            width: 1px; height: 50vh;
-            box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.02); 
-            background: linear-gradient(to top, rgba(255,255,255,0.4), transparent);
-            opacity: 0.5; pointer-events: none;
-        }
-
-        /* Utilities */
+        .ambient-light { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: radial-gradient(circle at 50% 30%, rgba(30, 58, 138, 0.08), transparent 70%), radial-gradient(circle at 80% 10%, rgba(234, 179, 8, 0.03), transparent 50%); z-index: 0; }
+        .hero-beam { position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 1px; height: 70vh; box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.03); background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent); opacity: 0.7; z-index: 0; }
+        .footer-beam { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); width: 1px; height: 50vh; box-shadow: 0 0 120px 70px rgba(255, 255, 255, 0.02); background: linear-gradient(to top, rgba(255,255,255,0.4), transparent); opacity: 0.5; pointer-events: none; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #555; }
         .card-hover:hover { transform: translateY(-4px); transition: transform 0.3s ease; border-color: rgba(251, 191, 36, 0.3); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8); }
         .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.2); }
-        
-        /* Font Classes */
-        .font-script {
-            font-family: 'Italianno', cursive;
-        }
-        /* Cinzel font for main titles */
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 0.1em;
-        }
-        /* Audio Player Styles */
+        .font-script { font-family: 'Italianno', cursive; }
+        .font-cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.1em; }
         .audio-btn:active { transform: scale(0.95); }
     </style>
 </head>
@@ -88,7 +39,6 @@
         <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3 flex-shrink-0">
                 <span class="text-yellow-400 text-2xl leading-none transform translate-y-[-1px]">✦</span>
-                <!-- Header text uses Italianno font -->
                 <span class="text-3xl font-script font-normal tracking-wide text-white leading-none pt-1">Echoes of Light</span>
             </div>
             <div class="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
@@ -116,7 +66,6 @@
                         Flower Angel
                     </div>
                 </div>
-                <!-- Hero Title uses Cinzel font -->
                 <h1 class="text-5xl md:text-7xl font-cinzel font-thin text-white tracking-tight mb-8 text-glow opacity-95">
                     Echoes <span class="text-gray-500 font-thin italic tracking-normal mx-1">of</span> Light
                 </h1>
@@ -666,6 +615,27 @@
                         </button>
                     </div>
 
+                    <!-- Tier 2: Movement Partner ($3,000) -->
+                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
+                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Movement Partner</h3>
+                        <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
+                        <!-- 1. flex-grow を追加して高さを合わせる -->
+                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank You Letter
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo / Name in End Credits
+                            </li>
+                             <li class="flex items-center gap-3">
+                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo Placement on Official Site
+                            </li>
+                        </ul>
+                        <button class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase">
+                            AMPLIFY THE ECHOES
+                        </button>
+                    </div>
+                    
                     <!-- Tier 1 (Featured): Founding Guardian ($10,000) -->
                     <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 relative transform md:-translate-y-6 shadow-[0_0_60px_rgba(234,179,8,0.05)] flex flex-col group backdrop-blur-md">
                         <div class="absolute top-0 right-0 bg-yellow-500/10 text-yellow-500 text-[9px] font-bold px-4 py-1 tracking-[0.2em] border-b border-l border-yellow-500/20">RECOMMENDED</div>
@@ -674,6 +644,11 @@
                         </h3>
                         <p class="text-4xl font-light text-white mt-6">$10,000<span class="text-xs font-normal text-gray-500 ml-2">USD~</span></p>
                         <ul class="mt-10 space-y-5 text-xs text-gray-300 flex-grow font-light">
+                             <!-- NEW TEMPORARY FEATURE (★を一つに修正) -->
+                            <li class="flex items-start gap-3 text-yellow-400 font-bold">
+                                <span class="text-xl leading-none">★</span> 
+                                <span>LIMITED: Original song gift from Harmony for the first 3 supporters!</span>
+                            </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-yellow-500/80 mt-0.5">✦</span> 
                                 <span>"Founding Guardian" Credit in Documentary</span>
@@ -690,31 +665,16 @@
                                 <span class="text-yellow-500/80 mt-0.5">✦</span> 
                                 <span>Invitation to Premiere Screenings (VIP)</span>
                             </li>
+                             <li class="flex items-start gap-3">
+                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                <span>Humanitarian Economy Partner Visibility</span>
+                            </li>
                         </ul>
                         <button class="w-full mt-10 py-4 bg-white text-black hover:bg-gray-200 transition-all duration-300 text-xs font-bold tracking-widest uppercase shadow-lg shadow-white/10">
                             PARTNER WITH US
                         </button>
                     </div>
 
-                    <!-- Tier 2: Movement Partner ($3,000) -->
-                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
-                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Movement Partner</h3>
-                        <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank You Letter
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo / Name in End Credits
-                            </li>
-                             <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo Placement on Official Site
-                            </li>
-                        </ul>
-                        <button class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase">
-                            AMPLIFY THE ECHOES
-                        </button>
-                    </div>
                 </div>
 
                 <!-- Special High Tiers -->
@@ -726,15 +686,23 @@
 
                     <div class="grid md:grid-cols-3 gap-8">
                         <!-- $30k Storyteller -->
-                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 hover:border-yellow-500/30 transition-all duration-500 card-hover group flex flex-col">
+                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 hover:border-yellow-500/30 transition-all duration-500 card-hover flex flex-col">
                             <h3 class="text-base font-light text-white tracking-widest uppercase mb-2">Storyteller</h3>
                             <p class="text-3xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
                             <p class="text-xs text-gray-400 leading-relaxed mb-8 min-h-[40px]">
                                 We will produce a <strong class="text-white">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
                             </p>
                             <ul class="space-y-3 text-xs text-gray-500 flex-grow">
-                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Short Documentary Production</li>
-                                <li class="flex items-center gap-2"><span class="text-gray-600">+</span> All "Founding Guardian" Benefits</li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-1 h-1 rounded-full bg-gray-700"></span> Short Documentary Production
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-1 h-1 rounded-full bg-gray-700"></span> All "Founding Guardian" Benefits
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                    <span>Inclusion in Humanitarian Economy Partner Directory</span>
+                                </li>
                             </ul>
                             <button class="w-full mt-8 py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase">TELL YOUR STORY</button>
                         </div>
@@ -748,9 +716,22 @@
                                 A full-scale <strong class="text-white">30min+ Documentary</strong> preserving your achievements and vision for future generations.
                             </p>
                             <ul class="space-y-3 text-xs text-gray-500 flex-grow">
-                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> 30min+ Documentary Production</li>
-                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> "Legacy Partner" Solo Credit</li>
-                                <li class="flex items-center gap-2"><span class="text-yellow-500">✦</span> Premiere Stage Greeting</li>
+                                <li class="flex items-center gap-3">
+                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                    <span>30min+ Documentary Production</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                    <span>"Legacy Partner" Solo Credit</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                    <span>Premiere Stage Greeting</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
+                                    <span>Cultural Integration Workshop Access</span>
+                                </li>
                             </ul>
                             <button class="w-full mt-8 py-3 bg-white/5 hover:bg-white hover:text-black text-white border border-white/10 transition-all text-xs tracking-widest uppercase">BUILD YOUR LEGACY</button>
                         </div>
@@ -772,6 +753,10 @@
                                 <li class="flex items-start gap-3">
                                     <span class="text-yellow-400 mt-0.5">✦</span> 
                                     <span><strong class="text-white">Full Documentary Production Rights</strong><br>(Includes Legacy Partner benefits)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-yellow-400 mt-0.5">✦</span> 
+                                    <span>Direct Consultation on Global Cultural Strategy</span>
                                 </li>
                             </ul>
                             <button class="w-full mt-8 py-4 bg-yellow-500 text-black hover:bg-white transition-all text-xs font-bold tracking-widest uppercase shadow-lg shadow-yellow-500/20">
