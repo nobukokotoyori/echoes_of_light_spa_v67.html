@@ -232,7 +232,6 @@
                                             <li class="flex items-start gap-2">
                                                 <span class="text-yellow-600 leading-none">・</span>
                                                 2023 <strong class="text-gray-400">Winny</strong> (Screenwriter / DOP) Shanghai International Film Festival
-                                            </li>
                                             <li class="flex items-start gap-2">
                                                 <span class="text-yellow-600 leading-none">・</span>
                                                 2023 <strong class="text-gray-400">The Road to Love</strong> (DOP) Osaka Asian Film Festival
@@ -496,7 +495,7 @@
                             </div>
 
                             <!-- Music Player: Champion's Story (feat. Jowie) -->
-                            <div class="mb-8 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
                                 <div class="flex items-center gap-4">
                                     <button id="audio-control-championsstory" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
                                         <i class="fas fa-play ml-1" id="audio-icon-championsstory"></i>
@@ -516,7 +515,47 @@
                                 <audio id="audio-track-championsstory" src="championsstory.mp3" preload="metadata"></audio>
                             </div>
                             
-                            <!-- END: Newly added players -->
+                            <!-- START: 追加されたプレイヤー (Arigato Mr. Go Furusawa) -->
+                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <button id="audio-control-arigatomrgofurusawa" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
+                                        <i class="fas fa-play ml-1" id="audio-icon-arigatomrgofurusawa"></i>
+                                    </button>
+                                    <div class="flex-grow min-w-0">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Arigato Mr. Go Furusawa</h4>
+                                            <span id="time-display-arigatomrgofurusawa" class="text-[10px] text-gray-400 font-mono">0:00</span>
+                                        </div>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
+                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-arigatomrgofurusawa">
+                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-arigatomrgofurusawa"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <audio id="audio-track-arigatomrgofurusawa" src="arigatomrgofurusawa.mp3" preload="metadata"></audio>
+                            </div>
+
+                            <!-- START: 追加されたプレイヤー (Thank you for loving Japan) -->
+                            <div class="mb-8 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <button id="audio-control-thankyouforlovingjapan" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
+                                        <i class="fas fa-play ml-1" id="audio-icon-thankyouforlovingjapan"></i>
+                                    </button>
+                                    <div class="flex-grow min-w-0">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Thank you for loving Japan</h4>
+                                            <span id="time-display-thankyouforlovingjapan" class="text-[10px] text-gray-400 font-mono">0:00</span>
+                                        </div>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
+                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-thankyouforlovingjapan">
+                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-thankyouforlovingjapan"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <audio id="audio-track-thankyouforlovingjapan" src="thankyouforlovingjapan.mp3" preload="metadata"></audio>
+                            </div>
+                            <!-- END: 追加されたプレイヤー -->
+
                             
                             <div class="flex flex-wrap items-center gap-3 mt-auto pt-6 border-t border-white/5">
                                 <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Music</span>
@@ -996,14 +1035,17 @@
             { id: 'nihonarigato', title: 'Nihon Arigato', src: 'nihonarigato.mp3' }, 
             { id: 'molmolarigato', title: 'Mol Mol Arigato', src: 'molmolarigato.mp3' },
             { id: 'ilikethewayyouare', title: 'I like the way you are', src: 'ilikethewayyouare.mp3' },
-            { id: 'championsstory', title: "Champion's Story (feat. Jowie)", src: 'championsstory.mp3' }
+            { id: 'championsstory', title: "Champion's Story (feat. Jowie)", src: 'championsstory.mp3' },
+            // 新規追加
+            { id: 'arigatomrgofurusawa', title: 'Arigato Mr. Go Furusawa', src: 'arigatomrgofurusawa.mp3' },
+            { id: 'thankyouforlovingjapan', title: 'Thank you for loving Japan', src: 'thankyouforlovingjapan.mp3' }
         ];
 
         // Music Player IDs (Footer Section)
         const footerTracks = [
-            { id: 'nobukoarigato', title: 'Nobuko Arigato', src: 'nobukoarigato.mp3' }, // 修正済み
-            { id: 'nobukoarigatotrumpet', title: 'Nobuko Arigato (Instromental trumpet ver)', src: 'nobukoarigatotrumpet.m4a' }, // 新規追加
-            { id: 'nobukogodbless', title: 'Nobuko God bless you (feat. Jowie)', src: 'nobukogodbless.mp3' } // 新規追加
+            { id: 'nobukoarigato', title: 'Nobuko Arigato', src: 'nobukoarigato.mp3' },
+            { id: 'nobukoarigatotrumpet', title: 'Nobuko Arigato (Instromental trumpet ver)', src: 'nobukoarigatotrumpet.m4a' },
+            { id: 'nobukogodbless', title: 'Nobuko God bless you (feat. Jowie)', src: 'nobukogodbless.mp3' }
         ];
         
         document.addEventListener('DOMContentLoaded', () => {
