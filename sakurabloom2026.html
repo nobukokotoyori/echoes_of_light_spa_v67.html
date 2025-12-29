@@ -202,12 +202,31 @@
             margin-bottom: 12px;
         }
 
-        .map-container {
+        /* --- スライドショー --- */
+        .slideshow-container {
             width: 100%;
-            height: 350px;
+            height: 400px;
             border-radius: 2rem;
             overflow: hidden;
+            position: relative;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #111;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
         }
     </style>
 </head>
@@ -216,6 +235,52 @@
     <div id="sakura-box" class="sakura-container"></div>
 
     <div id="secretTapArea"></div>
+
+    <!-- 固定ダッシュボード (スマホ右上JOIN MISSION対応) -->
+    <div class="fixed-dashboard">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center gap-4">
+            <button id="langToggle" class="text-[9px] font-black px-4 py-1.5 border border-pink-500/30 rounded-full hover:bg-white hover:text-black transition-all bg-pink-500/5 uppercase tracking-tighter shadow-md">
+                日本語 / EN
+            </button>
+            <a href="#missions" class="bg-pink-500 hover:bg-pink-400 text-white px-5 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-lg transition-all">
+                <span class="lang-en">Join Mission</span>
+                <span class="lang-jp hidden-lang">ミッション参加</span>
+            </a>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 pb-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-1">
+                <div class="flex justify-between items-end">
+                    <p class="text-[8px] uppercase font-black text-pink-300 tracking-widest">Global AI Analysis / Live Hashtag Tracking</p>
+                    <p class="text-[9px] font-mono font-bold text-white"><span class="hashtagCounterDisplay">742,831</span> <span class="text-gray-500">/ 1M</span></p>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
+                    <div class="progressBarDisplay bg-pink-500 h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,183,197,0.8)]" style="width: 74.2%"></div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-1 opacity-80">
+                    <span class="ai-hashtag-badge">#humanitarian_economy</span>
+                    <span class="ai-hashtag-badge">#A_Story_of_hope</span>
+                    <span class="ai-hashtag-badge">#Echoes_of_light</span>
+                    <span class="ai-hashtag-badge">#UZUWORLD</span>
+                    <span class="ai-hashtag-badge">#SAKURA_BLOOM_2026</span>
+                    <span class="ai-hashtag-badge">#Harmony_japan</span>
+                    <span class="ai-hashtag-badge">#Kamui</span>
+                    <span class="ai-hashtag-badge">#A_Sacred_Lie</span>
+                </div>
+            </div>
+
+            <div class="space-y-1 text-right">
+                <div class="flex justify-between items-end">
+                    <p class="text-[8px] uppercase font-black text-white/60 tracking-widest">Pay It Forward Ticket Sales Goal</p>
+                    <p class="text-[9px] font-mono font-bold text-pink-300"><span class="ticketCounterDisplay">206</span> <span class="text-gray-500">/ <span class="goalTextDisplay">10,000</span></span></p>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
+                    <div class="ticketProgressBarDisplay bg-white h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,255,255,0.3)]" style="width: 2.06%"></div>
+                </div>
+                <div id="aiStatusFixed" class="text-[7px] uppercase font-mono text-green-400 animate-pulse">AI analysis live...</div>
+            </div>
+        </div>
+    </div>
 
     <!-- 管理者パネル -->
     <div class="admin-control flex flex-col items-end">
@@ -245,52 +310,6 @@
         </button>
     </div>
 
-    <!-- 固定ダッシュボード (スマホ対応調整済み) -->
-    <div class="fixed-dashboard">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center gap-4">
-            <button id="langToggle" class="text-[9px] font-black px-4 py-1.5 border border-pink-500/30 rounded-full hover:bg-white hover:text-black transition-all bg-pink-500/5 uppercase tracking-tighter">
-                日本語 / EN
-            </button>
-            <!-- モバイルでも表示されるように hidden sm:block を削除 -->
-            <a href="#missions" class="bg-pink-500 hover:bg-pink-400 text-white px-4 py-1.5 rounded-full text-[8px] sm:text-[9px] font-black uppercase tracking-widest shadow-lg transition-all">
-                <span class="lang-en">Join Mission</span>
-                <span class="lang-jp hidden-lang">ミッション参加</span>
-            </a>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 pb-3 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <!-- AI Analytics -->
-            <div class="space-y-1">
-                <div class="flex justify-between items-end">
-                    <p class="text-[8px] uppercase font-black text-pink-300 tracking-widest">Global AI Analysis / Live Hashtag Tracking</p>
-                    <p class="text-[9px] font-mono font-bold text-white"><span class="hashtagCounterDisplay">742,831</span> <span class="text-gray-500">/ 1M</span></p>
-                </div>
-                <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
-                    <div class="progressBarDisplay bg-pink-500 h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,183,197,0.8)]" style="width: 74.2%"></div>
-                </div>
-                <div class="flex flex-wrap gap-1 mt-1 opacity-80 overflow-x-auto no-scrollbar">
-                    <span class="ai-hashtag-badge">#humanitarian_economy</span>
-                    <span class="ai-hashtag-badge">#A_Story_of_hope</span>
-                    <span class="ai-hashtag-badge">#Echoes_of_light</span>
-                    <span class="ai-hashtag-badge">#UZUWORLD</span>
-                    <span class="ai-hashtag-badge">#Harmony_japan</span>
-                </div>
-            </div>
-
-            <!-- Ticket Goal -->
-            <div class="space-y-1 text-right">
-                <div class="flex justify-between items-end">
-                    <p class="text-[8px] uppercase font-black text-white/60 tracking-widest">Pay It Forward Ticket Sales Goal</p>
-                    <p class="text-[9px] font-mono font-bold text-pink-300"><span class="ticketCounterDisplay">206</span> <span class="text-gray-500">/ <span class="goalTextDisplay">10,000</span></span></p>
-                </div>
-                <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
-                    <div class="ticketProgressBarDisplay bg-white h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,255,255,0.3)]" style="width: 2.06%"></div>
-                </div>
-                <div id="aiStatusFixed" class="text-[7px] uppercase font-mono text-green-400 animate-pulse">AI analysis live...</div>
-            </div>
-        </div>
-    </div>
-
     <!-- Hero -->
     <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-52 pb-20">
         <div class="relative z-20 max-w-5xl w-full">
@@ -307,7 +326,6 @@
             </h1>
 
             <div class="flex justify-center mb-16">
-                <!-- メイン・エンゲージパネル -->
                 <div class="glass-panel px-8 py-10 rounded-[3rem] border-pink-500/30 text-center relative w-full max-w-lg shadow-2xl">
                     <p class="text-[12px] uppercase font-black text-white/60 mb-2 tracking-[0.2em]">Global AI Analysis / Live Hashtag Tracking</p>
                     
@@ -390,16 +408,16 @@
                         <span class="px-3 py-1 bg-pink-600 text-[10px] font-black rounded-full mb-3 inline-block uppercase tracking-widest italic">Vocalist</span>
                         <h3 class="text-3xl font-black uppercase italic mb-4">Harmony</h3>
                         <div class="lang-en text-sm text-gray-300 leading-relaxed font-light space-y-3 text-justify">
-                            <p>A vocalist whose journey is a testament to the power of hope. Harmony presents his first-ever international concerts, bringing healing through soulful songs like "Echoes of Light" and "We Are The World".</p>
+                            <p>A vocalist whose journey is a testament to the power of hope. After obtaining his first passport specifically for this mission, Harmony presents his first-ever international concerts. His music weaves a story of intense life experiences, bringing healing through soulful songs.</p>
                         </div>
                         <div class="lang-jp hidden-lang text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify text-center md:text-left">
-                            <p>人生初のパスポートを手にマクタンへ。壮絶な人生経験から紡がれる歌声は、日本、そして世界へ希望を届けます。『We Are The World』などを披露し、癒やしの波を広げていきます。</p>
+                            <p>人生初のパスポートを手にマクタンへ。このプロジェクトのために勇気を振り絞ったHarmonyによる、魂の初コンサート。壮絶な人生経験から紡がれる歌声は、日本、そして世界へ希望を届けます。『We Are The World』などで癒やしの波を広げます。</p>
                         </div>
                     </div>
-                    <!-- 動画を大きく -->
-                    <div class="grid grid-cols-1 gap-4 mt-auto">
-                        <div class="video-wrapper shadow-xl scale-100 hover:scale-[1.02] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
-                        <div class="video-wrapper shadow-xl scale-100 hover:scale-[1.02] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
+                    <!-- 動画をさらに大きく -->
+                    <div class="grid grid-cols-1 gap-6 mt-auto">
+                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
+                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
                     </div>
                 </div>
 
@@ -409,16 +427,16 @@
                         <span class="px-3 py-1 bg-red-600 text-[10px] font-black rounded-full mb-3 inline-block uppercase tracking-widest italic">Anime Character</span>
                         <h3 class="text-3xl font-black uppercase italic mb-4">Kamui</h3>
                         <div class="lang-en text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
-                            <p>Innovative character unit from Osaka dedicated to revealing the truths behind modern education. Representing essential Japanese spirit, Kamui makes its international debut at Mactan Newtown.</p>
+                            <p>Innovative character unit from Osaka dedicated to revealing the truths behind modern education. Representing essential Japanese spirit, Kamui makes its international debut at Mactan Newtown in March 2026.</p>
                         </div>
                         <div class="lang-jp hidden-lang text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
-                            <p>大阪から誕生した『神威（カムイ）』。教育システムの裏側の真実を語ります。日本古来の精神性を携え、マクタンニュータウンでついに世界デビュー。</p>
+                            <p>大阪から誕生した『神威（カムイ）』。教育システムの裏側の真実を語ります。日本古来の精神性と価値観を携え、すべてが新しく始まるマクタンニュータウンでついに世界デビュー。叡智と未来を繋ぎます。</p>
                         </div>
                     </div>
-                    <!-- 動画を大きく -->
-                    <div class="grid grid-cols-1 gap-4 mt-auto">
-                        <div class="video-wrapper shadow-xl scale-100 hover:scale-[1.02] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
-                        <div class="video-wrapper shadow-xl scale-100 hover:scale-[1.02] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'bOfVbH3bfsg')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
+                    <!-- 動画をさらに大きく -->
+                    <div class="grid grid-cols-1 gap-6 mt-auto">
+                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
+                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'bOfVbH3bfsg')"><div class="play-btn"><i data-lucide="play" class="w-6 h-6 fill-current"></i></div></div></div>
                     </div>
                 </div>
             </div>
@@ -442,16 +460,16 @@
                     <h3 class="text-2xl font-black mb-4 uppercase italic lang-en italic">Purchase Pay It Forward Ticket</h3>
                     <h3 class="text-2xl font-black mb-4 lang-jp hidden-lang italic text-xl">恩送りチケット購入ミッション</h3>
                     <div class="space-y-6 mb-8 flex-1">
-                        <div class="lang-en text-sm text-gray-400 space-y-4 leading-relaxed font-light">
+                        <div class="lang-en text-sm text-gray-400 space-y-4 font-light">
                             <p>Japanese soul food "Sutadon" is a partner in food. Buy Pay It Forward tickets for others to experience music and entertainment.</p>
                             <p class="text-white font-bold italic border-l-2 border-pink-500 pl-4">Every ticket purchased will be delivered to local children and families during the event period.</p>
                         </div>
-                        <div class="lang-jp hidden-lang text-sm text-gray-400 space-y-4 leading-relaxed font-light italic text-justify text-justify">
+                        <div class="lang-jp hidden-lang text-sm text-gray-400 space-y-4 leading-relaxed font-light italic text-justify">
                             <p>「伝説のすた丼屋」は人道経済のパートナー。あなたの恩送りが、マクタンの人々に音楽と希望の体験を届けます。</p>
                             <p class="text-white font-bold border-l-2 border-pink-500 pl-4 text-sm md:text-base">購入いただいたチケットは、イベント開催期間中に現地の子供たちやその家族に責任を持って直接届けられます。</p>
                         </div>
                         <div class="p-5 bg-pink-500/10 rounded-2xl border border-pink-500/30 text-xs italic text-pink-200">
-                            <span class="lang-en font-bold text-center block text-[10px]">VENUE REWARD: Present purchase confirmation screen at the concert venue to get FREE admission!</span>
+                            <span class="lang-en font-bold text-center block text-[10px]">VENUE REWARD: Present purchase confirmation screen at the venue to get FREE admission!</span>
                             <span class="lang-jp hidden-lang font-bold text-center block text-[10px]">【会場特典】購入完了画面を提示してください。コンサートへの無料入場をプレゼントいたします！</span>
                         </div>
                     </div>
@@ -463,7 +481,7 @@
                         <div class="flex justify-between py-1 border-b border-white/5"><span>50 Bowls</span> <span class="text-white text-right">Priority Seat + VIP Dinner (Charged)</span></div>
                         <div class="flex justify-between items-center py-1 border-b border-white/5"><span>100 Bowls</span> <span class="text-white text-right">VIP Seat + VIP Dinner (Charged)</span></div>
                         <div class="flex justify-between items-center py-1 border-b border-white/5"><span>1,000 Bowls</span> <span class="text-white text-right">VIP Seat + FREE VIP Dinner</span></div>
-                        <div class="flex justify-between py-1 text-pink-400"><span>10,000 Bowls</span> <span class="text-right leading-tight">VIP Seat + FREE VIP Dinner + Sponsor Exposure</span></div>
+                        <div class="flex justify-between py-1 text-pink-400"><span>10,000 Bowls</span> <span class="text-right leading-tight text-[8px]">VIP Seat + FREE VIP Dinner + Sponsor Exposure</span></div>
                     </div>
                     
                     <a href="https://uzuworld.com/" target="_blank" class="w-full text-center py-5 bg-pink-500 hover:bg-pink-400 text-white font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl shadow-pink-500/30">
@@ -472,47 +490,47 @@
                     </a>
                 </div>
 
-                <!-- Mission B -->
+                <!-- Mission B (Full restored with Icon Links) -->
                 <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full text-left border-blue-500/20 shadow-lg">
                     <h3 class="text-2xl font-black mb-4 uppercase italic lang-en italic">Humanitarian SNS Proof</h3>
                     <h3 class="text-2xl font-black mb-4 lang-jp hidden-lang italic text-xl">人道活動のSNS証明ミッション</h3>
                     <div class="space-y-6 mb-8 flex-1 text-justify">
                         <div class="lang-en text-sm text-gray-400 space-y-4 leading-relaxed font-light">
-                            <p>Changing the world doesn't require massive wealth. Your single post is a movement, and <span class="text-white font-bold italic text-base">your action plays a monumental role</span>. By sharing your journey with our hashtags, you become a vital part of UZU (whirlpool), echoing waves of hope across the globe.</p>
+                            <p>Changing the world doesn't require wealth. Your single post is a movement, and <span class="text-white font-bold italic text-base">your action plays a monumental role</span>. By sharing your journey with our hashtags, you become a vital part of UZU (whirlpool).</p>
                         </div>
                         <div class="lang-jp hidden-lang text-sm text-gray-400 space-y-4 leading-relaxed font-light italic">
-                            <p>世界を変えるのに大きなお金は必要ありません。あなたの投稿そのものがムーブメントとなり、<span class="text-white font-bold text-base">あなたのアクションそのものが世界を変える大きな役割を果たします。</span>ハッシュタグを付けて投稿することで、あなたもUZU（渦）の一端となり、希望を広げる力となるのです。</p>
+                            <p>世界を変えるのに大きなお金は必要ありません。あなたの投稿そのものがムーブメントとなり、<span class="text-white font-bold text-base">あなたのアクションそのものが世界を変える大きな役割を果たします</span>。UZU（渦）の一端となりましょう。</p>
                         </div>
-                        <div class="p-5 bg-blue-500/10 rounded-2xl border border-blue-500/30 text-xs italic text-blue-200">
-                            <span class="lang-en font-bold text-center block text-[10px]">VENUE REWARD: Present your SNS post screen at the venue to get FREE admission!</span>
-                            <span class="lang-jp hidden-lang font-bold text-center block text-[10px]">【会場特典】SNSの投稿画面を提示してください。コンサートへの無料入場をプレゼントいたします！</span>
+                        <div class="p-5 bg-blue-500/10 rounded-2xl border border-blue-500/30 text-xs italic text-blue-200 text-center">
+                            <span class="lang-en font-bold text-[10px]">VENUE REWARD: Present your SNS post screen at the venue to get FREE admission!</span>
+                            <span class="lang-jp hidden-lang font-bold text-[10px]">【会場特典】SNSの投稿画面を提示してください。コンサートへの無料入場をプレゼント！</span>
                         </div>
                     </div>
 
                     <div class="space-y-4 mb-8">
-                        <div class="lang-en space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light italic text-justify">
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">1. Environment: Clean Up</p><p>Capture transformation of beach or street. "Small actions, big changes" start with you.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">2. Education: Learning Space</p><p>Donating books or setting up study areas to open future doors.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">3. Food & Agriculture: No Waste</p><p>Create delicious meals from surplus produce. Love food, hate waste.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">4. Energy: Efficient Choices</p><p>Give Earth a break. Share candlelight nights or solar power use.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">5. Kindness: Spread Smiles</p><p>Help someone in need and ripple gratitude to the world.</p></div>
+                        <div class="lang-en space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light italic">
+                            <div class="action-item"><p class="text-white font-bold mb-1">1. Environment: Clean Up</p><p>Beach or street litter-picking. "Small actions, big changes" start with you.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">2. Education: Learning Space</p><p>Donating books or setting up study areas to open future doors.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">3. Food & Agriculture: No Waste</p><p>Create delicious meals from surplus produce. Love food, hate waste.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">4. Energy: Efficient Choices</p><p>Give Earth a break. Share candlelight nights or solar power use.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">5. Kindness: Spread Smiles</p><p>Help someone in need and ripple gratitude to the world.</p></div>
                             <div class="pt-4 border-t border-white/10 text-white font-bold text-[9px] text-center italic">Think of your own creative way to do something good!</div>
                         </div>
 
                         <div class="lang-jp hidden-lang space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light italic">
-                            <div class="action-item"><p class="text-white font-bold mb-1">1. 環境保護：クリーンアップ</p><p>ゴミ拾いのビフォー・アフター。「小さな行動が、大きな変化に。」</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">1. 環境保護：クリーンアップ</p><p>ゴミ拾いのビフォー・アフター。「小さな行動が、街や海を変える。」</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">2. 教育・住居：学びの環境</p><p>本の寄贈、学習スペース作り。「未来への扉を開くアクション。」</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">3. 食・農業：ロスゼロの循環</p><p>余った食材を活用した料理や農業支援。「食べ物を愛し、ムダをなくそう。」</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">4. エネルギー：賢い選択</p><p>節電、太陽光、キャンドルナイト。「地球にひと休みのプレゼント。」</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">5. 善行：優しさの連鎖</p><p>隣人を助け、感謝を言葉に。優しさは必ず連鎖します。</p></div>
-                            <div class="pt-4 border-t border-white/10 text-white font-bold text-[9px] text-center">※これらは一例です。自分なりに人・社会・地球にとって「いいこと」を考えて投稿しよう！</div>
+                            <div class="pt-4 border-t border-white/10 text-white font-bold text-[9px] text-center">※これらは一例です。自分なりにいいことを考えて投稿しよう！</div>
                         </div>
                     </div>
 
                     <div class="flex flex-col items-center border-t border-white/10 pt-6">
                         <p class="text-[9px] text-gray-500 uppercase font-black tracking-widest mb-4 italic text-center">Share to Spread</p>
-                        <!-- SNSアイコンにハイパーリンクを設定 -->
                         <div class="flex flex-wrap gap-4 justify-center">
+                            <!-- SNSアイコンリンク設定 -->
                             <a href="https://www.facebook.com/" target="_blank" class="social-share-btn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                             <a href="https://www.instagram.com/" target="_blank" class="social-share-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                             <a href="https://x.com/" target="_blank" class="social-share-btn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24h-2.198Z"/></svg></a>
@@ -524,14 +542,14 @@
         </div>
     </section>
 
-    <!-- The Mactan Newtown Section (文章 → Google Map の順) -->
+    <!-- The Mactan Newtown Section (文章 → スライドショー の順) -->
     <section class="py-24 px-6 border-t border-white/5">
         <div class="max-w-5xl mx-auto">
             <div class="glass-panel p-8 md:p-16 rounded-[3.5rem] border-white/5 overflow-hidden relative shadow-2xl">
                 <div class="grid grid-cols-1 gap-12 text-left">
-                    <!-- Text First -->
-                    <div>
-                        <h2 class="text-3xl md:text-5xl font-black uppercase italic gradient-text mb-6 text-center md:text-left">The Mactan Newtown</h2>
+                    <!-- 文章 -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-5xl font-black uppercase italic gradient-text mb-6">The Mactan Newtown</h2>
                         <div class="lang-en text-gray-400 space-y-4 font-light leading-relaxed">
                             <p>Experience the heart of Mactan, Cebu, The Philippines. A premier 30-hectare township blending modern living with stunning beachfront views.</p>
                             <p>The perfect stage for our global movement of hope and the humanitarian economy.</p>
@@ -541,14 +559,11 @@
                             <p>世界レベルのライフスタイルと自然が共生するこの場所は、人道経済という新しいムーブメントの幕開けに最もふさわしい舞台です。</p>
                         </div>
                     </div>
-                    <!-- Map Second -->
-                    <div>
-                        <div class="map-container shadow-2xl border border-pink-500/10">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.328817688463!2d124.01633517585098!3d10.31551066749969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a990ecf32a76f7%3A0xc02330752530182b!2sThe%20Mactan%20Newtown!5e0!3m2!1sja!2sph!4v1703770000000!5m2!1sja!2sph" 
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
-                        </div>
+                    <!-- スライドショー -->
+                    <div class="slideshow-container shadow-2xl">
+                        <div class="slide active" style="background-image: url('mactanexpo1.jpg');"></div>
+                        <div class="slide" style="background-image: url('mactannight1.jpg');"></div>
+                        <div class="slide" style="background-image: url('openconcert.jpg');"></div>
                     </div>
                 </div>
             </div>
@@ -562,11 +577,11 @@
                 <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-black px-6 text-gold shadow-lg shadow-gold/20"><i data-lucide="crown" class="w-10 h-10"></i></div>
                 <h2 class="text-3xl font-black mb-4 lang-en uppercase italic tracking-tighter text-gold">Founding Guardians Needed</h2>
                 <h2 class="text-3xl font-black mb-4 lang-jp hidden-lang leading-tight">ファウンディング・ガーディアン募集</h2>
-                <div class="text-gray-400 mb-8 font-light leading-relaxed">
-                    <p class="lang-en text-sm italic text-center">Seeking at least <strong>3 founding guardians in January</strong> to support our global mission.</p>
-                    <p class="lang-jp text-sm md:text-base text-center">世界規模のミッションを支えるガーディアンを1月に少なくとも3名募集しています。あなたの支援が礎となります。</p>
+                <div class="text-gray-400 mb-8 font-light leading-relaxed text-sm">
+                    <p class="lang-en italic">Seeking at least <strong>3 founding guardians in January</strong> to support our global mission.</p>
+                    <p class="lang-jp">世界規模のミッションを支えるガーディアンを1月に少なくとも3名募集しています。あなたの支援が礎となります。</p>
                 </div>
-                <a href="https://echoes-of-light.jp/" target="_blank" class="inline-block bg-[#d4af37] text-black px-12 py-5 rounded-full font-black text-xs uppercase tracking-widest shadow-xl shadow-gold/20 hover:scale-105 transition-all active:scale-95">
+                <a href="https://echoes-of-light.jp/" target="_blank" class="inline-block bg-[#d4af37] text-black px-12 py-5 rounded-full font-black text-xs uppercase tracking-widest shadow-xl shadow-gold/20 hover:scale-105 transition-all">
                     <span class="lang-en">Become a Guardian</span>
                     <span class="lang-jp hidden-lang">ガーディアンになる</span>
                 </a>
@@ -581,35 +596,35 @@
             <div class="space-y-6">
                 <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">UZU WORLD</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
-                    <a href="https://www.youtube.com/channel/UC4jLmOuuTPaAqWDZa5R9kMg" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="youtube" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">YouTube</span></a>
-                    <a href="https://www.facebook.com/profile.php?id=61585342990076" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="facebook" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Facebook</span></a>
-                    <a href="https://www.instagram.com/uzu_world/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="instagram" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Instagram</span></a>
-                    <a href="https://www.tiktok.com/@uzu_world" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i><span class="text-xs font-bold uppercase tracking-wider">TikTok</span></a>
+                    <a href="https://www.youtube.com/channel/UC4jLmOuuTPaAqWDZa5R9kMg" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="youtube" class="w-4 h-4"></i>YouTube</a>
+                    <a href="https://www.facebook.com/profile.php?id=61585342990076" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
+                    <a href="https://www.instagram.com/uzu_world/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
+                    <a href="https://www.tiktok.com/@uzu_world" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i>TikTok</a>
                 </div>
             </div>
             <!-- Flower Angel -->
             <div class="space-y-6">
                 <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">Flower Angel</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
-                    <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="facebook" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Facebook</span></a>
-                    <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="youtube" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">YouTube</span></a>
-                    <a href="https://www.instagram.com/flower_angel_japan/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="instagram" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Instagram</span></a>
-                    <a href="https://www.tiktok.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i><span class="text-xs font-bold uppercase tracking-wider">TikTok</span></a>
+                    <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
+                    <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="youtube" class="w-4 h-4"></i>YouTube</a>
+                    <a href="https://www.instagram.com/flower_angel_japan/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
+                    <a href="https://www.tiktok.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i>TikTok</a>
                 </div>
             </div>
             <!-- UZUSHIO Holdings -->
             <div class="space-y-6">
                 <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">UZUSHIO Holdings</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
-                    <a href="https://www.facebook.com/profile.php?id=61578114391592" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="facebook" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Facebook</span></a>
-                    <a href="https://www.instagram.com/uzushiojapan/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i data-lucide="instagram" class="w-4 h-4"></i><span class="text-xs font-bold uppercase tracking-wider">Instagram</span></a>
-                    <a href="https://www.tiktok.com/@uzushiojapan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i><span class="text-xs font-bold uppercase tracking-wider">TikTok</span></a>
+                    <a href="https://www.facebook.com/profile.php?id=61578114391592" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
+                    <a href="https://www.instagram.com/uzushiojapan/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
+                    <a href="https://www.tiktok.com/@uzushiojapan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i>TikTok</a>
                 </div>
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
             <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em] font-black">&copy; 2026 Echoes of Light</p>
-            <p class="text-[8px] text-gray-700 uppercase italic font-light tracking-widest">The Mactan Newtown, Cebu, The Philippines</p>
+            <p class="text-[8px] text-gray-700 uppercase italic font-light tracking-widest text-center md:text-right">The Mactan Newtown, Cebu, The Philippines</p>
         </div>
     </footer>
 
@@ -676,6 +691,17 @@
             if (goalSubtitle) goalSubtitle.innerText = `Proof of Humanitarian Economy - Goal: ${ticketGoal.toLocaleString()}`;
         }
 
+        // --- スライドショー制御 ---
+        function startSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            let current = 0;
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 2000); // 2秒間隔
+        }
+
         window.onload = function() {
             if (typeof lucide !== 'undefined') lucide.createIcons();
 
@@ -691,7 +717,7 @@
                 });
             }
 
-            // 隠しタップ (右下隅を3回)
+            // 隠しタップ (右下隅)
             const secretArea = document.getElementById('secretTapArea');
             const adminBtn = document.getElementById('adminToggle');
             let tapCount = 0;
@@ -715,6 +741,7 @@
                 });
             }
 
+            startSlideshow();
             triggerAISearch();
             setInterval(triggerAISearch, 300000);
 
