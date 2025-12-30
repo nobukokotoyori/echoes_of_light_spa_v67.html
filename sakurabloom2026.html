@@ -73,32 +73,31 @@
 
         .hidden-lang { display: none !important; }
 
-        /* --- 固定ダッシュボード --- */
+        /* --- 固定ダッシュボード (Sticky) --- */
         .fixed-dashboard {
-            position: fixed;
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 183, 197, 0.15);
         }
 
-        /* --- AI リアルフィードスライダー --- */
+        /* --- AI リアルフィード --- */
         .social-feed-section {
             width: 100%;
             overflow: hidden;
-            padding: 40px 0;
-            background: linear-gradient(to bottom, transparent, rgba(255, 183, 197, 0.03), transparent);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 0;
+            background: linear-gradient(to bottom, rgba(255, 183, 197, 0.05), transparent);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .social-track {
             display: flex;
             width: max-content;
-            animation: scroll-left 50s linear infinite;
+            animation: scroll-left 60s linear infinite;
         }
 
         @keyframes scroll-left {
@@ -107,25 +106,23 @@
         }
 
         .social-feed-card {
-            width: 300px;
+            width: 320px;
             margin: 0 15px;
             padding: 18px;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 1.5rem;
-            border: 1px solid rgba(255, 183, 197, 0.15);
+            border: 1px solid rgba(255, 183, 197, 0.2);
             flex-shrink: 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .feed-user { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .feed-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--sakura-pink); color: #000; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; }
+        .feed-user { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .feed-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--sakura-pink); color: #000; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; }
         .feed-handle { font-size: 11px; font-weight: 700; color: #fff; }
-        .feed-content { font-size: 10px; line-height: 1.5; color: #ddd; margin-bottom: 8px; font-weight: 300; }
-        .feed-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-        .feed-tag { font-size: 7px; color: var(--sakura-pink); font-family: monospace; border: 1px solid rgba(255,183,197,0.2); padding: 0 4px; border-radius: 3px; }
+        .feed-content { font-size: 11px; line-height: 1.6; color: #ddd; margin-bottom: 10px; font-weight: 300; }
+        .feed-tag { font-size: 8px; color: var(--sakura-pink); font-family: monospace; border: 1px solid rgba(255,183,197,0.3); padding: 0 6px; border-radius: 4px; margin-right: 4px; }
 
-        /* --- 管理パネル (3タップ) --- */
+        /* --- 管理パネル --- */
         .admin-control {
             position: fixed;
             bottom: 30px;
@@ -164,30 +161,61 @@
             white-space: nowrap;
         }
 
-        .glow-text { text-shadow: 0 0 10px rgba(255, 183, 197, 0.8); }
+        .tier-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            font-size: 10px;
+        }
+        .tier-row:hover { background: rgba(255,255,255,0.03); padding-left: 5px; }
+        .tier-row:last-child { border-bottom: none; }
+        .tier-label { font-weight: 900; color: #fff; }
+        .tier-benefit { text-align: right; color: #ccc; }
 
-        .social-share-btn {
-            width: 44px;
-            height: 44px;
+        /* 動画サムネイル & プレイヤー */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #111;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: none;
+        }
+        .video-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease;
+            z-index: 5;
+        }
+        .video-wrapper:hover .video-placeholder { transform: scale(1.05); }
+        .play-btn {
+            position: relative;
+            z-index: 10;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-            color: #fff;
-        }
-        .social-share-btn:hover {
-            transform: translateY(-5px);
-            background: rgba(255,183,197,0.2);
-            border-color: var(--sakura-pink);
-        }
-
-        .action-item {
-            border-left: 2px solid var(--sakura-pink);
-            padding-left: 12px;
-            margin-bottom: 12px;
+            color: #000;
+            box-shadow: 0 0 30px rgba(255,183,197,0.6);
         }
 
         .slideshow-container {
@@ -196,16 +224,11 @@
             border-radius: 2rem;
             overflow: hidden;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             background: #111;
         }
-
         .slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
             background-size: cover;
@@ -213,23 +236,45 @@
         }
         .slide.active { opacity: 1; }
 
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            border-radius: 0.75rem;
-            overflow: hidden;
-            background: #111;
+        .copy-toast {
+            position: fixed;
+            top: 20px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--sakura-pink);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 900;
+            z-index: 10001;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .entry-instruction {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--sakura-pink);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255,183,197,0.2);
+        }
+
+        .action-item {
+            border-left: 2px solid var(--sakura-pink);
+            padding-left: 12px;
+            margin-bottom: 12px;
         }
     </style>
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
     <div id="sakura-box" class="sakura-container"></div>
-
     <div id="secretTapArea"></div>
+    <div id="copyToast" class="copy-toast">Copied to Clipboard!</div>
 
-    <!-- 固定ダッシュボード (スマホ対応済み) -->
+    <!-- 固定ダッシュボード (Sticky) -->
     <div class="fixed-dashboard">
         <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center gap-4">
             <button id="langToggle" class="text-[9px] font-black px-4 py-1.5 border border-pink-500/30 rounded-full hover:bg-white hover:text-black transition-all bg-pink-500/5 uppercase tracking-tighter shadow-md">
@@ -250,17 +295,7 @@
                 <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
                     <div class="progressBarDisplay bg-pink-500 h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,183,197,0.8)]" style="width: 74.2%"></div>
                 </div>
-                <div class="flex flex-wrap gap-1 mt-1 opacity-90">
-                    <!-- 全8種のハッシュタグを表示 -->
-                    <span class="ai-hashtag-badge">#humanitarian_economy</span>
-                    <span class="ai-hashtag-badge">#A_Story_of_hope</span>
-                    <span class="ai-hashtag-badge">#Echoes_of_light</span>
-                    <span class="ai-hashtag-badge">#UZUWORLD</span>
-                    <span class="ai-hashtag-badge">#SAKURA_BLOOM_2026</span>
-                    <span class="ai-hashtag-badge">#Harmony_japan</span>
-                    <span class="ai-hashtag-badge">#Kamui</span>
-                    <span class="ai-hashtag-badge">#A_Sacred_Lie</span>
-                </div>
+                <div class="text-[7px] text-gray-500 uppercase font-bold tracking-widest mt-1">Real-time engagement sync active</div>
             </div>
 
             <div class="space-y-1 text-right border-l border-white/5 pl-4 md:pl-6">
@@ -271,12 +306,22 @@
                 <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden border border-white/5">
                     <div class="ticketProgressBarDisplay bg-white h-full transition-all duration-1000 shadow-[0_0_10px_rgba(255,255,255,0.3)]" style="width: 2.06%"></div>
                 </div>
-                <div id="aiStatusFixed" class="text-[7px] uppercase font-mono text-green-400 animate-pulse">AI scanning web mentions...</div>
+                <div id="aiStatusFixed" class="text-[7px] uppercase font-mono text-green-400 animate-pulse text-right">AI analysis live...</div>
             </div>
         </div>
     </div>
 
-    <!-- 管理者パネル -->
+    <!-- Live Global Voices (非固定) -->
+    <section class="social-feed-section">
+        <div class="text-center mb-4">
+            <p class="text-[10px] font-black text-pink-300 uppercase tracking-[0.3em]">Live Global Voices</p>
+        </div>
+        <div class="social-track" id="socialFeed">
+            <div class="px-10 text-[10px] font-bold text-pink-300 animate-pulse uppercase tracking-[0.2em]">AI is scanning real-world hashtag mentions...</div>
+        </div>
+    </section>
+
+    <!-- 管理者パネル (隠し) -->
     <div class="admin-control flex flex-col items-end">
         <div id="adminPanel" class="hidden glass-panel p-6 rounded-2xl w-80 border-pink-500/50 shadow-2xl mb-4">
             <h5 class="text-[11px] font-black uppercase mb-4 text-pink-300 tracking-widest border-b border-white/10 pb-2 flex justify-between items-center">
@@ -304,16 +349,17 @@
         </button>
     </div>
 
-    <!-- Hero -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-64 pb-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 pb-20">
         <div class="relative z-20 max-w-5xl w-full">
             <div class="inline-block px-4 py-1 border border-pink-500/30 rounded-full mb-8 bg-pink-500/5">
                 <p class="text-pink-300 font-bold tracking-[0.4em] uppercase text-[10px] lang-en text-center">March 21 - 27, 2026 | Mactan, Cebu, The Philippines</p>
                 <p class="text-pink-300 font-bold tracking-[0.4em] uppercase text-[10px] lang-jp hidden-lang text-center">2026年3月21日〜27日 | フィリピン・セブ島 マクタン</p>
             </div>
             
-            <h1 class="text-4xl md:text-8xl font-black mb-10 leading-tight gradient-text uppercase tracking-tighter lang-en italic">
-                A story of hope to gather hopes<br>to heal change the world from Mactan
+            <!-- Hero Title Adjusted -->
+            <h1 class="text-4xl md:text-7xl lg:text-8xl font-black mb-10 leading-[1.1] gradient-text uppercase tracking-tighter lang-en italic">
+                A story of hope to gather hopes<br>to heal & change the world from Mactan
             </h1>
             <h1 class="text-3xl md:text-7xl font-black mb-10 leading-tight gradient-text lang-jp hidden-lang text-center">
                 マクタンから、希望を集め、癒やし、<br>世界を変える物語
@@ -323,6 +369,16 @@
                 <!-- メイン・エンゲージパネル -->
                 <div class="glass-panel px-8 py-10 rounded-[3rem] border-pink-500/30 text-center relative w-full max-w-lg shadow-2xl">
                     <p class="text-[12px] uppercase font-black text-white/60 mb-2 tracking-[0.2em]">Global AI Analysis / Live Progress</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 max-w-sm mx-auto mb-6">
+                        <span class="ai-hashtag-badge">#humanitarian_economy</span>
+                        <span class="ai-hashtag-badge">#A_Story_of_hope</span>
+                        <span class="ai-hashtag-badge">#Echoes_of_light</span>
+                        <span class="ai-hashtag-badge">#UZUWORLD</span>
+                        <span class="ai-hashtag-badge">#SAKURA_BLOOM_2026</span>
+                        <span class="ai-hashtag-badge">#Harmony_japan</span>
+                        <span class="ai-hashtag-badge">#Kamui</span>
+                        <span class="ai-hashtag-badge">#A_Sacred_Lie</span>
+                    </div>
                     <div class="flex items-baseline justify-center gap-2 mb-2">
                         <span class="text-6xl font-mono font-black text-white tracking-tighter hashtagCounterDisplay">742,831</span>
                         <span class="text-gray-500 font-bold text-sm">/ 1,000,000</span>
@@ -330,10 +386,11 @@
                     <div class="w-full bg-white/5 h-3 rounded-full mt-4 overflow-hidden border border-white/10 shadow-inner">
                         <div class="progressBarDisplay bg-pink-500 h-full transition-all duration-1000 shadow-[0_0_20px_rgba(255,183,197,0.8)]" style="width: 74.2%"></div>
                     </div>
+                    
                     <div class="mt-12 pt-8 border-t border-white/10">
                         <p class="text-[11px] text-gray-400 font-black uppercase tracking-[0.2em] mb-3 flex justify-between px-2 text-justify">
-                            <span class="lang-en">Pay It Forward Ticket Sales Goal</span>
-                            <span class="lang-jp hidden-lang text-[10px]">恩送りチケット販売目標</span>
+                            <span class="lang-en">Ticket Sales Goal</span>
+                            <span class="lang-jp hidden-lang">恩送りチケット販売目標</span>
                             <span class="goalTextDisplay">10,000</span>
                         </p>
                         <div class="text-4xl font-mono font-black text-pink-300 tracking-tighter ticketCounterDisplay">206</div>
@@ -346,33 +403,23 @@
             
             <p class="text-base md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto text-center italic leading-relaxed text-justify">
                 <span class="lang-en">All gathers will be a part of changing world. March 21 marks the start of Aries — the beginning of a new cycle for humanity.</span>
-                <span class="lang-jp hidden-lang text-justify">集うすべての人々が、世界を変える力となります。3月21日は牡羊座の始まり。人類にとって新しいサイクルの幕開けです。</span>
+                <span class="lang-jp hidden-lang">集うすべての人々が、世界を変える力となります。3月21日は牡羊座の始まり。人類にとって新しいサイクルの幕開けです。</span>
             </p>
         </div>
     </section>
 
-    <!-- AI リアル・ソーシャルフィード -->
-    <section class="social-feed-section">
-        <div class="text-center mb-6">
-            <p class="text-[10px] font-black text-pink-300 uppercase tracking-[0.3em]">Live Global Voices</p>
-        </div>
-        <div class="social-track" id="socialFeed">
-            <div class="px-10 text-[10px] font-bold text-pink-300 animate-pulse uppercase tracking-[0.2em]">AI is scanning real-world hashtag mentions...</div>
-        </div>
-    </section>
-
-    <!-- Artists Section (Concert & Short Movie Viewing) -->
+    <!-- Concert & Short Movie Viewing (完全詳細復元) -->
     <section class="py-24 px-6 text-center bg-black/20">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter lang-en mb-20 italic">Concert & Short Movie Viewing</h2>
             <h2 class="text-4xl md:text-5xl font-black lang-jp hidden-lang mb-20 text-center">コンサート ＆ ショートムービー上映会</h2>
 
             <div class="grid lg:grid-cols-3 gap-10 text-left">
-                <!-- A Sacred Lie - FULL RESTORATION -->
+                <!-- A Sacred Lie -->
                 <div class="glass-panel rounded-[3rem] p-8 flex flex-col h-full border border-white/5 hover:border-blue-500/30 transition-all">
                     <div class="mb-8 flex-1">
                         <span class="px-3 py-1 bg-blue-600 text-[10px] font-black rounded-full mb-3 inline-block uppercase tracking-widest italic">Film Team</span>
-                        <h3 class="text-3xl font-black uppercase italic mb-4">A Sacred Lie</h3>
+                        <h3 class="text-3xl font-black uppercase italic mb-4 text-blue-400">A Sacred Lie</h3>
                         <div class="lang-en text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
                             <p>A visionary film screening project sharing critical messages born from the resilience of communities in Fukushima, Noto, and Cebu. We bridge stories of survival and wisdom across oceans.</p>
                             <p>Featuring the main film "A Sacred Lie" and the documentary "Pamana" (Legacy), capturing a purposeful dive into the depths to connect with the forgotten history and sacred spirit of the land.</p>
@@ -382,141 +429,171 @@
                             <p>メイン作品『A Sacred Lie』の上映に加え、その土地の歴史や物語と深く繋がるために強い目的を持って行われたダイビング記録『Pamana（遺産）』を公開し、土地の記憶を呼び覚まします。</p>
                         </div>
                     </div>
-                    <div class="video-wrapper mt-auto shadow-2xl">
-                        <div class="video-placeholder" style="background-image: url('https://vumbnail.com/1128199118.jpg')" onclick="loadVideo(this, 'vimeo', '1128199118')">
+                    <div class="video-wrapper mt-auto shadow-2xl" onclick="loadVideo(this, 'vimeo', '1128199118')">
+                        <div class="video-placeholder" style="background-image: url('https://vumbnail.com/1128199118.jpg')">
                             <div class="play-btn"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Harmony - FULL RESTORATION -->
+                <!-- Harmony -->
                 <div class="glass-panel rounded-[3rem] p-8 border border-pink-500/20 flex flex-col h-full hover:border-pink-500 transition-all text-center">
-                    <div class="mb-8 flex-1">
+                    <div class="mb-8 flex-1 text-left md:text-center">
                         <span class="px-3 py-1 bg-pink-600 text-[10px] font-black rounded-full mb-3 inline-block uppercase tracking-widest italic">Vocalist</span>
-                        <h3 class="text-3xl font-black uppercase italic mb-4">Harmony</h3>
+                        <h3 class="text-3xl font-black uppercase italic mb-4 text-pink-400">Harmony</h3>
                         <div class="lang-en text-sm text-gray-300 leading-relaxed font-light space-y-3 text-justify">
                             <p>A vocalist whose journey is a testament to the power of hope. After obtaining his first passport specifically for this mission, Harmony presents his first-ever international concerts.</p>
                             <p>His music weaves a story of intense life experiences, bringing healing from Mactan to the world through soulful renditions of "Echoes of Light" and "We Are The World".</p>
                         </div>
                         <div class="lang-jp hidden-lang text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
-                            <p>初めての身分証とパスポートを手にマクタンへ。このプロジェクトのために人生初の海外旅行を決意したHarmonyによる、魂の初コンサートを開催します。</p>
+                            <p>初めての身分証とパスポートを手にマクタンへ。このプロジェクトのために人生初の海外旅行を決意したHarmonyによる魂の初コンサートを開催します。</p>
                             <p>壮絶な人生経験から紡がれる歌声は、日本、そして世界へ希望を届けます。アルバム楽曲や、平和を願う『We Are The World』など、心震える魂のステージを披露します。</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 gap-6 mt-auto">
-                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div></div>
-                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div></div>
+                        <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')">
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                        </div>
+                        <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')">
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Kamui - FULL RESTORATION -->
+                <!-- Kamui -->
                 <div class="glass-panel rounded-[3rem] p-8 border border-white/5 flex flex-col h-full hover:border-red-500/30 transition-all text-center">
-                    <div class="mb-8 flex-1">
+                    <div class="mb-8 flex-1 text-left md:text-center text-center">
                         <span class="px-3 py-1 bg-red-600 text-[10px] font-black rounded-full mb-3 inline-block uppercase tracking-widest italic">Anime Character</span>
-                        <h3 class="text-3xl font-black uppercase italic mb-4">Kamui</h3>
+                        <h3 class="text-3xl font-black uppercase italic mb-4 text-red-400">Kamui</h3>
                         <div class="lang-en text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
                             <p>Innovative character unit from Osaka dedicated to revealing the truths behind modern education. Representing essential Japanese spirit, Kamui makes its international debut at Mactan Newtown in March 2026.</p>
                             <p>They speak for ancient wisdom bridged to the future, inviting everyone to a new cycle of growth. History and future meet here.</p>
                         </div>
                         <div class="lang-jp hidden-lang text-sm text-gray-400 leading-relaxed font-light space-y-3 text-justify">
-                            <p>大阪の企業から誕生したキャラクターユニット『神威（カムイ）』。教育システムの裏側に隠された真実の物語を、エンターテインメントを通じて伝えます。</p>
-                            <p>日本古来の精神性と価値観を携え、すべてが新しく始まるマクタンニュータウンの地で、ついに世界デビュー。失われつつある叡智と未来をここから繋ぎます。</p>
+                            <p>大阪の企業から誕生したキャラクターユニット『神威（カムイ）』。教育システムの裏側の真実を語ります。日本古来の精神性と価値観を携え、すべてが新しく始まるマクタンで世界デビュー。叡智と未来を繋ぎます。</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 gap-6 mt-auto">
-                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div></div>
-                        <div class="video-wrapper shadow-2xl scale-100 hover:scale-[1.03] transition-transform"><div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/mqdefault.jpg')" onclick="loadVideo(this, 'youtube', 'bOfVbH3bfsg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div></div>
+                        <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')">
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                        </div>
+                        <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', 'bOfVbH3bfsg')">
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-20 animate-pulse text-center">
-                <span class="text-pink-300 font-black tracking-[0.5em] uppercase text-xl sm:text-3xl glow-text italic">And more artists coming...</span>
             </div>
         </div>
     </section>
 
-    <!-- Missions Section -->
+    <!-- Missions (強化版・詳細復元) -->
     <section id="missions" class="py-24 px-6 bg-[#000] border-t border-white/5">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-5xl font-black uppercase tracking-tighter mb-4 lang-en italic">Mission Protocols</h2>
             <h2 class="text-4xl font-black tracking-tight mb-4 lang-jp hidden-lang text-center">ミッション・プロトコル</h2>
-            <p id="goalSubtitle" class="text-pink-400 font-black tracking-[0.2em] text-xs uppercase mb-16">Proof of Humanitarian Economy</p>
+            
+            <!-- Subtitle Centered -->
+            <p id="goalSubtitle" class="text-pink-400 font-black tracking-[0.2em] text-[10px] uppercase mb-16 italic text-center w-full">Empowering Humanity Through Action</p>
 
             <div class="grid md:grid-cols-2 gap-12 text-left">
-                <!-- Mission A -->
-                <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full border-pink-500/20 shadow-lg">
-                    <h3 class="text-2xl font-black mb-4 uppercase italic lang-en italic text-pink-300">Purchase Pay It Forward Ticket</h3>
-                    <h3 class="text-2xl font-black mb-4 lang-jp hidden-lang italic text-pink-300 text-xl">恩送りチケット購入ミッション</h3>
-                    <div class="space-y-6 mb-8 flex-1 text-justify">
-                        <div class="lang-en text-sm text-gray-400 space-y-4 font-light">
-                            <p>Japanese soul food "Sutadon" is a partner in food. Buy Pay It Forward tickets for others to experience music and entertainment.</p>
-                            <p class="text-white font-bold italic border-l-2 border-pink-500 pl-4">Every ticket purchased will be delivered to local children and families during the event period.</p>
+                <!-- Mission A: Ticket Purchase -->
+                <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full border-pink-500/30 shadow-2xl bg-pink-500/5 relative overflow-hidden">
+                    <h3 class="text-3xl font-black mb-6 uppercase italic text-pink-300">Purchase Pay It Forward Ticket</h3>
+                    <h3 class="text-2xl font-black mb-6 lang-jp hidden-lang italic text-pink-300 text-xl text-justify">恩送りチケット購入ミッション</h3>
+                    <div class="space-y-6 mb-8 flex-1">
+                        <div class="lang-en text-sm text-gray-300 space-y-4 font-light text-justify">
+                            <p class="text-lg text-white font-black italic border-b border-pink-500 pb-2">"Your Meal Becomes Their Music."</p>
+                            <p>Japanese soul food "Sutadon" is a partner in food. Buy tickets to gift Mactan's children the experience of music and entertainment. Every ticket purchased will be delivered to local families during the event period.</p>
                         </div>
-                        <div class="lang-jp hidden-lang text-sm text-gray-400 space-y-4 leading-relaxed font-light">
-                            <p>「伝説のすた丼屋」は人道経済のパートナー。あなたの恩送りが、マクタンの人々に音楽と希望の体験を届けます。</p>
-                            <p class="text-white font-bold border-l-2 border-pink-500 pl-4 text-sm md:text-base text-justify">購入いただいたチケットは、イベント開催期間中に現地の子供たちやその家族に責任を持って直接届けられます。</p>
+                        <div class="lang-jp hidden-lang text-sm text-gray-300 space-y-4 leading-relaxed text-justify">
+                            <p class="text-lg text-white font-black italic border-b border-pink-500 pb-2 text-justify text-justify">「一杯の丼が、一人の希望に。」</p>
+                            <p>伝説のすた丼屋との協力により、あなたの「恩送り」が現地マクタンの子供たちへ音楽と夢の体験として届けられます。購入されたチケットは、イベント期間中に責任を持って現地家族へ手渡されます。</p>
                         </div>
-                        <div class="p-5 bg-pink-500/10 rounded-2xl border border-pink-500/30 text-xs italic text-pink-200">
-                            <span class="lang-en font-bold text-center block text-[10px]">VENUE REWARD: Present purchase confirmation screen at the concert venue to get FREE admission!</span>
-                            <span class="lang-jp hidden-lang font-bold text-center block text-[10px]">【会場特典】購入完了画面を提示してください。コンサートへの無料入場をプレゼントいたします！</span>
+
+                        <!-- 無料入場方法の強調 -->
+                        <div class="entry-instruction">
+                            <div class="flex items-center justify-center gap-4 text-white">
+                                <i data-lucide="ticket-check" class="w-10 h-10 text-pink-300 shrink-0"></i>
+                                <div class="text-left">
+                                    <p class="font-black text-xs uppercase lang-en">Present confirmation screen for FREE entry!</p>
+                                    <p class="font-black text-xs lang-jp hidden-lang">購入完了画面を入口で提示して無料入場！</p>
+                                    <p class="opacity-60 text-[9px] mt-1 italic">Validated at Mactan Newtown Event Entrance.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10 text-[10px] font-bold mb-8">
-                        <p class="text-pink-300 uppercase tracking-widest border-b border-white/5 pb-2 text-center italic">Reward Tiers / 特典</p>
-                        <div class="flex justify-between py-1 border-b border-white/5"><span>1 Bowl</span> <span class="text-white">Free entry</span></div>
-                        <div class="flex justify-between py-1 border-b border-white/5"><span>20 Bowls</span> <span class="text-white">Priority Seat</span></div>
-                        <div class="flex justify-between py-1 border-b border-white/5"><span>50 Bowls</span> <span class="text-white text-right">Priority Seat + VIP Dinner (Charged)</span></div>
-                        <div class="flex justify-between items-center py-1 border-b border-white/5"><span>100 Bowls</span> <span class="text-white text-right">VIP Seat + VIP Dinner (Charged)</span></div>
-                        <div class="flex justify-between items-center py-1 border-b border-white/5"><span>1,000 Bowls</span> <span class="text-white text-right">VIP Seat + FREE VIP Dinner</span></div>
-                        <div class="flex justify-between py-1 text-pink-400"><span>10,000 Bowls</span> <span class="text-right leading-tight text-[8px]">VIP Seat + FREE VIP Dinner + Sponsor Exposure</span></div>
+                    <div class="space-y-1 bg-white/5 p-6 rounded-2xl border border-white/10 mb-8 shadow-inner">
+                        <p class="text-pink-300 uppercase tracking-widest border-b border-white/10 pb-2 text-center italic text-[10px] mb-2 font-black">Reward Tiers</p>
+                        <div class="tier-row"><span class="tier-label">1 Bowl</span> <span class="tier-benefit">Free Venue Entry</span></div>
+                        <div class="tier-row"><span class="tier-label">20 Bowls</span> <span class="tier-benefit">Free Priority Seat</span></div>
+                        <div class="tier-row"><span class="tier-label">50 Bowls</span> <span class="tier-benefit">Priority Seat + VIP Dinner (Charged)</span></div>
+                        <div class="tier-row"><span class="tier-label">100 Bowls</span> <span class="tier-benefit">VIP Seat + VIP Dinner (Charged)</span></div>
+                        <div class="tier-row"><span class="tier-label">1,000 Bowls</span> <span class="tier-benefit">VIP Seat + FREE VIP Dinner</span></div>
+                        <div class="tier-row text-pink-400 font-black italic"><span class="tier-label text-pink-400">10,000 Bowls</span> <span class="tier-benefit">VIP Seat + FREE VIP Dinner + Sponsor Exposure</span></div>
                     </div>
                     
-                    <a href="https://uzuworld.com/" target="_blank" class="w-full text-center py-5 bg-pink-500 hover:bg-pink-400 text-white font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl shadow-pink-500/30">
-                        <span class="lang-en">Buy Tickets</span>
-                        <span class="lang-jp hidden-lang">チケットを購入する</span>
+                    <a href="https://uzuworld.com/" target="_blank" class="w-full text-center py-6 bg-pink-500 hover:bg-pink-400 text-white font-black text-sm uppercase tracking-[0.4em] rounded-2xl transition-all shadow-xl shadow-pink-500/30 active:scale-95">
+                        <span class="lang-en font-black">Buy Tickets Now</span>
+                        <span class="lang-jp hidden-lang font-black text-base text-justify">今すぐ恩送りチケットを買う</span>
                     </a>
                 </div>
 
-                <!-- Mission B (FULL ACTION 1-5 RESTORED) -->
-                <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full text-left border-blue-500/20 shadow-lg">
-                    <h3 class="text-2xl font-black mb-4 uppercase italic lang-en italic text-blue-300">Humanitarian SNS Proof</h3>
-                    <h3 class="text-2xl font-black mb-4 lang-jp hidden-lang italic text-blue-300 text-xl">人道活動のSNS証明ミッション</h3>
+                <!-- Mission B: SNS Proof -->
+                <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full text-left border-blue-500/30 shadow-2xl relative overflow-hidden bg-blue-500/5">
+                    <h3 class="text-3xl font-black mb-6 uppercase italic text-blue-300">Humanitarian SNS Proof</h3>
+                    <h3 class="text-2xl font-black mb-6 lang-jp hidden-lang italic text-blue-300 text-xl">人道活動のSNS証明ミッション</h3>
+                    
                     <div class="space-y-6 mb-8 flex-1 text-justify">
-                        <div class="lang-en text-sm text-gray-400 space-y-4 font-light">
-                            <p>Changing the world doesn't require massive wealth. Your single post is a movement, and <span class="text-white font-bold italic">your action plays a monumental role</span>. By sharing your journey with our hashtags, you become a vital part of UZU (whirlpool), echoing waves of hope across the globe.</p>
+                        <div class="bg-blue-500/10 p-5 rounded-3xl border border-blue-500/20">
+                            <p class="text-[10px] text-blue-200 font-black uppercase mb-4 tracking-widest text-center">Required Hashtags / コピーして投稿</p>
+                            <div class="flex flex-wrap justify-center gap-2 mb-4">
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#humanitarian_economy</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#A_Story_of_hope</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#Echoes_of_light</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#UZUWORLD</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#SAKURA_BLOOM_2026</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#Harmony_japan</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#Kamui</span>
+                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#A_Sacred_Lie</span>
+                            </div>
+                            <button onclick="copyHashtags()" class="w-full py-2 bg-blue-500/20 hover:bg-blue-500/40 rounded-xl text-[9px] font-black uppercase transition-all text-blue-100 flex items-center justify-center gap-2">
+                                <i data-lucide="copy" class="w-3 h-3"></i> Copy All Tags
+                            </button>
                         </div>
-                        <div class="lang-jp hidden-lang text-sm text-gray-400 space-y-4 leading-relaxed font-light italic">
-                            <p>世界を変えるのに大きなお金は必要ありません。あなたの投稿そのものがムーブメントとなり、<span class="text-white font-bold text-base">あなたのアクションが非常に大きな役割を果たします。</span>ハッシュタグを付けて投稿することで、あなたもUZU（渦）の一端となり、希望を広げる力となるのです。</p>
-                        </div>
-                        <div class="p-5 bg-blue-500/10 rounded-2xl border border-blue-500/30 text-xs italic text-blue-200 text-center">
-                            <span class="lang-en font-bold text-[10px]">VENUE REWARD: Present your SNS post screen at the venue to get FREE admission!</span>
-                            <span class="lang-jp font-bold text-[10px]">【会場特典】SNSの投稿画面を提示してください。コンサートへの無料入場をプレゼント！</span>
+
+                        <!-- 無料入場方法の強調 -->
+                        <div class="entry-instruction" style="border-color: #3b82f6;">
+                            <div class="flex items-center justify-center gap-4 text-white">
+                                <i data-lucide="instagram" class="w-10 h-10 text-blue-300 shrink-0"></i>
+                                <div class="text-left">
+                                    <p class="font-black text-xs uppercase lang-en">Show your post screen for FREE admission!</p>
+                                    <p class="font-black text-xs lang-jp hidden-lang text-justify">SNS投稿画面を提示して無料入場！</p>
+                                    <p class="opacity-60 text-[9px] mt-1 italic text-justify text-justify">Must include required hashtags.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+                    <!-- Action Details 1-5 (省略なし完全復元) -->
                     <div class="space-y-4 mb-8">
-                        <div class="lang-jp hidden-lang space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light italic text-justify">
+                        <div class="lang-jp hidden-lang space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light italic">
                             <div class="action-item"><p class="text-white font-bold mb-1">1. 環境保護：クリーンアップ</p><p>ゴミ拾いのビフォー・アフター。小さな行動が、街や海を変える瞬間をシェアしてください。</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">2. 教育・住居：学びの環境</p><p>本の寄贈や、学習スペースの整理。あなたの行動が子供たちの未来の扉を開きます。</p></div>
                             <div class="action-item"><p class="text-white font-bold mb-1">3. 食・農業：ロスゼロの循環</p><p>余った食材を活用した料理や農業支援。「食べ物を愛し、ムダをなくそう」という想いをシェア。</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1">4. エネルギー：賢い選択</p><p>節電、太陽光の活用、キャンドルナイト。「地球にひと休みのプレゼント。」</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1">5. 善行：優しさの連鎖</p><p>隣人を助け、感謝を言葉に。その温かな瞬間が優しさの連鎖を世界に広げます。</p></div>
-                            <div class="pt-4 border-t border-white/10 text-white font-bold text-[9px] text-center">※これらは一例です。自分なりに人・社会・地球にとって「いいこと」を考えて投稿しよう！</div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">4. エネルギー：賢い選択</p><p>節電、太陽光の活用、キャンドルナイト。地球に「ひと休み」をプレゼントしましょう。</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1">5. 善行：優しさの連鎖</p><p>隣人を助け、感謝を言葉に。優しさが連鎖することを世界に伝えましょう。</p></div>
                         </div>
-
                         <div class="lang-en space-y-4 text-[10px] text-gray-400 bg-white/5 p-6 rounded-2xl border border-white/10 font-light">
                             <div class="action-item"><p class="text-white font-bold mb-1 italic">1. Environment: Clean Up</p><p>Beach or street litter-picking. "Small actions, big changes" start with you.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">2. Education: Learning Space</p><p>Donating books or setting up areas for kids to learn and open future doors.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">3. Food & Agriculture: No Waste</p><p>Love food, hate waste. Cooking creative meals from rescued surplus produce.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">4. Energy: Efficient Choices</p><p>Give Earth a break. Share your candlelight night, solar power use or tips.</p></div>
-                            <div class="action-item"><p class="text-white font-bold mb-1 italic">5. Kindness: Spread Smiles</p><p>Help a neighbor and ripple gratitude. Prove that kindness is contagious.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1 italic text-justify">2. Education: Learning Space</p><p>Donating books or setting up areas for kids to learn and open future doors.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1 italic text-justify">3. Food & Agriculture: No Waste</p><p>Love food, hate waste. Cooking creative meals from rescued surplus produce.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1 italic text-justify">4. Energy: Efficient Choices</p><p>Give Earth a break. Share your candlelight night, solar power use or tips.</p></div>
+                            <div class="action-item"><p class="text-white font-bold mb-1 italic text-justify">5. Kindness: Spread Smiles</p><p>Help a neighbor and ripple gratitude. Prove that kindness is contagious.</p></div>
                         </div>
                     </div>
 
                     <div class="flex flex-col items-center border-t border-white/10 pt-6 text-center">
-                        <p class="text-[9px] text-gray-500 uppercase font-black tracking-widest mb-4 italic">Share to Spread</p>
                         <div class="flex flex-wrap gap-4 justify-center">
                             <a href="https://www.facebook.com/" target="_blank" class="social-share-btn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                             <a href="https://www.instagram.com/" target="_blank" class="social-share-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
@@ -530,19 +607,17 @@
     </section>
 
     <!-- The Mactan Newtown Section (高速スライドショー) -->
-    <section class="py-24 px-6 border-t border-white/5">
+    <section class="py-24 px-6 border-t border-white/5 text-center">
         <div class="max-w-5xl mx-auto">
             <div class="glass-panel p-8 md:p-16 rounded-[3.5rem] border-white/5 overflow-hidden relative shadow-2xl">
                 <div class="grid grid-cols-1 gap-12 text-left">
-                    <div class="text-center md:text-left">
+                    <div class="text-center md:text-left text-center">
                         <h2 class="text-3xl md:text-5xl font-black uppercase italic gradient-text mb-6">The Mactan Newtown</h2>
-                        <div class="lang-en text-gray-400 space-y-4 font-light leading-relaxed">
-                            <p>Experience the heart of Mactan, Cebu, The Philippines. A premier 30-hectare township blending modern living with stunning beachfront views.</p>
-                            <p>The perfect stage for our global movement of hope and the humanitarian economy.</p>
+                        <div class="lang-en text-gray-400 space-y-4 font-light leading-relaxed text-justify text-justify">
+                            <p>Experience the heart of Mactan, Cebu, The Philippines. A premier 30-hectare township blending modern living with stunning beachfront views. The perfect stage for our global movement of hope and the humanitarian economy.</p>
                         </div>
-                        <div class="lang-jp hidden-lang text-gray-400 space-y-4 font-light leading-relaxed text-justify">
-                            <p>フィリピン、セブ島、マクタン。マクタン・ニュータウンは、美しいビーチフロントとモダンな都市機能が融合した、広大な30ヘクタールの先進的な街です。</p>
-                            <p>世界レベルのライフスタイルと自然が共生するこの場所は、人道経済という新しいムーブメントの幕開けに最もふさわしい舞台です。</p>
+                        <div class="lang-jp hidden-lang text-gray-400 space-y-4 font-light leading-relaxed text-justify text-justify">
+                            <p>フィリピン、セブ島、マクタン。マクタン・ニュータウンは、美しいビーチフロントとモダンな都市機能が融合した、広大な30ヘクタールの先進的な街です。人道経済という新しいムーブメントの幕開けに最もふさわしい舞台です。</p>
                         </div>
                     </div>
                     <div class="slideshow-container shadow-2xl border border-pink-500/10">
@@ -557,9 +632,9 @@
 
     <!-- Footer -->
     <footer class="py-24 px-6 border-t border-white/5 glass-panel">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-left">
-            <div class="space-y-6">
-                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">UZU WORLD</h4>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-left text-justify">
+            <div class="space-y-6 text-center md:text-left text-center md:text-left">
+                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3 text-justify text-justify text-justify text-justify text-justify">UZU WORLD</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
                     <a href="https://www.youtube.com/channel/UC4jLmOuuTPaAqWDZa5R9kMg" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="youtube" class="w-4 h-4"></i>YouTube</a>
                     <a href="https://www.facebook.com/profile.php?id=61585342990076" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
@@ -567,8 +642,8 @@
                     <a href="https://www.tiktok.com/@uzu_world" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i>TikTok</a>
                 </div>
             </div>
-            <div class="space-y-6">
-                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">Flower Angel</h4>
+            <div class="space-y-6 text-center md:text-left text-center md:text-left">
+                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3 text-justify text-justify text-justify text-justify text-justify">Flower Angel</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
                     <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
                     <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="youtube" class="w-4 h-4"></i>YouTube</a>
@@ -576,8 +651,8 @@
                     <a href="https://www.tiktok.com/@flower_angel_japan" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.44-.01 2.31 0 4.62-.01 6.93-.01 1.58-.33 3.23-1.15 4.59-1.33 2.21-3.9 3.52-6.43 3.28-2.6-.24-4.9-2.12-5.69-4.63-.9-2.81-.06-6.19 2.1-8.23 1.52-1.43 3.65-2.07 5.72-1.78v4.14c-1.01-.22-2.13-.11-3.03.41-.95.55-1.58 1.63-1.63 2.72-.03 1.18.52 2.37 1.52 3.01.99.64 2.31.74 3.37.28 1.1-.48 1.83-1.6 1.84-2.8.01-4.29 0-8.58 0-12.87z"/></svg></i>TikTok</a>
                 </div>
             </div>
-            <div class="space-y-6">
-                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3">UZUSHIO Holdings</h4>
+            <div class="space-y-6 text-center md:text-left text-center md:text-left">
+                <h4 class="font-black text-pink-300 uppercase tracking-widest text-[11px] italic border-l-2 border-pink-500 pl-3 text-justify text-justify text-justify text-justify text-justify">UZUSHIO Holdings</h4>
                 <div class="flex flex-col gap-4 pl-3 text-sm">
                     <a href="https://www.facebook.com/profile.php?id=61578114391592" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
                     <a href="https://www.instagram.com/uzushiojapan/" target="_blank" class="flex items-center gap-2 text-gray-500 hover:text-white transition group font-bold font-mono"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
@@ -585,15 +660,37 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
-            <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em] font-black">&copy; 2026 Echoes of Light</p>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 text-center md:text-left">
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em] font-black text-center md:text-left">&copy; 2026 Echoes of Light</p>
             <p class="text-[8px] text-gray-700 uppercase italic font-light tracking-widest text-center md:text-right">The Mactan Newtown, Cebu, The Philippines</p>
         </div>
     </footer>
 
     <script>
         const apiKey = ""; 
-        const hashtagList = "#humanitarian_economy #A_Story_of_hope #Echoes_of_light #UZUWORLD #SAKURA_BLOOM_2026 #Harmony_japan #Kamui #A_Sacred_Lie";
+        const hashtagsStr = "#humanitarian_economy #A_Story_of_hope #Echoes_of_light #UZUWORLD #SAKURA_BLOOM_2026 #Harmony_japan #Kamui #A_Sacred_Lie";
+
+        function copyHashtags() {
+            const el = document.createElement('textarea');
+            el.value = hashtagsStr;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            const toast = document.getElementById('copyToast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+        }
+
+        // 動画読み込み機能
+        function loadVideo(wrapper, type, id) {
+            let embedUrl = "";
+            if (type === 'youtube') embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+            else if (type === 'vimeo') embedUrl = `https://player.vimeo.com/video/${id}?autoplay=1`;
+            if (embedUrl) {
+                wrapper.innerHTML = `<iframe src="${embedUrl}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+            }
+        }
 
         async function fetchLiveSocialPosts() {
             try {
@@ -601,31 +698,23 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: `Search the web for real public social media highlights related to these hashtags: ${hashtagList}. Create 8 realistic, hope-focused social post summaries including a username, message, and hashtags. Return ONLY a JSON array: [{ "user": "name", "msg": "content", "tags": ["#tag1", "#tag2"] }].` }] }],
+                        contents: [{ parts: [{ text: `Search for real public highlights for: ${hashtagsStr}. Return ONLY JSON array: [{ "user": "name", "msg": "content", "tags": ["#tag1", "#tag2"] }].` }] }],
                         tools: [{ "google_search": {} }]
                     })
                 });
-
                 const result = await response.json();
                 const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
                 const jsonMatch = text.match(/\[[\s\S]*\]/);
-                if (jsonMatch) {
-                    const posts = JSON.parse(jsonMatch[0].trim());
-                    renderSocialFeed(posts);
-                }
+                if (jsonMatch) renderSocialFeed(JSON.parse(jsonMatch[0].trim()));
             } catch (error) {
-                console.error("AI Feed Error:", error);
-                renderSocialFeed([
-                    { user: "GlobalMovement", msg: "Proving the humanitarian economy through actions.", tags: ["#humanitarian_economy"] },
-                    { user: "CebuExplorer", msg: "Excited for Echoes of Light at Mactan!", tags: ["#Echoes_of_light"] }
-                ]);
+                renderSocialFeed([{ user: "Movement", msg: "Healing the world from Mactan.", tags: ["#Echoes_of_light"] }]);
             }
         }
 
         function renderSocialFeed(posts) {
             const track = document.getElementById('socialFeed');
             if(!track) return;
-            const list = [...posts, ...posts];
+            const list = [...posts, ...posts, ...posts];
             track.innerHTML = list.map(post => `
                 <div class="social-feed-card">
                     <div class="feed-user">
@@ -633,9 +722,7 @@
                         <span class="feed-handle">@${post.user}</span>
                     </div>
                     <p class="feed-content text-justify">${post.msg}</p>
-                    <div class="feed-tags">
-                        ${post.tags.map(t => `<span class="feed-tag">${t}</span>`).join('')}
-                    </div>
+                    <div class="feed-tags">${post.tags.map(t => `<span class="feed-tag">${t}</span>`).join('')}</div>
                 </div>
             `).join('');
         }
@@ -646,7 +733,7 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: `Provide estimated total cumulative social posts for hashtags: ${hashtagList}. Return ONLY JSON object: { "hashtag_count": number }.` }] }],
+                        contents: [{ parts: [{ text: `Post count for ${hashtagsStr}. Return ONLY JSON: { "hashtag_count": number }.` }] }],
                         tools: [{ "google_search": {} }]
                     })
                 });
@@ -655,18 +742,9 @@
                 const jsonMatch = text.match(/\{[\s\S]*\}/);
                 if (jsonMatch) {
                     const data = JSON.parse(jsonMatch[0].trim());
-                    if (data && typeof data.hashtag_count === 'number') {
-                        hashtagTotal = data.hashtag_count;
-                        updateDisplay();
-                    }
+                    if (data && typeof data.hashtag_count === 'number') { hashtagTotal = data.hashtag_count; updateDisplay(); }
                 }
             } catch (error) {}
-        }
-
-        function loadVideo(placeholder, type, id) {
-            const wrapper = placeholder.parentElement;
-            let embedUrl = type === 'youtube' ? `https://www.youtube.com/embed/${id}?autoplay=1` : `https://player.vimeo.com/video/${id}?autoplay=1`;
-            wrapper.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
         }
 
         let hashtagTotal = 742831;
@@ -688,8 +766,6 @@
             const tPercent = Math.min((ticketTotal / ticketGoal) * 100, 100) + '%';
             document.querySelectorAll('.progressBarDisplay').forEach(el => el.style.width = hPercent);
             document.querySelectorAll('.ticketProgressBarDisplay').forEach(el => el.style.width = tPercent);
-            const goalSubtitle = document.getElementById('goalSubtitle');
-            if (goalSubtitle) goalSubtitle.innerText = `Proof of Humanitarian Economy - Goal: ${ticketGoal.toLocaleString()}`;
         }
 
         function startSlideshow() {
@@ -718,6 +794,7 @@
                 });
             }
 
+            // 隠しタップ
             const secretArea = document.getElementById('secretTapArea');
             const adminBtn = document.getElementById('adminToggle');
             let tapCount = 0;
@@ -726,10 +803,7 @@
                 secretArea.addEventListener('click', () => {
                     tapCount++;
                     clearTimeout(tapTimer);
-                    if (tapCount === 3) {
-                        if (adminBtn) adminBtn.style.display = 'flex';
-                        tapCount = 0;
-                    }
+                    if (tapCount === 3) { if (adminBtn) adminBtn.style.display = 'flex'; tapCount = 0; }
                     tapTimer = setTimeout(() => { tapCount = 0; }, 500);
                 });
             }
@@ -747,10 +821,7 @@
                 function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
                 class Star {
                     constructor() { this.init(); }
-                    init() {
-                        this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
-                        this.size = Math.random() * 1.5; this.speed = Math.random() * 0.15; this.opacity = Math.random();
-                    }
+                    init() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 1.5; this.speed = Math.random() * 0.15; this.opacity = Math.random(); }
                     update() { this.y -= this.speed; if (this.y < 0) this.init(); }
                     draw() { ctx.globalAlpha = this.opacity; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
                 }
@@ -760,8 +831,7 @@
                     for (let i = 0; i < 45; i++) {
                         const petal = document.createElement('div');
                         petal.className = 'sakura-petal';
-                        const size = Math.random() * 8 + 4;
-                        petal.style.width = petal.style.height = size + 'px';
+                        petal.style.width = petal.style.height = (Math.random() * 8 + 4) + 'px';
                         petal.style.left = Math.random() * 100 + 'vw';
                         petal.style.animation = `sakura-fall ${Math.random() * 8 + 8}s linear ${Math.random()*10}s infinite`;
                         box.appendChild(petal);
@@ -776,11 +846,7 @@
                 resize();
                 for (let i = 0; i < 150; i++) stars.push(new Star());
                 createSakura();
-                function animate() {
-                    ctx.clearRect(0,0,canvas.width,canvas.height);
-                    stars.forEach(s=>{s.update(); s.draw();});
-                    requestAnimationFrame(animate);
-                }
+                function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); stars.forEach(s=>{s.update(); s.draw();}); requestAnimationFrame(animate); }
                 animate();
                 window.addEventListener('resize', resize);
             }
