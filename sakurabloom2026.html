@@ -190,19 +190,37 @@
             z-index: 5;
         }
         .video-wrapper:hover .video-placeholder { transform: scale(1.05); }
+        
+        /* --- 修正箇所: 再生ボタンのデザイン変更 (角丸長方形 - YouTube風) --- */
         .play-btn {
             position: relative;
             z-index: 10;
-            width: 60px;
-            height: 60px;
+            width: 70px; /* 横長に */
+            height: 48px; /* 比率調整 */
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
+            border-radius: 12px; /* 角丸 */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
-            box-shadow: 0 0 30px rgba(255,183,197,0.6);
+            color: var(--sakura-deep);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(4px);
         }
+        .video-wrapper:hover .play-btn {
+            transform: scale(1.1);
+            background: #fff;
+            color: #ff5e88;
+        }
+        /* インラインSVG用スタイル */
+        .play-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            margin-left: 2px; /* 視覚的中央調整 */
+            display: block; /* 確実に表示 */
+        }
+        /* -------------------------------- */
 
         .slideshow-container {
             width: 100%;
@@ -219,7 +237,7 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0;
-            transition: opacity 0.8s ease-in-out;
+            transition: opacity 1.5s ease-in-out; 
             background-size: cover;
             background-position: center;
         }
@@ -250,6 +268,27 @@
             flex-shrink: 0;
             box-shadow: 0 0 15px rgba(255,183,197,0.5);
         }
+
+        /* --- 修正箇所: ハッシュタグデザイン調整 --- */
+        .ai-hashtag-badge {
+            font-size: 9px; /* 小さく */
+            color: rgba(255, 255, 255, 0.5); /* ページに馴染む薄いグレー/白 */
+            font-family: 'Inter', sans-serif; /* シンプルなフォント */
+            padding: 0 6px;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            background: transparent;
+            border: none;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        .ai-hashtag-badge:hover {
+            opacity: 1;
+            color: var(--sakura-pink);
+            text-shadow: 0 0 8px rgba(255,183,197,0.3);
+        }
+        /* -------------------------------- */
 
         .achievement-badge {
             background: rgba(255, 183, 197, 0.15);
@@ -295,6 +334,46 @@
             display: none;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+
+        /* --- OR Divider Styles --- */
+        .or-divider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            margin: 2rem 0;
+        }
+        .or-circle {
+            background: #000;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-style: italic;
+            z-index: 20;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            font-size: 14px;
+        }
+        @media (min-width: 768px) {
+            .mission-grid-wrapper {
+                position: relative;
+            }
+            .or-divider-desktop {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 30;
+                margin: 0;
+            }
+        }
+        /* -------------------------------- */
     </style>
 </head>
 <body>
@@ -386,7 +465,7 @@
             <div class="flex justify-center mb-10 text-center">
                 <div class="glass-panel px-6 py-8 rounded-3xl border-pink-500/30 text-center relative w-full max-w-md shadow-2xl">
                     <p class="text-[10px] uppercase font-black text-white/50 mb-4 tracking-[0.2em] text-center">Global AI Analysis / Live Progress</p>
-                    <div class="flex flex-wrap justify-center gap-1.5 max-w-xs mx-auto mb-4">
+                    <div class="flex flex-wrap justify-center gap-2 max-w-md mx-auto mb-4 px-4">
                         <span class="ai-hashtag-badge">#humanitarian_economy</span>
                         <span class="ai-hashtag-badge">#A_Story_of_hope</span>
                         <span class="ai-hashtag-badge">#Echoes_of_light</span>
@@ -434,7 +513,7 @@
         </div>
     </section>
 
-    <!-- Concert & Short Movie Viewing (アーティスト詳細復元) -->
+    <!-- Concert & Short Movie Viewing (アーティスト詳細) -->
     <section class="py-24 px-6 text-center bg-black/20">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter lang-en mb-20 italic">Concert & Short Movie Viewing</h2>
@@ -454,9 +533,14 @@
                             <p>メイン作品『A Sacred Lie』の上映に加え、土地の魂と深く繋がるために行われたダイビング記録『Pamana（遺産）』を特別公開し、土地の記憶を呼び覚まします。</p>
                         </div>
                     </div>
+                    <!-- 修正: 再生ボタンデザイン (インラインSVGで確実に表示) -->
                     <div class="video-wrapper mt-auto shadow-2xl" onclick="loadVideo(this, 'vimeo', '1128199118')">
                         <div class="video-placeholder" style="background-image: url('https://vumbnail.com/1128199118.jpg')">
-                            <div class="play-btn"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -474,10 +558,22 @@
                     </div>
                     <div class="grid grid-cols-1 gap-6 mt-auto">
                         <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')">
-                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/2Yq0ycPNgdg/maxresdefault.jpg')">
+                                <div class="play-btn">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')">
-                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/65fbOndnbrE/maxresdefault.jpg')">
+                                <div class="play-btn">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -495,10 +591,22 @@
                     </div>
                     <div class="grid grid-cols-1 gap-6 mt-auto">
                         <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')">
-                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current text-justify"></i></div></div>
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/ZlyM6ksP3fY/hqdefault.jpg')">
+                                <div class="play-btn">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <div class="video-wrapper shadow-2xl" onclick="loadVideo(this, 'youtube', 'bOfVbH3bfsg')">
-                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/maxresdefault.jpg')"><div class="play-btn"><i data-lucide="play" class="w-4 h-4 fill-current"></i></div></div>
+                            <div class="video-placeholder" style="background-image: url('https://img.youtube.com/vi/bOfVbH3bfsg/hqdefault.jpg')">
+                                <div class="play-btn">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -510,16 +618,31 @@
         </div>
     </section>
 
-    <!-- Missions (人道経済理念追記・詳細復元) -->
+    <!-- Missions (修正: OR条件の明示と説明追加) -->
     <section id="missions" class="py-24 px-6 bg-[#000] border-t border-white/5">
         <div class="max-w-6xl mx-auto text-center text-justify">
             <h2 class="text-5xl font-black uppercase tracking-tighter mb-4 lang-en italic text-center">Mission Protocols</h2>
             <h2 class="text-4xl font-black tracking-tight mb-4 lang-jp hidden-lang text-center">ミッション・プロトコル</h2>
-            <p id="goalSubtitle" class="text-pink-400 font-black tracking-[0.2em] text-[10px] uppercase mb-16 italic text-center w-full">Empowering Humanity Through Action</p>
+            <p id="goalSubtitle" class="text-pink-400 font-black tracking-[0.2em] text-[10px] uppercase mb-12 italic text-center w-full">Empowering Humanity Through Action</p>
 
-            <div class="grid md:grid-cols-2 gap-12 text-left text-justify">
+            <!-- 修正: OR条件の説明ボックス -->
+            <div class="mb-12 text-center max-w-2xl mx-auto border border-white/20 p-6 rounded-3xl bg-white/5 backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 to-blue-500"></div>
+                <h3 class="text-lg md:text-xl font-black text-white mb-2 italic">CHOOSE YOUR PATH</h3>
+                <p class="lang-en text-sm text-gray-300 font-light mb-2">You can enter by either <span class="text-pink-400 font-bold">Financial Contribution</span> <span class="text-lg font-black italic mx-1 text-white">OR</span> <span class="text-blue-400 font-bold">Humanitarian Action</span>.</p>
+                <p class="lang-en text-xs text-gray-500 italic">"Money is not the only currency. Your action (Give) is a ticket."</p>
+                
+                <p class="lang-jp hidden-lang text-sm text-gray-300 font-light mb-2"><span class="text-pink-400 font-bold">金銭的支援</span> または <span class="text-blue-400 font-bold">人道的アクション</span> のどちらか一方で参加可能です。</p>
+                <p class="lang-jp hidden-lang text-xs text-gray-500 italic">「お金だけが通貨ではありません。あなたの行動（Give）が入場チケットになります。」</p>
+            </div>
+
+            <div class="mission-grid-wrapper grid md:grid-cols-2 gap-12 text-left text-justify relative">
+                <!-- 修正: OR Divider (中央配置) -->
+                <div class="or-divider-desktop hidden md:flex or-circle">OR</div>
+
                 <!-- Mission A: Ticket Purchase -->
                 <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full border-pink-500/30 shadow-2xl bg-pink-500/5 relative overflow-hidden text-left text-justify text-justify">
+                    <div class="absolute top-0 right-0 bg-pink-500 text-white text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">Option A</div>
                     <h3 class="text-3xl font-black mb-6 uppercase italic text-pink-300 text-center md:text-left">Purchase Pay It Forward Ticket</h3>
                     <h3 class="text-2xl font-black mb-6 lang-jp hidden-lang italic text-pink-300 text-xl text-center md:text-left">恩送りチケット購入ミッション</h3>
                     
@@ -579,23 +702,30 @@
                     </a>
                 </div>
 
+                <!-- Mobile Divider -->
+                <div class="md:hidden or-divider-container">
+                    <div class="or-circle">OR</div>
+                </div>
+
                 <!-- Mission B: SNS Proof (1-5 完全詳細復元) -->
                 <div class="mission-card glass-panel p-10 rounded-[3.5rem] flex flex-col h-full text-left border-blue-500/30 shadow-2xl relative overflow-hidden bg-blue-500/5 text-justify">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">Option B</div>
                     <h3 class="text-3xl font-black mb-6 uppercase italic text-blue-300 text-center md:text-left text-justify">Humanitarian SNS Proof</h3>
                     <h3 class="text-2xl font-black mb-6 lang-jp hidden-lang italic text-blue-300 text-xl text-center md:text-left">人道活動のSNS証明ミッション</h3>
                     
                     <div class="space-y-6 mb-8 flex-1 text-justify text-justify text-justify">
                         <div class="bg-blue-500/10 p-5 rounded-3xl border border-blue-500/20 text-center">
                             <p class="text-[10px] text-blue-200 font-black uppercase mb-4 tracking-widest text-center text-center">Required Hashtags</p>
-                            <div class="flex flex-wrap justify-center gap-2 mb-4">
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center">#humanitarian_economy</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center">#A_Story_of_hope</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center text-center">#Echoes_of_light</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center text-center">#UZUWORLD</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center text-center">#SAKURA_BLOOM_2026</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#Harmony_japan</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20 text-center">#Kamui</span>
-                                <span class="text-[8px] bg-white/10 px-2 py-1 rounded font-mono text-blue-300 border border-blue-500/20">#A_Sacred_Lie</span>
+                            <!-- 修正: ハッシュタグデザイン変更 (ここも適用) -->
+                            <div class="flex flex-wrap justify-center gap-2 mb-4 px-2">
+                                <span class="ai-hashtag-badge text-blue-200">#humanitarian_economy</span>
+                                <span class="ai-hashtag-badge text-blue-200">#A_Story_of_hope</span>
+                                <span class="ai-hashtag-badge text-blue-200">#Echoes_of_light</span>
+                                <span class="ai-hashtag-badge text-blue-200">#UZUWORLD</span>
+                                <span class="ai-hashtag-badge text-blue-200">#SAKURA_BLOOM_2026</span>
+                                <span class="ai-hashtag-badge text-blue-200">#Harmony_japan</span>
+                                <span class="ai-hashtag-badge text-blue-200">#Kamui</span>
+                                <span class="ai-hashtag-badge text-blue-200">#A_Sacred_Lie</span>
                             </div>
                             <button onclick="copyHashtags()" class="w-full py-2 bg-blue-500/20 hover:bg-blue-500/40 rounded-xl text-[9px] font-black uppercase transition-all text-blue-100 flex items-center justify-center gap-2 shadow-lg">
                                 <i data-lucide="copy" class="w-3 h-3 text-center"></i> Copy All Tags
@@ -609,6 +739,12 @@
                                 <p class="font-black text-xs lang-jp hidden-lang text-white">SNS投稿画面を提示して無料入場！</p>
                                 <p class="opacity-60 text-[9px] mt-1 italic text-justify text-justify text-justify text-justify">Must include required hashtags.</p>
                             </div>
+                        </div>
+                        
+                        <!-- Free Entry Emphasis (より強調) -->
+                        <div class="p-4 bg-blue-500/10 border border-blue-500/50 rounded-xl text-center animate-pulse">
+                            <p class="lang-en text-[11px] font-black text-blue-200 uppercase tracking-widest">No Payment Required via this path</p>
+                            <p class="lang-jp hidden-lang text-[11px] font-black text-blue-200">このルートならチケット購入は不要です</p>
                         </div>
                     </div>
 
@@ -832,7 +968,7 @@
                 slides[current].classList.remove('active');
                 current = (current + 1) % slides.length;
                 slides[current].classList.add('active');
-            }, 2000);
+            }, 5000);
         }
 
         window.onload = function() {
