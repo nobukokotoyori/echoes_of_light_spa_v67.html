@@ -214,7 +214,7 @@
                 </div>
                 <div class="video-column mt-4 md:mt-0">
                     <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', 's42f_t5hZYw')">
-                        <img src="https://img.youtube.com/vi/s42f_t5hZYw/maxresdefault.jpg" class="w-full h-full object-cover">
+                        <img src="https://img.youtube.com/vi/s42f_t5hZYw/hqdefault.jpg" class="w-full h-full object-cover">
                         <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer">
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-black fill-current translate-x-1"></i></div>
                         </div>
@@ -275,7 +275,7 @@
                 <div class="video-column mt-4 md:mt-0 space-y-4">
                     <div>
                         <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', '2Yq0ycPNgdg')">
-                            <img src="https://img.youtube.com/vi/2Yq0ycPNgdg/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
+                            <img src="https://img.youtube.com/vi/2Yq0ycPNgdg/hqdefault.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://img.youtube.com/vi/2Yq0ycPNgdg/mqdefault.jpg'">
                             <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer">
                                 <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                             </div>
@@ -284,7 +284,7 @@
                     </div>
                     <div>
                         <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', '65fbOndnbrE')">
-                            <img src="https://img.youtube.com/vi/65fbOndnbrE/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
+                            <img src="https://img.youtube.com/vi/65fbOndnbrE/hqdefault.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://img.youtube.com/vi/65fbOndnbrE/mqdefault.jpg'">
                             <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer">
                                 <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                             </div>
@@ -294,7 +294,7 @@
                 </div>
             </div>
 
-            <!-- Artist 3: Kamui -->
+            <!-- Artist 3: Kamui (Thumbnail Fixed) -->
             <div class="artist-flyer p-5 rounded-xl border-red-100">
                 <div class="flex-1 pr-0 md:pr-8">
                     <span class="tag-pill" style="color:red; border-color:red;">Anime Character</span>
@@ -312,12 +312,15 @@
                 </div>
                 <div class="video-column mt-4 md:mt-0">
                     <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', 'ZlyM6ksP3fY')">
-                        <img src="https://img.youtube.com/vi/ZlyM6ksP3fY/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
+                        <!-- Using hqdefault for better compatibility and clear display -->
+                        <img src="https://img.youtube.com/vi/ZlyM6ksP3fY/hqdefault.jpg" 
+                             onerror="this.src='https://img.youtube.com/vi/ZlyM6ksP3fY/mqdefault.jpg'"
+                             class="w-full h-full object-cover">
                         <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer">
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                         </div>
                     </div>
-                    <p class="video-caption">just right now!</p>
+                    <p class="video-caption">JUST RIGHT NOW!</p>
                 </div>
             </div>
 
@@ -339,7 +342,7 @@
                 </div>
                 <div class="video-column mt-4 md:mt-0">
                     <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', 'nEYZQJNj8uM')">
-                        <img src="https://img.youtube.com/vi/nEYZQJNj8uM/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
+                        <img src="https://img.youtube.com/vi/nEYZQJNj8uM/hqdefault.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://img.youtube.com/vi/nEYZQJNj8uM/mqdefault.jpg'">
                         <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer">
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                         </div>
@@ -366,7 +369,7 @@
                 </div>
                 <div class="video-column mt-4 md:mt-0">
                     <div class="video-container shadow-sm" onclick="loadVideo(this, 'youtube', 'M-C8bbSlp2w')">
-                        <img src="https://img.youtube.com/vi/M-C8bbSlp2w/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
+                        <img src="https://img.youtube.com/vi/M-C8bbSlp2w/hqdefault.jpg" class="w-full h-full object-cover opacity-60" onerror="this.src='https://img.youtube.com/vi/M-C8bbSlp2w/mqdefault.jpg'">
                         <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer">
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                         </div>
@@ -378,7 +381,7 @@
         </div>
     </section>
 
-    <!-- Movement Section: LIGHT MODE with GOLD Title & UPDATED BUTTON TEXT -->
+    <!-- Movement Section: LIGHT MODE with GOLD Title & Special Free Invitation -->
     <section id="join" class="py-12 px-6 bg-[#fdfbfb] relative z-10 border-t border-black/5">
         <div class="max-w-3xl mx-auto">
             <div class="bg-white border border-black/5 p-10 rounded-3xl text-center font-mincho shadow-sm">
@@ -397,7 +400,6 @@
                         Your resonance creates the next chapter of the humanitarian economy.
                     </p>
                 </div>
-                <!-- Updated Button Text -->
                 <div class="flex justify-center">
                     <a href="https://echoes-of-light.jp/a_story_of_hope" target="_blank" 
                        class="inline-block text-[11px] font-black uppercase bg-[#1a1a1a] text-white px-14 py-4 rounded-full hover:bg-[#b3913e] transition-all duration-500 shadow-xl font-inter tracking-[0.2em] transform hover:scale-105 active:scale-95">
@@ -408,7 +410,7 @@
         </div>
     </section>
 
-    <!-- Footer: Light Mode (Unified Minimalist Design with GOLD elements) -->
+    <!-- Footer: Light Mode with GOLD elements -->
     <footer class="py-24 px-6 bg-[#fdfbfb] text-center relative z-10 border-t border-black/5">
         <div class="max-w-4xl mx-auto">
             <div class="mb-14">
@@ -420,7 +422,6 @@
                 
                 <p class="text-[11px] font-light tracking-wider mb-10" style="color: var(--gold);">The Mactan Newtown, Cebu, Philippines</p>
                 
-                <!-- SNS links in Gold font -->
                 <div class="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-14">
                     <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="footer-link">YouTube</a>
                     <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="footer-link">Facebook</a>
@@ -429,7 +430,6 @@
                 </div>
             </div>
 
-            <!-- Copyright in Gold -->
             <p class="text-[9px] font-black uppercase tracking-[0.5em]" style="color: var(--gold);">
                 &copy; 2026 ECHOES OF LIGHT - SAKURA BLOOM 2026
             </p>
