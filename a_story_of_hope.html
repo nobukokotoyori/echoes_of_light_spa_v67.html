@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Free Invitation - A STORY OF HOPE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.441.0/lucide.min.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Noto+Serif+JP:wght@300;400;700&display=swap');
+
+        :root {
+            --gold: #d4af37;
+            --gold-light: #fef08a;
+            --champagne: #f9f6f0;
+            --sakura-pink: #ffb7c5;
+            --sakura-deep: #f687b3;
+            --premium-pink: #fdf2f4;
+        }
+
+        body {
+            background-color: var(--champagne);
+            color: #2d2d2d;
+            font-family: 'Noto Serif JP', serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #b8860b 0%, #d4af37 25%, #f7e6a1 50%, #d4af37 75%, #b8860b 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine-flow 6s linear infinite;
+        }
+
+        .sakura-gradient {
+            background: linear-gradient(135deg, #f687b3 0%, #ffb7c5 50%, #fbc2eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        @keyframes shine-flow {
+            to { background-position: 200% center; }
+        }
+
+        .shimmer {
+            position: relative;
+            display: inline-block;
+        }
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shimmer-swipe 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes shimmer-swipe {
+            0% { left: -100%; opacity: 0; }
+            20% { opacity: 1; }
+            50% { left: 150%; opacity: 0; }
+            100% { left: 150%; opacity: 0; }
+        }
+
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 10px 2px white;
+            animation: sparkle-anim 2s infinite;
+        }
+
+        @keyframes sparkle-anim {
+            0%, 100% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 0.8; }
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .virtue-badge {
+            background: var(--gold);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            margin-bottom: 0.4rem;
+        }
+
+        .header-info-box {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 0.6rem 1.4rem;
+            border-radius: 1.8rem;
+            border: 1px solid var(--sakura-pink);
+            display: inline-block;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(255, 183, 197, 0.2);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 20px;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--sakura-pink), transparent);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+            display: flex;
+            gap: 24px;
+            text-align: left;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -20px; top: 10px;
+            width: 8px; height: 8px;
+            background: var(--sakura-pink);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-time {
+            flex-shrink: 0;
+            width: 50px;
+            font-weight: 900;
+            font-size: 13px;
+            color: var(--sakura-deep);
+        }
+
+        .hashtag-item {
+            background: white;
+            border: 1px solid var(--sakura-pink);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            color: var(--sakura-deep);
+            font-family: monospace;
+        }
+
+        .time-limit-pill {
+            background: #fff1f2;
+            border: 1px solid #ffe4e6;
+            color: #e11d48;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .vip-premium-card {
+            background: linear-gradient(145deg, #111111, #222222);
+            border: 1px solid var(--gold);
+            padding: 2.2rem;
+            border-radius: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .vip-premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.08), transparent);
+            animation: vip-shimmer 8s infinite linear;
+        }
+        @keyframes vip-shimmer {
+            0% { left: -100%; }
+            30% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .sns-text-link {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--sakura-deep);
+            padding: 4px 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid transparent;
+        }
+        .sns-text-link:hover {
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hidden-lang { display: none !important; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-center">
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-pink-100/30 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gold-light/20 blur-[120px] rounded-full"></div>
+    </div>
+    <div id="sparkle-container" class="fixed inset-0 pointer-events-none z-20"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 flex justify-start items-center px-6 py-6 z-50">
+        <div class="text-[8px] tracking-[0.2em] font-black uppercase text-gray-400 bg-white/60 backdrop-blur px-5 py-2 rounded-full border border-white/50 shadow-sm">Special Free Invitation</div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header class="hero-section text-center relative z-10">
+        <div class="max-w-5xl mx-auto w-full flex flex-col items-center">
+            
+            <div class="invitation-badge-container">
+                <span class="virtue-badge lang-en">Humanitarian Economy Access</span>
+                <span class="virtue-badge lang-jp hidden-lang">人道経済へのアクセス権</span>
+            </div>
+
+            <!-- Title -->
+            <div class="hero-title mb-2 px-6">
+                <h1 class="font-black italic leading-tight shimmer pr-10 md:pr-20 text-center">
+                    <span class="block text-xl md:text-3xl gold-gradient mb-0.5 font-light tracking-[0.2em]">A Story of</span>
+                    <span class="block text-5xl md:text-[7.5rem] gold-gradient tracking-normal leading-[0.85]">HOPE</span>
+                </h1>
+            </div>
+
+            <!-- Date Box -->
+            <div class="header-info-box">
+                <p class="text-2xl md:text-5xl tracking-widest mb-2 sakura-gradient">March 27, 2026</p>
+                <div class="flex items-center justify-center gap-6 md:gap-14 border-t border-pink-100 pt-3 text-center">
+                    <div class="text-center">
+                        <span class="text-[7px] md:text-[9px] uppercase tracking-[0.1em] text-gray-400 block mb-0.5">Doors Open</span>
+                        <span class="text-lg md:text-2xl font-black italic text-gray-600 leading-none">16:00</span>
+                    </div>
+                    <div class="w-[1px] h-10 bg-pink-100"></div>
+                    <div class="text-center">
+                        <span class="text-[7px] md:text-[9px] uppercase tracking-[0.1em] text-pink-400 block font-black mb-0.5">Concert Time</span>
+                        <span class="text-lg md:text-2xl font-black italic text-pink-500 leading-none">17:00 - 19:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="mt-2 text-center max-w-4xl px-6">
+                <p class="text-xl md:text-3xl text-pink-500 font-black tracking-tighter uppercase leading-none mb-1">
+                    The Mactan Newtown Concert Venue
+                </p>
+                <p class="text-base md:text-xl text-pink-400 font-bold opacity-90 italic mb-6 text-center">
+                    (Next to Mactan Expo)
+                </p>
+            </div>
+
+            <!-- Introduction Quote -->
+            <div class="max-w-3xl px-6 border-t border-pink-100/50 pt-6">
+                <p class="text-lg md:text-xl text-gray-500 leading-relaxed font-light italic lang-en text-center">
+                    "The Story of Hope begins here in Mactan, Cebu. Echoes of Light—let us raise the Sakura Pillar of Hope together and let it resonate throughout the world."
+                </p>
+                <p class="text-lg md:text-xl text-gray-500 leading-relaxed font-light lang-jp hidden-lang text-center">
+                    「希望の物語がマクタン、セブから始まる Echoes of Light。桜光の柱をみんなで立てて、世界に響かせる。」
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 px-6">
+        
+        <!-- SNS Campaign Section (Lucky 10) -->
+        <section class="py-14 px-8 my-12 bg-white/60 backdrop-blur rounded-[4rem] border border-pink-100 shadow-2xl max-w-5xl mx-auto overflow-hidden relative text-center lg:text-left">
+            <div class="absolute top-0 right-0 px-8 py-2 bg-pink-500 text-white text-[10px] font-black uppercase tracking-widest rounded-bl-3xl shadow-lg">LUCKY 10</div>
+            <div class="flex flex-col md:flex-row items-center gap-12 text-center">
+                <div class="w-40 h-40 bg-pink-50 rounded-full flex flex-col items-center justify-center shrink-0 border-4 border-white shadow-xl text-center mx-auto lg:mx-0">
+                    <span class="text-5xl font-black text-pink-500 leading-none">10</span>
+                    <span class="text-[10px] font-black text-pink-300 uppercase tracking-widest mt-1 text-center">Winners</span>
+                </div>
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="time-limit-pill">
+                        <i data-lucide="clock-4" class="w-4 h-4"></i>
+                        <span class="lang-en text-[11px]">March 27 Only: 09:00 AM - 05:00 PM</span>
+                        <span class="lang-jp hidden-lang text-[11px]">3月27日限定：09:00 - 17:00</span>
+                    </div>
+                    <h3 class="text-3xl font-black italic mb-4 sakura-gradient leading-tight">Photogenic Morning<br><span class="text-gray-400 text-sm md:text-lg">Share the Light from Cebu</span></h3>
+                    <p class="text-lg text-gray-600 font-light mb-6 leading-relaxed">
+                        Join the "Story of Hope" and share your experience. The top 10 most impactful posts with all 7 tags will receive exclusive premium Japanese goods!
+                    </p>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                        <span class="hashtag-item">#humanitarian_economy</span>
+                        <span class="hashtag-item">#A_Story_of_hope</span>
+                        <span class="hashtag-item">#Echoes_of_light</span>
+                        <span class="hashtag-item">#UZUWORLD</span>
+                        <span class="hashtag-item">#SAKURA_BLOOM_2026</span>
+                        <span class="hashtag-item">#Harmony_japan</span>
+                        <span class="hashtag-item font-bold italic">#Donation_Light</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Timeline -->
+        <section class="py-20 max-w-4xl mx-auto border-y border-pink-100 text-center text-left">
+            <div class="text-center mb-16">
+                <span class="text-xs font-black tracking-[0.6em] text-pink-300 uppercase italic text-center">Event Timeline</span>
+                <h3 class="text-4xl font-black mt-3 text-gray-300 uppercase tracking-tighter">Day Schedule</h3>
+            </div>
+            <div class="timeline-container max-w-xl mx-auto">
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">09:00</div>
+                    <div class="timeline-content">
+                        <h5 class="text-sm font-black uppercase text-gray-600">Photogenic Booth Open</h5>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">15:00</div>
+                    <div class="timeline-content">
+                        <h5 class="text-sm font-black uppercase text-left">Sutadonya Grand Launch</h5>
+                        <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest mt-1 italic">Ribbon Cutting & Store Blessing</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">16:00</div>
+                    <div class="timeline-content">
+                        <h5 class="text-sm font-black uppercase">Doors Open / Cosplay Walking</h5>
+                        <p class="text-[11px] text-pink-400 font-black mt-1 uppercase leading-tight text-left">Entrance & Mactan Expo (Right Side). Together to the venue!</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot bg-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]"></div>
+                    <div class="timeline-time text-pink-600 text-left">17:00</div>
+                    <div class="timeline-content">
+                        <div class="mb-2 text-left text-left"><span class="bg-pink-100 text-pink-600 text-[9px] font-black px-2 py-0.5 rounded-full uppercase">Main Event</span></div>
+                        <h5 class="text-base font-black uppercase text-pink-600 leading-none">Story of Hope Concert Begins</h5>
+                        <p class="text-[10px] text-gray-400 italic mt-2 text-left">Special Stage next to Mactan Expo</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">17:10</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase text-gray-600">UUU Japanese Orchestra</h5>
+                        <p class="text-[11px] text-pink-400 font-bold italic">Resonating the Soul of Japan</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">17:30</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase text-gray-600">Local Singer Performance</h5>
+                        <p class="text-[10px] text-gray-400 italic">Mactan Voice Showcase</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left text-left">18:00</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase text-gray-600">10,000 Meals Journey</h5>
+                        <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold italic mt-1 text-left text-left">The Humanitarian Economy Project</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">18:10</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase text-gray-600 text-left">Harmony: Soul Performance</h5>
+                        <p class="text-[10px] text-gray-400 italic mt-1 lang-en leading-relaxed">
+                            The story of hope of a man who had no ID, no parents, no family, and no dignity.
+                        </p>
+                        <p class="text-[10px] text-gray-400 italic mt-1 lang-jp hidden-lang leading-relaxed">
+                            IDも親も家族も尊厳も何もなかった彼の希望の物語
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot bg-gold shadow-[0_0_15px_var(--gold)] text-left"></div>
+                    <div class="timeline-time text-gold font-black text-left">18:30</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase gold-gradient">Finale: Donation Light by J Pride</h5>
+                        <p class="text-[10px] text-gray-400 italic uppercase mt-1 tracking-widest font-bold">The Sakura Pillar of Hope</p>
+                    </div>
+                </div>
+                <div class="timeline-item border-none text-left">
+                    <div class="timeline-dot bg-gray-400"></div>
+                    <div class="timeline-time text-gray-400 text-left">19:00</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-sm font-black uppercase text-gray-400 text-left">Finish</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Protocol -->
+        <div class="premium-glass p-14 md:p-20 rounded-[4rem] border-pink-200 shadow-2xl max-w-4xl mx-auto mt-24 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
+            <h4 class="text-3xl font-black mb-8 sakura-gradient tracking-tighter text-center">Admission Protocol</h4>
+            
+            <div class="space-y-6 mb-12 text-center text-left">
+                <div class="lang-en text-center">
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-light">
+                        This concert is part of the <span class="font-bold text-gray-700 underline decoration-pink-300">Humanitarian Economy</span>, where "Tokuzumi" (Deeds of Kindness) serves as your ticket. Please show your kind action or SNS post at the entrance.
+                    </p>
+                    <div class="bg-pink-50/50 p-6 rounded-3xl mt-6 border border-pink-100">
+                        <p class="text-pink-600 font-black text-xl mb-2">Enjoy a FREE Sutadonya bowl as our gift!</p>
+                        <p class="text-[11px] text-pink-400 font-bold italic uppercase leading-relaxed max-w-md mx-auto">
+                            (Receive a voucher at the venue. After the concert, visit SUTADON Cebu to get your stamp or share your post on SNS to redeem.)
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="lang-jp hidden-lang text-center">
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto font-light">
+                        本公演は「徳積み（善行）」をチケットとする人道経済の試みです。SNSでの発信やゴミ拾いなど、あなたの「光」を入場時に提示してください。<br>
+                    </p>
+                    <div class="bg-pink-50/50 p-6 rounded-3xl mt-6 border border-pink-100">
+                        <p class="text-pink-600 font-black text-xl mb-2">皆様の善行への感謝として、「すた丼」を無料で提供いたします！</p>
+                        <p class="text-[11px] text-pink-400 font-bold italic leading-relaxed max-w-md mx-auto">
+                            （会場で引換券を受け取ってください。コンサート後にSUTADON Cebuにてスタンプをもらうか、SNS投稿を提示してね）
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIP Section -->
+            <div class="vip-premium-card text-center text-center">
+                <div class="flex flex-col items-center">
+                    <span class="text-yellow-200 font-black text-[10px] uppercase tracking-[0.4em] mb-4">Filipino Only Premium Access</span>
+                    <h5 class="text-white text-2xl font-black uppercase tracking-widest mb-1">BUY VIP Ticket</h5>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-4 opacity-50"></div>
+                    
+                    <div class="space-y-2">
+                        <p class="text-white text-xl font-bold tracking-wider">10,000 PHP VIP Seat & VIP Dinner</p>
+                        <p class="text-yellow-200 text-sm italic font-black uppercase tracking-widest">
+                            at Mactan Newtown Beach (19:00-22:00)
+                        </p>
+                        <div class="pt-4 border-t border-white/10 mt-4 text-center">
+                            <p class="text-gray-300 text-[13px] lang-en leading-relaxed max-w-sm">
+                                <i data-lucide="sparkles" class="inline-block w-3 h-3 mr-2 text-gold"></i>
+                                Exclusive networking opportunity with VIPs from Japan.
+                            </p>
+                            <p class="text-gray-300 text-[13px] lang-jp hidden-lang leading-relaxed">
+                                <i data-lucide="sparkles" class="inline-block w-3 h-3 mr-2 text-gold"></i>
+                                日本のVIPとの特別なネットワーキングが可能です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Refined Footer -->
+    <footer class="py-24 px-10 border-t border-pink-100 bg-white/40 backdrop-blur mt-48 text-center text-center">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-16 text-center text-center">
+            
+            <!-- Follow and Contact Section (Moved Up) -->
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <span class="text-[12px] font-black uppercase tracking-[0.4em] text-pink-500">Follow and Contact</span>
+                    <p class="text-sm font-bold text-gray-600 uppercase tracking-widest mb-2">Flower Angel</p>
+                    <div class="flex flex-wrap gap-6 justify-center">
+                        <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="sns-text-link">YouTube</a>
+                        <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="sns-text-link">Facebook</a>
+                        <a href="https://www.instagram.com/flower_angel_japan/" target="_blank" class="sns-text-link">Instagram</a>
+                        <a href="https://www.tiktok.com/@flower_angel_japan" target="_blank" class="sns-text-link">TikTok</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Identity (With Gold A Story of Life) -->
+            <div class="text-center flex flex-col gap-3">
+                <span class="text-3xl font-black uppercase tracking-[0.4em] sakura-gradient text-center">SAKURA BLOOM 2026</span>
+                <span class="text-xl font-bold gold-gradient italic uppercase tracking-[0.3em] text-center">- A Story of Life -</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-light mt-4">The Mactan Newtown, Cebu, Philippines</span>
+                
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold opacity-70 mt-10 text-center">
+                    © 2026 Echoes of Light Produced by Flower Angel
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function createSparkles() {
+            const container = document.getElementById('sparkle-container');
+            const count = 25;
+            for (let i = 0; i < count; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                const size = Math.random() * 4 + 1;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.animationDelay = Math.random() * 5 + 's';
+                sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(sparkle);
+            }
+        }
+
+        // Language toggle functionality maintained in background
+        let currentLang = 'en';
+        function updateLang() {
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden-lang', currentLang === 'jp'));
+            document.querySelectorAll('.lang-jp').forEach(el => el.classList.toggle('hidden-lang', currentLang === 'en'));
+        }
+
+        window.onload = () => {
+            if(typeof lucide !== 'undefined') lucide.createIcons();
+            createSparkles();
+            updateLang();
+        };
+    </script>
+</body>
+</html>
