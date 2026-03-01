@@ -30,20 +30,24 @@
         .font-cinzel { font-family: 'Cinzel', serif; }
         .font-mincho { font-family: 'Shippori Mincho', serif; }
 
-        /* --- Sakura Animation --- */
+        /* --- Natural Sakura Animation --- */
         .sakura-petal {
             position: absolute;
             background-color: var(--sakura);
             border-radius: 150% 0 150% 0;
-            opacity: 0.4;
+            opacity: 0;
             pointer-events: none;
             z-index: 1;
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5));
         }
 
-        @keyframes sakura-fall {
-            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+        @keyframes sakura-fall-natural {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg) scale(0.8); opacity: 0; }
             10% { opacity: 0.6; }
-            100% { transform: translateY(110vh) translateX(80px) rotate(360deg); opacity: 0; }
+            25% { transform: translateY(20vh) translateX(40px) rotate(90deg) scale(1); }
+            50% { transform: translateY(50vh) translateX(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(80vh) translateX(30px) rotate(270deg) scale(1); }
+            100% { transform: translateY(110vh) translateX(-10px) rotate(360deg) scale(0.8); opacity: 0; }
         }
 
         /* --- Hero Section --- */
@@ -171,13 +175,14 @@
     <!-- Hero Section -->
     <section class="pt-20 pb-12 flex flex-col items-center justify-center px-6 relative z-10 text-center">
         <div class="max-w-4xl hero-reveal">
-            <div class="mb-2">
+            <div class="mb-3">
                 <span class="text-[8px] font-black uppercase tracking-[0.8em] text-gold/80">Flower Angel Presents</span>
             </div>
             <div class="mb-4">
                 <h1 class="font-black italic text-black leading-tight font-mincho">
-                    <span class="text-lg md:text-xl block mb-1 tracking-widest opacity-50">Echoes of Light</span>
-                    <span class="text-3xl md:text-5xl block tracking-[0.05em] pink-gradient font-extrabold">SAKURA BLOOM 2026</span>
+                    <span class="text-2xl md:text-3xl block mb-1 tracking-[0.2em] opacity-50">Echoes of Light</span>
+                    <span class="text-[9px] md:text-[11px] block font-cinzel tracking-[0.4em] text-gold mb-6 uppercase">Global Art & Humanitarian Peace</span>
+                    <span class="text-3xl md:text-6xl block tracking-[0.1em] pink-gradient font-extrabold">SAKURA BLOOM 2026</span>
                 </h1>
             </div>
             
@@ -237,11 +242,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 bilingual-text border-t border-black/5 pt-3">
                         <div class="text-text-sub">
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
-                            <p>A film project connecting lands that overcame disasters—Fukushima, Noto, and Cebu. Screening the Japan-Philippines collaborative film "A Sacred Lie." Also involved in "KABILIN (Pamana)" (Legacy), connecting the soul of Bohol.</p>
+                            <p class="mb-3">Having stood on the frontlines of recovery in Fukushima, Noto, and Cebu, Award-winning Director <strong>Kentaro Kishi</strong> has finally completed the script for <strong>"A Sacred Lie."</strong> Sublimating the memories of tragedy into a "resonance of light," this work confronts the challenges of co-existence and justice faced by diverse Asian societies. It breaks through the thick walls of systemic bias to depict a profound encounter of souls seeking truth and dignity. Now is the perfect moment to share this resonance with the world. He is also deeply involved in the documentary <strong>"KABILIN (Cebuano) / Pamana (Tagalog): Legacy,"</strong> which connects the memory of Bohol.</p>
+                            <a href="https://echoes-of-light.jp/" target="_blank" class="text-[9px] font-black uppercase text-gold hover:text-sakura-deep transition-colors tracking-widest flex items-center gap-1">
+                                <span>Director's Vision (English)</span>
+                                <i data-lucide="external-link" class="w-2.5 h-2.5"></i>
+                            </a>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase opacity-40">Japanese:</p>
-                            <p>福島、能登、セブ。震災を乗り越えた土地の魂と繋がる映画上映プロジェクト。日本・フィリピン共同製作映画『A Sacred Lie』を上映。ボホールの土地の魂と記憶を繋ぐドキュメンタリー『KABILIN (Pamana)』にも深く関わっています。</p>
+                            <p>福島、能登、セブ。震災を乗り越えた土地の魂と対話し続けてきた<strong>岸建太朗</strong>（監督・脚本・撮影）。彼が長年温め、ついに書き上げた『A Sacred Lie』の脚本には、映画が社会に果たすべき使命が凝縮されています。それは、悲劇の記憶を「光の共鳴」へと昇華させ、アジアの多様な社会が直面する共生と正義の葛藤を鋭く問い直すもの。制度の歪みや思い込みという厚い壁を打ち破り、真実と尊厳を求める魂の邂逅を描き出します。今、その静かなる情熱を世界へと伝える、最高のタイミングが訪れました。ボホールの土地の魂と記憶を繋ぐドキュメンタリー<strong>『KABILIN（セブアノ語）/ Pamana（タガログ語）：継承』</strong>にも深く関わっています。</p>
                         </div>
                     </div>
                 </div>
@@ -252,23 +261,23 @@
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                         </div>
                     </div>
-                    <p class="video-caption">A Sacred Lie - Trailer</p>
+                    <p class="video-caption">A Sacred Lie - Director's Vision & Message</p>
                 </div>
             </div>
 
-            <!-- Artist 2: Junkyu Muto (Documentary Focus) -->
+            <!-- Artist 2: Junkyu Muto (Significantly Enhanced Achievement Description) -->
             <div class="artist-flyer p-5 rounded-xl border-gold/20 bg-gold/5">
                 <div class="flex-1 pr-0 md:pr-8">
-                    <span class="tag-pill" style="color:var(--gold); border-color:var(--gold);">Sculptor / Project</span>
+                    <span class="tag-pill" style="color:var(--gold); border-color:var(--gold);">Sculptor / World Master</span>
                     <h3 class="text-2xl font-black italic mt-1 font-mincho">Junkyu Muto</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 bilingual-text border-t border-black/5 pt-3">
                         <div class="text-text-sub">
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
-                            <p>Starting with the Papal Palace in Vatican (2000), the "Kazenowa" (Circle of Wind) project has spanned global sacred sites including Bodh Gaya and Devils Tower. This documentary captures the historic final installation at Izumo Taisha, Japan, resonating a 25-year message of world peace.</p>
+                             Maesta <strong>Junkyu Muto</strong> is a world-renowned sculptor based in Pietrasanta, Italy—the sacred center of marble art loved by Michelangelo. In 2000, he achieved a historic milestone by permanently installing the <strong>first-ever abstract sculpture</strong> at the Vatican's Castel Gandolfo since the Renaissance. His "Kazenowa" (Circle of Wind) project has since linked global sacred sites, from India's Bodh Gaya (World Heritage) to the USA's first National Monument, Devils Tower. This documentary captures the 25-year completion of this epic ring of prayer at Japan's Izumo Taisha.</p>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase opacity-40">Japanese:</p>
-                            <p>2000年バチカン法王宮殿への設置以来、世界を巡った「風の環」プロジェクト。本映像は、その集大成となる出雲大社への永久設置を記録したドキュメンタリーです。25年にわたる軌跡と共に、武藤順九の「平和への願い」を伝えます。</p>
+                            <p>彫刻の聖地イタリア・ピエトラサンタを拠点に、世界の美術史を塗り替えてきた巨匠・<strong>武藤順九</strong>。2000年、バチカン法王宮殿へ<strong>ルネサンス以来初となる抽象彫刻</strong>を永久設置するという、歴史的快挙を成し遂げました。以来、仏教の聖地インド・ブッダガヤ（世界遺産）やアメリカ初の国定公園デビルズタワーなど、世界の主要な聖地に9つの記念碑を刻んできた「風の環」プロジェクト。ローマ帝国遺跡（トラヤヌス帝の広場）での史上初個展など、その足跡は人類の平和への祈りそのものです。25年の歳月を経て、日本の臍の緒・出雲大社で完結した壮大な軌跡をドキュメンタリーで上映します。</p>
                         </div>
                     </div>
                 </div>
@@ -279,7 +288,6 @@
                             <div class="play-btn-circle scale-75"><i data-lucide="play" class="w-8 h-8 text-white fill-current translate-x-1"></i></div>
                         </div>
                     </div>
-                    <!-- Updated Caption -->
                     <p class="video-caption">Kazenowa - Message for Peace (Izumo Taisha Documentary)</p>
                 </div>
             </div>
@@ -292,11 +300,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 bilingual-text border-t border-black/5 pt-3">
                         <div class="text-text-sub">
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
-                            <p>Traveling to Cebu with his first passport in hand, Harmony brings a voice that resonates with the depths of the human soul. Born from intense life experiences, his healing melodies carry a story of hope and resilience to his first international stage, aiming to unite hearts through the universal language of music.</p>
+                            <p>Traveling to Cebu with his first passport in hand, Harmony brings a voice that resonates with the depths of the human soul. Born as an orphan with no ID, no name, no family, no siblings, and no home, his life began from absolute nothingness. These intense experiences forged a healing melody that carries a story of hope and resilience to his first international stage, aiming to unite hearts through the universal language of music.</p>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase opacity-40">Japanese:</p>
-                            <p>人生初のパスポートを手にセブのステージへ。壮絶な人生経験から生まれた癒やしの歌声は、人間の魂の深淵にまで響き渡ります。この初めての国際舞台で、彼は「希望」と「不屈の精神（レジリエンス）」の物語を歌い上げ、音楽という万国共通の言語を通じて世界中の心を一つに繋ぐことを目指します。</p>
+                            <p>人生初のパスポートを手にセブのステージへ。IDも名前も家族も兄弟も家もなく、孤児として「何もない」ところから始まった彼の人生。その壮絶な人生経験から生まれた癒やしの歌声は、人間の魂の深淵にまで響き渡ります。この初めての国際舞台で、彼は「希望」と「不屈の精神（レジリエンス）」の物語を歌い上げ、音楽という万国共通の言語を通じて世界中の心を一つに繋ぐことを目指します。</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +340,7 @@
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
                             <p>Innovative character unit from Osaka. Representing the essential Japanese spirit, Kamui joins our mission in Mactan as a supporting appearance to bridge ancient wisdom with the future of global education.</p>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase tracking-tighter opacity-40">Japanese:</p>
                             <p>大阪発のキャラクターユニット。日本精神を代表し、2026年3月にマクタン・ニュータウンでの応援参加が決定。叡智と未来を繋ぐ存在として新たな視座を提示します。</p>
                         </div>
@@ -361,7 +369,7 @@
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
                             <p>A majestic orchestra project where Japanese musicians teach Filipino children in Cebu, leading to an inspiring concert performed by the children themselves. Connecting hearts through the resonance of sound.</p>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase tracking-tighter opacity-40">Japanese:</p>
                             <p>和楽器とオーケストラの融合。日本人がセブの子供たちに音楽を教え、フィリピンの子供たちによって演奏される感動のコンサート。音を通じて世界中の心を一つに繋ぎます。</p>
                         </div>
@@ -386,11 +394,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 bilingual-text border-t border-black/5 pt-3">
                         <div class="text-text-sub">
                             <p class="font-bold text-black text-[9px] mb-1 uppercase opacity-40">English:</p>
-                            <p>A powerhouse vocalist who has performed theme songs for "Made in Abyss," "Bloom Into You," and more. Delivering Japan's soul to support the future of Cebu's children.</p>
+                            <p>A powerhouse artist known for numerous anime theme songs and active as a voice actress. Having performed for "Made in Abyss," "Bloom Into You," and more, Riko delivers Japan's soul through her world-class vocals to support the future of Cebu's children.</p>
                         </div>
-                        <div class="text-text-sub/70 italic">
+                        <div class="text-text-sub/70 italic border-l md:border-l-0 md:pl-0 pl-4 border-black/5">
                             <p class="font-bold text-black/50 text-[9px] mb-1 uppercase tracking-tighter opacity-40">Japanese:</p>
-                            <p>『メイドインアビス』『やがて君になる』等の主題歌を担当。圧倒的な歌唱力で日本の魂を届け、セブの子供たちの未来を応援します。</p>
+                            <p>数々のアニメソングの主題歌を担当するアーティストであり、声優としても活躍。『メイドインアビス』『やがて君になる』等の代表作を持ち、その圧倒的な歌唱力で日本の魂を届け、セブの子供たちの未来を応援します。</p>
                         </div>
                     </div>
                 </div>
@@ -437,12 +445,16 @@
         </div>
     </section>
 
-    <!-- Footer: Light Mode with GOLD elements -->
+    <!-- Footer -->
     <footer class="py-24 px-6 bg-[#fdfbfb] text-center relative z-10 border-t border-black/5">
         <div class="max-w-4xl mx-auto">
             <div class="mb-14">
                 <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-2" style="color: var(--gold);">Producer</p>
-                <h3 class="text-4xl font-black italic text-black/90 tracking-tighter mb-2 font-mincho">Flower Angel</h3>
+                <h3 class="text-4xl font-black italic text-black/90 tracking-tighter mb-1 font-mincho">Flower Angel</h3>
+                
+                <p class="text-xl font-mincho tracking-[0.1em] opacity-60 mb-1">Echoes of Light</p>
+                <p class="text-[9px] uppercase tracking-[0.3em] mb-4" style="color: var(--gold);">Global Art & Humanitarian Peace</p>
+
                 <p class="text-[13px] font-black uppercase tracking-[0.4em] pink-gradient mb-8 font-mincho">SAKURA BLOOM 2026</p>
                 
                 <div class="w-10 h-px bg-black/10 mx-auto mb-8"></div>
@@ -474,16 +486,27 @@
         function createSakura() {
             const container = document.getElementById('sakura-container');
             if(!container) return;
-            for(let i=0; i<30; i++) {
+            
+            const petalCount = 40; 
+            
+            for(let i=0; i<petalCount; i++) {
                 const petal = document.createElement('div');
                 petal.className = 'sakura-petal';
-                const size = Math.random() * 6 + 3;
+                
+                const size = Math.random() * 7 + 4; 
+                const left = Math.random() * 100; 
+                const duration = Math.random() * 10 + 10; 
+                const delay = Math.random() * 20; 
+                
                 petal.style.width = size + 'px';
                 petal.style.height = (size * 0.8) + 'px';
-                petal.style.left = Math.random() * 100 + 'vw';
-                const duration = Math.random() * 8 + 8;
-                const delay = Math.random() * 15;
-                petal.style.animation = `sakura-fall ${duration}s linear ${delay}s infinite`;
+                petal.style.left = left + 'vw';
+                
+                petal.style.animation = `sakura-fall-natural ${duration}s linear -${delay}s infinite`;
+                
+                const brightness = 90 + Math.random() * 20;
+                petal.style.filter = `brightness(${brightness}%)`;
+                
                 container.appendChild(petal);
             }
         }
