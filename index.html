@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of Light - Global Art & Humanitarian Project</title>
+    <title>Echoes of Light - Global Art & Humanitarian Peace</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,20 +34,22 @@
 
     <div class="ambient-light"></div>
 
-    <!-- Header -->
+    <!-- Header / Engagement Bar -->
     <header class="sticky top-0 z-50 bg-black/95 border-b border-white/5 w-full">
-        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 flex-shrink-0">
-                <span class="text-yellow-400 text-2xl leading-none transform translate-y-[-1px]">✦</span>
+        <nav class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between relative">
+            <div class="flex items-center gap-3 flex-shrink-0 z-20">
+                <span class="text-yellow-400 text-xl leading-none">✦</span>
                 <span class="text-3xl font-script font-normal tracking-wide text-white leading-none pt-1">Echoes of Light</span>
             </div>
+            
             <div class="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
-                <a href="#home" data-target="home" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">HOME</a>
-                <a href="#projects" data-target="projects" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">PROJECTS</a>
-                <a href="#tiers" data-target="tiers" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">ENERGY FLOW</a>
+                <a href="#home" data-target="home" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Home</a>
+                <a href="#projects" data-target="projects" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Projects</a>
+                <a href="#tiers" data-target="tiers" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Energy Flow</a>
             </div>
-            <div class="flex items-center">
-                <a href="#payment" data-target="payment" class="hidden md:inline-block px-6 py-2.5 bg-[#222] hover:bg-[#333] text-white text-sm font-normal rounded-full border border-transparent hover:border-white/10 transition-all duration-300 tracking-wide uppercase">
+            
+            <div class="flex items-center z-20">
+                <a href="#payment" data-target="payment" class="hidden md:inline-block px-6 py-2.5 bg-[#222]/60 hover:bg-[#333] text-white text-[10px] font-light rounded-full border border-white/10 transition-all duration-300 tracking-[0.3em] uppercase">
                     Fuel the Light
                 </a>
             </div>
@@ -71,25 +73,45 @@
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto leading-relaxed tracking-wide">
                     Be the Light that Breaks the Silence.<br>
-                    <span class="text-sm text-gray-500 uppercase tracking-widest mt-3 block">Global Art & Humanitarian Project</span>
+                    <span class="text-sm text-gray-500 uppercase tracking-widest mt-3 block">Global Art & Humanitarian Peace</span>
                 </p>
                 <div class="mt-16 flex flex-col md:flex-row gap-6 justify-center items-center">
                     <a href="#philosophy" data-target="philosophy" class="group bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)]">
-                        <span class="tracking-wider text-sm">Read the Vision</span>
+                        <span class="tracking-wider text-sm font-light uppercase">Read the Vision</span>
                         <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </a>
-                    <a href="#tiers" data-target="tiers" class="text-gray-400 hover:text-white text-sm tracking-widest border-b border-transparent hover:border-white/50 pb-1 transition-all duration-300">
+                    <a href="#tiers" data-target="tiers" class="text-gray-400 hover:text-white text-xs tracking-widest border-b border-transparent hover:border-white/50 pb-1 transition-all duration-300 uppercase font-light">
                         Light the Echoes
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Philosophy Section (Now Energy Flow Section) -->
-        <section id="philosophy" class="py-32 border-t border-white/5 relative">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <!-- LATEST UPDATES -->
+        <section id="updates" class="py-16 bg-white/[0.02] border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row gap-12 items-center justify-between">
+                    <div class="flex-1 space-y-5 text-center md:text-left">
+                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold">Upcoming Event</span>
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white tracking-[0.1em] leading-tight">SAKURA BLOOM 2026</h2>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed max-w-md mx-auto md:mx-0">March 21-28, 2026. A celebration of renewal and global harmony.</p>
+                        <a href="https://echoes-of-light.jp/sakurabloom2026" target="_blank" class="inline-block text-[10px] text-yellow-500 hover:text-white border-b border-yellow-500/30 transition-all uppercase tracking-[0.3em] pb-1">Visit Event Page</a>
+                    </div>
+                    <div class="w-px h-24 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 space-y-5 text-center md:text-left">
+                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold">Live Performance</span>
+                        <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white tracking-[0.1em] leading-tight uppercase">A Story of Hope Concert</h2>
+                        <p class="text-gray-400 text-sm font-light">17:00-19:00 March 27, 2026 @The Mactan Newtown</p>
+                        <a href="https://echoes-of-light.jp/a_story_of_hope" target="_blank" class="inline-block text-[10px] text-yellow-500 hover:text-white border-b border-yellow-500/30 transition-all uppercase tracking-[0.3em] pb-1">Concert Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section (UPDATED: Nobuko Kotoyori's Introduction) -->
+        <section id="philosophy" class="py-32 relative">
             <div class="max-w-3xl mx-auto px-6 text-center">
-                <h2 class="text-2xl md:text-3xl font-extralight text-white mb-16 tracking-[0.1em] text-glow">Harmony from Japan</h2>
+                <h2 class="text-2xl md:text-3xl font-cinzel font-thin text-white mb-16 tracking-[0.15em] text-glow uppercase">Harmony from Japan</h2>
                 <div class="space-y-12 text-base md:text-lg text-gray-400 leading-loose font-light">
                     <p>
                         In an era of division and isolation,<br>
@@ -97,972 +119,485 @@
                     </p>
                     <div class="py-12 relative">
                         <div class="absolute left-1/2 -translate-x-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent"></div>
-                        <div class="bg-black/60 border border-white/5 p-8 rounded-lg relative z-10 backdrop-blur-sm max-w-xl mx-auto shadow-2xl">
+                        <div class="bg-black/60 border border-white/5 p-10 rounded-lg relative z-10 backdrop-blur-sm max-w-2xl mx-auto shadow-2xl">
                             <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black p-2 border border-white/10 rounded-full">
                                 <svg class="w-3 h-3 text-yellow-500/80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" /></svg>
                             </div>
-                            <p class="text-gray-300 mb-8 text-lg font-light leading-relaxed">
-                                <span class="text-2xl text-yellow-400/90 font-normal tracking-wide block mb-4">Flower Angel</span>
-                                We have guided "Angels" destined to bloom billions of flowers.
+                            
+                            <h3 class="text-2xl text-yellow-400 font-cinzel font-thin tracking-widest block mb-6 uppercase">Flower Angel</h3>
+                            
+                            <!-- UPDATED: Flower Angel Philosophy -->
+                            <p class="text-gray-300 mb-10 text-sm leading-relaxed font-light text-left md:text-center">
+                                Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the <strong class="text-white">"circulation of the light of peace"</strong>: drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally. This powerful cultural exchange ensures our vision transcends borders and creates lasting impact.
                             </p>
-                            <p class="text-gray-500 text-sm leading-relaxed tracking-wide uppercase mb-8">
-                                Upholding "World peace in equity",<br>
-                                we serve as a "Divine Guidance" from above,<br>
-                                to bring the flower of harmony to this world.
-                            </p>
-                            <!-- START: Nobuko Kotoyori Profile Summary -->
-                            <div class="text-left pt-6 border-t border-white/10 flex flex-col items-center">
+                            
+                            <div class="text-center pt-8 border-t border-white/10 flex flex-col items-center">
+                                <img src="https://placehold.co/120x120/222/FFF?text=Nobuko+Photo" alt="Nobuko Kotoyori" class="w-24 h-24 object-cover rounded-lg border-2 border-yellow-500/70 mb-6 shadow-lg" onerror="this.src='https://placehold.co/120x120/222/FFF?text=Nobuko'">
                                 
-                                <!-- Flower Angel Mission/Background Text (Nobuko Photoの前に移動) -->
-                                <p class="text-gray-500 text-xs leading-relaxed font-light text-center mb-4">
-                                    Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the "circulation of the light of peace": drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally. This powerful cultural exchange ensures our vision transcends borders and creates lasting impact.
-                                </p>
-
-                                <!-- Nobuko Kotoyori Image -->
-                                <img src="nobukopic.jpg" alt="Nobuko Kotoyori, Producer / Japan Representative" class="w-24 h-24 object-cover rounded-lg border-2 border-yellow-500/70 mb-4 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/96x96/222/FFF?text=Nobuko+Photo'">
+                                <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-medium mb-1 whitespace-nowrap">Producer / Japan Representative</p>
+                                <h4 class="text-xl font-cinzel font-thin text-white tracking-widest mb-4 uppercase">Nobuko Kotoyori</h4>
                                 
-                                <p class="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-medium mb-1 whitespace-nowrap">Producer / Japan Representative</p>
-                                <h4 class="text-lg font-light text-white tracking-widest mb-3">Nobuko Kotoyori</h4>
-
-                                <!-- Nobuko Kotoyori Personal Profile Text -->
-                                <p class="text-gray-500 text-xs leading-relaxed font-light text-center mt-2">
+                                <!-- UPDATED: Nobuko Kotoyori Introduction -->
+                                <p class="text-gray-400 text-xs leading-relaxed font-light max-w-lg">
                                     Nobuko Kotoyori, a seasoned producer based in Japan, guides the project with a philosophy centered on global harmony and equity. Her dedication ensures the 'Echoes of Light' vision translates into meaningful artistic and humanitarian outcomes, bridging cultures and funding essential phases like the Africa expedition and global sales preparation.
                                 </p>
-                                
                             </div>
-                            <!-- END: Nobuko Kotoyori Profile Summary -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section (背景色修正) -->
+        <!-- Projects Section -->
         <section id="projects" class="py-32 bg-black/40 relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-3xl md:text-4xl font-thin text-white mb-4 text-glow">Featured Echoes</h2>
+                    <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white mb-4 text-glow uppercase">Featured Echoes</h2>
                     <p class="text-gray-600 uppercase tracking-[0.2em] text-xs">The Two Pillars of Light</p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-16">
-                    
                     <!-- Pillar A: Documentary Film -->
                     <div class="flex flex-col">
-                        <!-- Header -->
                         <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
-                            <h3 class="text-xl font-light text-white tracking-widest uppercase">DOCUMENTARY FILM</h3>
+                            <h3 class="text-xl font-cinzel font-thin text-white tracking-widest uppercase">DOCUMENTARY FILM</h3>
                             <span class="text-xs text-gray-500 uppercase tracking-wider">Project 01</span>
                         </div>
-
-                        <!-- Visual Card (Vimeo Embed) -->
                         <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative group">
                             <iframe src="https://player.vimeo.com/video/1128199118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="A Sacred Lie"></iframe>
                         </div>
-
-                        <!-- Details -->
                         <div>
-                            <!-- Tokyo International Film Festival 2025 を最初の行に、A Sacred Lie をその下に配置 -->
                             <div class="flex flex-col items-start mb-2">
-                                <!-- バッジ (最初の行) -->
-                                <div class="text-[10px] text-yellow-200/80 bg-yellow-900/20 border border-yellow-500/20 px-3 py-1 rounded-full tracking-widest uppercase backdrop-blur-md whitespace-nowrap mb-2">
+                                <div class="text-[10px] text-yellow-200/80 bg-yellow-900/20 border border-yellow-500/20 px-3 py-1 rounded-full tracking-widest uppercase mb-2">
                                     Tokyo International Film Festival 2025
                                 </div>
-                                <!-- タイトル (次の行) -->
-                                <h3 class="text-3xl font-extralight text-white leading-tight">A Sacred Lie</h3>
+                                <h3 class="text-3xl font-cinzel font-thin text-white leading-tight">A Sacred Lie</h3>
                             </div>
-                            
                             <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
                                 A Film by <a href="https://k-zone.tokyo/" target="_blank" class="hover:text-yellow-400 border-b border-transparent hover:border-yellow-400 transition-colors duration-300">MR. KENTARO KISHI</a>
                             </p>
                             
-                            <!-- START: Director Profile & Achievements -->
                             <div class="mb-6 border border-white/5 p-4 rounded-lg bg-gray-900/10">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">
-                                    <a href="https://k-zone.tokyo/" target="_blank" class="hover:text-yellow-400">MR. KENTARO KISHI</a>'s Profile
-                                </h4>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3 tracking-[0.1em]">MR. KENTARO KISHI'S PROFILE</h4>
                                 <div class="space-y-4">
-                                    <p class="text-gray-400 text-xs leading-relaxed font-light mb-4">
-                                        <strong class="text-white">Professional Profile:</strong><br>
-                                        <a href="https://k-zone.tokyo/" target="_blank" class="text-yellow-500 hover:text-yellow-400 underline underline-offset-2">Kentaro Kishi</a> is a Tokyo-based actor, cinematographer, screenwriter and director, actively working across film and theatre with experiencing shooting in all over the world. 
-                                    </p>
+                                    <p class="text-gray-400 text-[11px] leading-relaxed font-light"><strong class="text-white">Professional Profile:</strong><br>Kentaro Kishi is a Tokyo-based actor, cinematographer, screenwriter and director, actively working across film and theatre with experiencing shooting in all over the world.</p>
                                     <div>
-                                        <p class="text-xs font-bold uppercase tracking-wide text-gray-300 mb-2">Key Achievements & Awards</p>
-                                        <ul class="text-gray-500 text-xs space-y-2 font-light">
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2011 <strong class="text-gray-400">Record of the Future</strong> (Director / Screenwriter / DOP) Torino Film Festival
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2018 <strong class="text-gray-400">Bagmati River</strong> (Screenwriter / DOP) Moon Cinema Project / Best Pitch Award
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2018 <strong class="text-gray-400">Fragile</strong> (DOP) Tokyo International Film Festival
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2018 <strong class="text-gray-400">The Sower</strong> (DOP / Lead Actor) Thessaloniki International Film Festival
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2019 <strong class="text-gray-400">Noise</strong> (DOP / Actor) Raindance Film Festival / Montreal World Film Festival
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2019 <strong class="text-gray-400">Passage of Life</strong> (DOP) Tokyo International Film Festival – Asian Future Section / Best Picture Award, Audience Award
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2020 <strong class="text-gray-400">HAMMOCK</strong> (Director / Screenwriter / DOP) Osaka Asian Film Festival / Best Short Film Award
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2021 <strong class="text-gray-400">Suzuki-san</strong> (DOP) Tokyo International Film Festival
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2022 <strong class="text-gray-400">Along the Sea</strong> (DOP) San Sebastián International Film Festival / Shindo Kaneto Award, Nagisa Oshima Award
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2023 <strong class="text-gray-400">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto International Film Festival / Audience Award
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2023 <strong class="text-gray-400">Winny</strong> (Screenwriter / DOP) Shanghai International Film Festival
-                                            <li class="flex items-start gap-2">
-                                                <span class="text-yellow-600 leading-none">・</span>
-                                                2023 <strong class="text-gray-400">The Road to Love</strong> (DOP) Osaka Asian Film Festival
-                                            </li>
+                                        <p class="text-[10px] font-bold uppercase tracking-wide text-gray-300 mb-2">Key Achievements & Awards</p>
+                                        <ul class="text-gray-500 text-[10px] space-y-1 font-light leading-relaxed">
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2011 <strong class="text-gray-400">Record of the Future</strong> (Dir/Screenwriter/DOP) Torino Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">Bagmati River</strong> Best Pitch Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">Fragile</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">The Sower</strong> (DOP/Lead Actor) Thessaloniki International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2019 <strong class="text-gray-400">Noise</strong> (DOP/Actor) Raindance Film Festival / Montreal World Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2019 <strong class="text-gray-400">Passage of Life</strong> (DOP) Tokyo International Film Festival / Best Picture Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2020 <strong class="text-gray-400">HAMMOCK</strong> (Dir/Screenwriter/DOP) Osaka Asian Film Festival / Best Short Film Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2021 <strong class="text-gray-400">Suzuki-san</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2022 <strong class="text-gray-400">Along the Sea</strong> (DOP) San Sebastián Int'l Film Festival / Nagisa Oshima Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto Int'l Film Festival / Audience Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">Winny</strong> (Screenwriter/DOP) Shanghai International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">The Road to Love</strong> (DOP) Osaka Asian Film Festival</li>
                                         </ul>
+                                    </div>
+                                    
+                                    <div class="mt-4 pt-4 border-t border-white/10">
+                                        <p class="text-[10px] font-bold uppercase tracking-widest text-yellow-500 mb-3">Recent Accolades (2025)</p>
+                                        <div class="space-y-4">
+                                            <div class="flex flex-col gap-1 text-[10px]">
+                                                <span class="text-gray-200 font-medium leading-relaxed">Soundscape Association of Japan - Encouragement Award</span>
+                                                <p class="text-gray-500 leading-relaxed font-light italic">For the installation work "Listening to the Sound of Prayer" (祈りの音を聴く).</p>
+                                                <div class="flex gap-3 mt-1">
+                                                    <a href="https://www.soundscape-j.org/activities_2025_prize.html" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30">Official Link</a>
+                                                    <a href="https://drive.google.com/file/d/1HY9PEfUDAFmCdRqCuHzVH_jnFTIp375c/view?usp=sharing" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30">Speech Video</a>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col gap-1 text-[10px]">
+                                                <span class="text-gray-200 font-medium leading-relaxed">Asian TELEVISION AWARDS - Best Original Digital Drama Series</span>
+                                                <p class="text-gray-500 leading-relaxed font-light italic">"The Transparent Us" (透明なわたしたち), for which Mr. Kishi served as DOP, became the first Japanese production to win this top prize.</p>
+                                                <a href="https://www.cyberagent.co.jp/news/detail/id=32778" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30 w-fit">News Detail</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- END: Director Profile & Achievements -->
 
-                            <!-- 2. 説明文を director message の前に移動 -->
-                            <p class="text-gray-400 mb-6 font-light leading-relaxed text-sm">
-                                A feature documentary film visualizing the "shadows" society ignores, themed around wrongful convictions in the Japanese justice system.
-                                A record of universal "salvation" that thrusts reality more vividly than fiction.
-                            </p>
-
-                            <!-- Updated: Director's message added here -->
                             <div class="bg-white/5 border border-white/10 p-5 rounded-lg mb-6 shadow-inner">
-                                <p class="text-yellow-400 text-xs font-bold uppercase tracking-wider mb-3">
-                                    Message from the director of A Sacred Lie, <a href="https://k-zone.tokyo/" target="_blank" class="hover:text-yellow-400">MR. KENTARO KISHI</a>
-                                </p>
-                                <div class="text-gray-400 text-xs leading-relaxed space-y-3 font-light">
-                                    <p>
-                                        We can only see the world within the reach of light.
-                                        And cinema, to me, is the act of quietly carrying light and sound into the dark—
-                                        of making the voices within silence visible once more.
-                                    </p>
-                                    <p>
-                                        Yet there are those who cannot receive that light,
-                                        and those who cannot hear its sound.
-                                        Each time I make a film, I find myself asking,
-                                        How can I deliver light? How can I hand over sound?
-                                        That question has shaped not only my work,
-                                        but also my path—my way of learning how to reconnect with the world.
-                                    </p>
-                                    <p>
-                                        Through film screenings and museum installations,
-                                        I have explored different ways of sharing moving images.
-                                        How can sound be conveyed to those who cannot hear it?
-                                        How can images be shared with those who cannot see?
-                                        Each small attempt has been a quiet experiment—
-                                        a way for light and sound to cross time and space
-                                        and reach another person’s heart.
-                                    </p>
-                                    <p>
-                                        The film project I am now developing, A Sacred Lie,
-                                        follows a woman entangled in a miscarriage of justice in Japan.
-                                        By depicting her story, I hope to reflect on the society
-                                        that chose not to see.
-                                        Between righteousness and indifference, shadows fall.
-                                        Rather than merely portraying those shadows,
-                                        I wish to face them together—
-                                        to turn the filmmaking process itself
-                                        into a small space of dialogue,
-                                        where people from different languages and cultures
-                                        can weave under the same light.
-                                    </p>
-                                    <p>
-                                        For me, this path is also a journey
-                                        of listening to what lies beyond sight.
-                                    </p>
-                                    <p>
-                                        There, unspoken voices quietly shape the world.
-                                        So that what is unseen may become visible to someone,
-                                        and what is unheard may be heard by someone.
-                                        To pass the echoes of light and sound into the future—
-                                        that is where the journey called Light Echoes begins.
-                                    </p>
+                                <p class="text-yellow-400 text-xs font-bold uppercase tracking-wider mb-4">Message from the director, MR. KENTARO KISHI</p>
+                                <div class="text-gray-400 text-[11px] leading-relaxed space-y-4 font-light italic">
+                                    <p>We can only see the world within the reach of light. And cinema, to me, is the act of quietly carrying light and sound into the dark— of making the voices within silence visible once more.</p>
+                                    <p>Yet there are those who cannot receive that light, and those who cannot hear its sound. Each time I make a film, I find myself asking, How can I deliver light? How can I hand over sound? That question has shaped not only my work, but also my path—my way of learning how to reconnect with the world.</p>
+                                    <p>Through film screenings and museum installations, I have explored different ways of sharing moving images. How can sound be conveyed to those who cannot hear it? How can images be shared with those who cannot see? Each small attempt has been a quiet experiment— a way for light and sound to cross time and space and reach another person’s heart.</p>
+                                    <p>The film project I am now developing, A Sacred Lie, follows a woman entangled in a miscarriage of justice in Japan. By depicting her story, I hope to reflect on the society that chose not to see. Between righteousness and indifference, shadows fall. Rather than merely portraying those shadows, I wish to face them together— to turn the filmmaking process itself into a small space of dialogue, where people from different languages and cultures can weave under the same light.</p>
+                                    <p>For me, this path is also a journey of listening to what lies beyond sight. There, unspoken voices quietly shape the world. So that what is unseen may become visible to someone, and what is unheard may be heard by someone. To pass the echoes of light and sound into the future— that is where the journey called Light Echoes begins.</p>
                                 </div>
                             </div>
-                            
 
-                            <!-- PDF Download Button -->
-                            <a href="asacredlieen.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs text-gray-300 hover:text-white border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-2 rounded transition-all duration-300 mb-8 group">
-                                <i class="fas fa-file-pdf text-yellow-500 group-hover:text-yellow-400"></i>
-                                <span class="tracking-wider uppercase">View Film Pitch Deck (PDF)</span>
-                            </a>
-                            
                             <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6">
                                 <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Feature Documentary</span>
                                 <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Social Justice</span>
                                 <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Total Budget: $600k</span>
                             </div>
-                            <p class="text-[10px] text-gray-600 italic">
-                                * Echoes of Light produces the "Making-of Documentary" of this film.
-                            </p>
                         </div>
                     </div>
 
                     <!-- Pillar B: Music Movement -->
                     <div class="flex flex-col">
-                        <!-- Header -->
                         <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
-                            <h3 class="text-xl font-light text-white tracking-widest uppercase">MUSIC MOVEMENT</h3>
+                            <h3 class="text-xl font-cinzel font-thin text-white tracking-widest uppercase">MUSIC MOVEMENT</h3>
                             <span class="text-xs text-gray-500 uppercase tracking-wider">Project 02</span>
                         </div>
-
-                        <!-- Visual Card (Songs for Japan) - 再生ボタンを中央に配置、テキストは下に配置し、クリックの干渉を防ぐ -->
-                        <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative group flex items-center justify-center">
-                            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-700"></div>
-                            
-                            <!-- 再生アイコンを中央に配置 -->
-                            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500 group-hover:border-white/60 relative z-10">
-                                <span class="text-white text-2xl pl-1 font-thin">▶</span>
+                        
+                        <!-- Recent Movement Videos -->
+                        <div class="space-y-6 mb-8">
+                            <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-2xl relative group">
+                                <iframe src="https://www.youtube.com/embed/2Yq0ycPNgdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mother's love by Harmony"></iframe>
                             </div>
-                            
-                            <!-- Songs for Japan タイトルを下に配置 -->
-                            <span class="absolute bottom-6 left-6 text-2xl font-thin text-white tracking-wide">Songs for Japan</span>
-                            
-                            <!-- Coming Soon テキストを中央に配置 (今回は非表示にします。Progress Updateで表示するため) -->
-                            <span class="text-yellow-400 text-lg font-bold tracking-widest z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">COMING SOON</span>
+                            <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-2xl relative group">
+                                <iframe src="https://www.youtube.com/embed/65fbOndnbrE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Go Go Go.... by Harmony feat. Jowie"></iframe>
+                            </div>
                         </div>
 
-                        <!-- NEW: Progress Update (テキストを元に戻す) -->
-                        <div class="bg-yellow-900/10 text-yellow-400 text-xs font-medium uppercase tracking-wider px-3 py-2 rounded-lg border border-yellow-500/20 mb-8 text-center shadow-lg">
-                            A Song of "Echoes of Light" will be shot in Africa soon
-                        </div>
-                        <!-- END NEW -->
-
-                        <!-- Details -->
                         <div>
-                            <h3 class="text-2xl font-extralight text-white leading-tight mb-2">The Spirit of Harmony</h3>
+                            <h3 class="text-2xl font-cinzel font-thin text-white leading-tight mb-2 uppercase">The Spirit of Harmony</h3>
                             <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Harmony Feat. Jowie & Global Artists</p>
-
-                            <!-- Updated: Harmony's description replaced -->
-                            <div class="text-gray-400 mb-8 font-light leading-relaxed text-sm space-y-4">
-                                <p>
-                                    An inspiring story of an African national who expresses his deep gratitude and admiration for Japanese culture through singing. His music touches and heals people’s hearts directly.
-                                </p>
-                                <p>
-                                    Despite not knowing his real name, age, or even his parents—and having no ID or passport—he continues to sing for others, seeking healing and understanding of why he was born after enduring so many hardships.
-                                </p>
-                                <p>
-                                    Even in the face of severe adversity, he keeps singing with unshakable determination, believing that his voice can bring light and hope to others.
-                                </p>
-                                <p>
-                                    His love for Japan has moved the hearts of local street children, who now sing his songs in Japanese. It is truly heartwarming to see how his spirit and music connect people beyond borders.
-                                </p>
-                            </div>
-                            <!-- End of Updated Description -->
                             
-                            <!-- Music Player: One day (Existing) -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-oneday" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-oneday"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">One day</h4>
-                                            <span id="time-display-oneday" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <!-- Progress Bar -->
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-oneday">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-oneday"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-oneday" src="oneday.mp3" preload="metadata"></audio>
+                            <div class="space-y-3">
+                                <script>
+                                    const projectTracks = [
+                                        {id: 'motherslove', title: "Mother's love"},
+                                        {id: 'gogogo', title: "Go Go Go...."},
+                                        {id: 'oneday', title: 'One day'},
+                                        {id: 'thankyoujapan', title: 'Thank you Japan'},
+                                        {id: 'arigatojapan', title: 'Arigato Japan'},
+                                        {id: 'nihonarigato', title: 'Nihon Arigato'},
+                                        {id: 'molmolarigato', title: 'Mol Mol Arigato'},
+                                        {id: 'ilikethewayyouare', title: 'I like the way you are'},
+                                        {id: 'championsstory', title: "Champion's Story (feat. Jowie)"},
+                                        {id: 'arigatomrgofurusawa', title: 'Arigato Mr. Go Furusawa'},
+                                        {id: 'thankyouforlovingjapan', title: 'Thank you for loving Japan'}
+                                    ];
+                                    projectTracks.forEach(t => {
+                                        document.write(`
+                                            <div class="bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-md transition-colors hover:bg-white/10">
+                                                <div class="flex items-center gap-4">
+                                                    <button id="audio-control-${t.id}" class="audio-btn w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center shadow-lg">
+                                                        <i class="fas fa-play ml-0.5" id="audio-icon-${t.id}"></i>
+                                                    </button>
+                                                    <div class="flex-grow min-w-0">
+                                                        <div class="flex justify-between items-center mb-1">
+                                                            <h4 class="text-white text-[11px] font-light truncate uppercase tracking-wider">${t.title}</h4>
+                                                            <span id="time-display-${t.id}" class="text-[9px] text-gray-500 font-mono">0:00</span>
+                                                        </div>
+                                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden relative" id="progress-container-${t.id}">
+                                                            <div class="bg-yellow-500 h-full w-0 absolute top-0 left-0" id="progress-bar-${t.id}"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <audio id="audio-track-${t.id}" src="${t.id}.mp3" preload="metadata"></audio>
+                                            </div>
+                                        `);
+                                    });
+                                </script>
                             </div>
 
-                            <!-- Music Player: Thank you Japan (Existing) -->
-                            <div class="mb-8 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-thankyoujapan" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-thankyoujapan"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Thank you Japan</h4>
-                                            <span id="time-display-thankyoujapan" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <!-- Progress Bar -->
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-thankyoujapan">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-thankyoujapan"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-thankyoujapan" src="thankyoujapan.mp3" preload="metadata"></audio>
-                            </div>
-                            
-                            <!-- Music Player: Arigato Japan -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-arigatojapan" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-arigatojapan"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Arigato Japan</h4>
-                                            <span id="time-display-arigatojapan" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-arigatojapan">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-arigatojapan"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-arigatojapan" src="arigatojapan.mp3" preload="metadata"></audio>
-                            </div>
-
-                            <!-- Music Player: Nihon Arigato -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-nihonarigato" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-nihonarigato"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nihon Arigato</h4>
-                                            <span id="time-display-nihonarigato" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nihonarigato">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nihonarigato"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-nihonarigato" src="nihonarigato.mp3" preload="metadata"></audio>
-                            </div>
-
-                            <!-- Music Player: Mol Mol Arigato -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-molmolarigato" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-molmolarigato"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Mol Mol Arigato</h4>
-                                            <span id="time-display-molmolarigato" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-molmolarigato">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-molmolarigato"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-molmolarigato" src="molmolarigato.mp3" preload="metadata"></audio>
-                            </div>
-
-                            <!-- Music Player: I like the way you are -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-ilikethewayyouare" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-ilikethewayyouare"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">I like the way you are</h4>
-                                            <span id="time-display-ilikethewayyouare" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-ilikethewayyouare">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-ilikethewayyouare"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-ilikethewayyouare" src="ilikethewayyouare.mp3" preload="metadata"></audio>
-                            </div>
-
-                            <!-- Music Player: Champion's Story (feat. Jowie) -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-championsstory" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-championsstory"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Champion's Story (feat. Jowie)</h4>
-                                            <span id="time-display-championsstory" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-championsstory">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-championsstory"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-championsstory" src="championsstory.mp3" preload="metadata"></audio>
-                            </div>
-                            
-                            <!-- Music Player: Arigato Mr. Go Furusawa -->
-                            <div class="mb-4 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-arigatomrgofurusawa" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-arigatomrgofurusawa"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Arigato Mr. Go Furusawa</h4>
-                                            <span id="time-display-arigatomrgofurusawa" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-arigatomrgofurusawa">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-arigatomrgofurusawa"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-arigatomrgofurusawa" src="arigatomrgofurusawa.mp3" preload="metadata"></audio>
-                            </div>
-
-                            <!-- Music Player: Thank you for loving Japan -->
-                            <div class="mb-8 bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <button id="audio-control-thankyouforlovingjapan" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                        <i class="fas fa-play ml-1" id="audio-icon-thankyouforlovingjapan"></i>
-                                    </button>
-                                    <div class="flex-grow min-w-0">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Thank you for loving Japan</h4>
-                                            <span id="time-display-thankyouforlovingjapan" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                        </div>
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-thankyouforlovingjapan">
-                                            <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-thankyouforlovingjapan"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio id="audio-track-thankyouforlovingjapan" src="thankyouforlovingjapan.mp3" preload="metadata"></audio>
-                            </div>
-                            
-                            <div class="flex flex-wrap items-center gap-3 mt-auto pt-6 border-t border-white/5">
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Music</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Humanity</span>
-                                <span class="px-3 py-1 bg-yellow-900/20 text-yellow-500/70 border border-yellow-900/30 rounded-full text-[10px]">Global Movement</span>
+                            <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6 mt-8">
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Music Humanity Global Movement</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Harmony</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Roadmap & Allocation (セクションの移動: FUEL THE LIGHT の前に配置) -->
+        <!-- Roadmap & Allocation Section -->
         <section id="support" class="py-32 bg-black relative border-t border-white/5">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-xl md:text-2xl font-light text-white mb-3">Roadmap & Allocation</h2>
-                    <p class="text-gray-500 text-xs tracking-widest">Realizing the Vision</p>
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <div class="mb-16">
+                    <h2 class="text-xl md:text-2xl font-cinzel font-thin text-white mb-3 tracking-widest uppercase">Roadmap & Allocation</h2>
+                    <p class="text-gray-500 text-xs tracking-widest uppercase font-light">Realizing the Vision</p>
                 </div>
-
                 <div class="bg-gradient-to-b from-gray-900/40 to-black border border-white/5 p-10 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm shadow-2xl">
                     <div class="text-center mb-10 border-b border-white/5 pb-8">
                         <p class="text-gray-400 text-xs uppercase tracking-[0.2em] mb-2">Phase 1 Ignition Goal</p>
-                        <p class="text-white font-light text-xl tracking-wider">
-                            $100,000 <span class="text-xs text-gray-600 font-thin">USD</span>
-                        </p>
+                        <p class="text-white font-cinzel font-thin text-2xl tracking-wider">$100,000 <span class="text-xs text-gray-600">USD</span></p>
                     </div>
-                    
-                    <div class="grid md:grid-cols-4 gap-8 text-sm">
-                        <div class="border-l border-blue-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                    <div class="grid md:grid-cols-4 gap-8 text-xs text-left">
+                        <div class="border-l border-blue-500/30 pl-4">
                             <span class="text-blue-500/80 font-mono text-xs block mb-1">01</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide">Africa Expedition</h4>
-                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">Harmony Recording & Documentary</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Africa Expedition</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Harmony Recording & Documentary filming</p>
                         </div>
-                        <div class="border-l border-yellow-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                        <div class="border-l border-yellow-500/30 pl-4">
                             <span class="text-yellow-500/80 font-mono text-xs block mb-1">02</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide">Philippines Production</h4>
-                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">
-                                "A Sacred Lie" Pre-production &<br>
-                                <span class="text-yellow-600/80">Making-of Filming</span>
-                            </p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Philippines Production</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">"A Sacred Lie" Pre-production & Making-of</p>
                         </div>
-                        <div class="border-l border-gray-500/30 pl-4 hover:pl-6 transition-all duration-300">
+                        <div class="border-l border-gray-500/30 pl-4">
                             <span class="text-gray-500/80 font-mono text-xs block mb-1">03</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide">Music & Editing</h4>
-                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">Orchestration, Editing & Promotional Video Production</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Music & Editing</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Orchestration & Promotional content editing</p>
                         </div>
-                        <!-- Phase 4: World Sales Preparation -->
-                        <div class="border-l border-yellow-700/30 pl-4 hover:pl-6 transition-all duration-300">
+                        <div class="border-l border-yellow-700/30 pl-4">
                             <span class="text-yellow-700/80 font-mono text-xs block mb-1">04</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide">World Sales Preparation</h4>
-                            <p class="text-gray-600 text-xs mt-2 font-light leading-relaxed">
-                                Global distribution across Japan, Philippines, ASEAN, other Asia, the Middle East, Europe, America, and Africa.
-                            </p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">World Sales</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Global distribution across Japan, ASEAN, Asia, and West</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- Tiers Section -->
         <section id="tiers" class="py-32 bg-black/80 relative border-t border-white/5">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
-                    <h2 class="text-2xl font-light text-white mb-4 text-glow">Energy Flow</h2>
-                    <p class="text-gray-500 text-xs tracking-widest">Become a First Believer and protect the light together.</p>
+                    <h2 class="text-2xl font-cinzel font-thin text-white mb-4 text-glow tracking-widest uppercase">Energy Flow</h2>
+                    <p class="text-gray-500 text-xs tracking-widest uppercase">Become a First Believer</p>
                 </div>
                 
-                <!-- START: Humanitarian Economy Vision -->
-                <div class="max-w-3xl mx-auto mb-16 bg-white/5 border border-yellow-500/20 p-6 rounded-xl shadow-xl">
-                    <h3 class="text-lg font-bold text-yellow-400 tracking-wide mb-3 uppercase">Humanitarian Economy Model Movement</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                <div class="max-w-3xl mx-auto mb-16 bg-white/5 border border-yellow-500/20 p-8 rounded-xl shadow-lg backdrop-blur-md">
+                    <h3 class="text-lg font-bold text-yellow-400 tracking-wide mb-4 uppercase">Humanitarian Economy Model Movement</h3>
+                    <p class="text-gray-300 text-[11px] leading-relaxed font-light">
                         Flower Angel is dedicated to driving a self-sustaining Humanitarian Economy alongside partner companies rooted in Japanese principles. Our core model involves leveraging music, film, and entertainment as a cultural catalyst to validate, energize, and amplify the light of peace projected by these trade and business partners globally. This cultural support establishes a continuous cycle of global harmony, human happiness, and sustainability that transcends traditional economic returns.
                     </p>
                 </div>
-                <!-- END: Humanitarian Economy Vision -->
 
-                <!-- Standard Tiers -->
                 <div class="grid md:grid-cols-3 gap-8 items-end mb-24">
-                    <!-- Tier 3: Global Supporter ($500) -->
-                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
-                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">Global Supporter</h3>
-                        <p class="text-3xl font-light text-white mt-6">$500<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow font-light">
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank you Letter
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Name in End Credits
-                            </li>
-                            <!-- NEW FEATURE: スタイルを修正 -->
-                            <li class="flex items-start gap-3">
-                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                <span>Short Thank You Song Gift</span>
-                            </li>
+                    <!-- Standard Tiers -->
+                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 card-hover flex flex-col h-auto">
+                        <h3 class="text-base font-light text-gray-400 tracking-widest uppercase">Global Supporter</h3>
+                        <p class="text-3xl font-light text-white mt-6">$500<span class="text-xs text-gray-600 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light leading-relaxed">
+                            <li>✦ Electronic Thank you Letter</li>
+                            <li>✦ Name mentioned in Feature Documentary End Credits</li>
+                            <li>✦ Short Thank You Message & Song Video Gift from Harmony</li>
                         </ul>
-                        <a href="https://buy.stripe.com/fZu28t6OegEt77Jda13oA00" target="_blank" class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase block text-center rounded-full">
-                            BECOME A SUPPORTER
-                        </a>
+                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60">BECOME A SUPPORTER</div>
                     </div>
-
-                    <!-- Tier 2: Movement Supporter ($3,000) -->
-                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 hover:border-white/20 transition-all duration-500 card-hover flex flex-col group backdrop-blur-sm h-auto">
-                        <h3 class="text-base font-light text-gray-400 group-hover:text-white transition-colors tracking-widest uppercase">MOVEMENT SUPPORTER</h3>
-                        <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs font-normal text-gray-600 ml-2">USD~</span></p>
-                        <!-- 1. flex-grow を追加して高さを合わせる -->
-                        <ul class="mt-10 space-y-4 text-xs text-gray-500 flex-grow">
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Thank You Letter
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="w-1 h-1 rounded-full bg-gray-700"></span> Logo / Name in End Credits
-                            </li>
-                             <li class="flex items-start gap-3">
-                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                <span>Getting Involved with one of the promotion videos Making</span>
-                            </li>
+                    <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 card-hover flex flex-col h-auto">
+                        <h3 class="text-base font-light text-gray-400 tracking-widest uppercase">MOVEMENT SUPPORTER</h3>
+                        <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs text-gray-600 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light leading-relaxed">
+                            <li>✦ Company Logo or Individual Name in Documentary End Credits</li>
+                            <li>✦ Opportunity to get involved with the Promotional Video Making process</li>
+                            <li>✦ Regular digital updates on project milestones</li>
                         </ul>
-                        <a href="https://buy.stripe.com/14A5kF4G64VLbnZfi93oA01" target="_blank" class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all duration-300 text-xs tracking-widest uppercase block text-center rounded-full">
-                            AMPLIFY THE ECHOES
-                        </a>
+                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60">AMPLIFY THE ECHOES</div>
                     </div>
-                    
-                    <!-- Tier 1 (Featured): Founding Guardian ($10,000) -->
-                    <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 relative transform md:-translate-y-6 shadow-[0_0_60px_rgba(234,179,8,0.05)] flex flex-col group backdrop-blur-md">
-                        <div class="absolute top-0 right-0 bg-yellow-500/10 text-yellow-500 text-[9px] font-bold px-4 py-1 tracking-[0.2em] border-b border-l border-yellow-500/20">RECOMMENDED</div>
-                        <h3 class="text-lg font-light text-white flex items-center gap-3 tracking-widest uppercase">
-                            <span class="text-yellow-400 text-sm drop-shadow-md">✦</span> Founding Guardian
+                    <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 md:-translate-y-6 shadow-2xl flex flex-col">
+                        <h3 class="text-lg font-light text-white tracking-widest uppercase flex items-center gap-3">
+                            <span class="text-yellow-400 text-sm">✦</span> Founding Guardian
                         </h3>
-                        <p class="text-4xl font-light text-white mt-6">$10,000<span class="text-xs font-normal text-gray-500 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-5 text-xs text-gray-300 flex-grow font-light">
-                             <!-- LIMITED FEATURE (テキスト修正済み) -->
-                            <li class="flex items-start gap-3 text-yellow-400 font-bold">
-                                <span class="text-xl leading-none">★</span> 
-                                <span>LIMITED: Original song gift from Harmony for the first 3 founding guardians!</span>
-                            </li>
-                            
-                            <!-- "Special Support" Credit in Feature Film を削除 -->
-                            <li class="flex items-start gap-3">
-                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                <span>"Founding Guardian" Credit in Documentary</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                <span>Access to Exclusive Production Reports</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                <span>Invitation to Premiere Screenings (VIP)</span>
-                            </li>
+                        <p class="text-4xl font-light text-white mt-6">$10,000<span class="text-xs text-gray-500 ml-2">USD~</span></p>
+                        <ul class="mt-10 space-y-5 text-[11px] text-gray-300 flex-grow font-light leading-relaxed">
+                            <li class="text-yellow-400 font-bold italic">★ LIMITED: Original song gift from Harmony for the first 3 supporters!</li>
+                            <li>✦ Prominent "Founding Guardian" Credit in Feature Documentary</li>
+                            <li>✦ Invitation to VIP Premiere Screenings (Tokyo or ASEAN)</li>
+                            <li>✦ Exclusive "Making-of" Photobook (Digital Copy)</li>
                         </ul>
-                        <!-- リンクを Stripe URL に修正 -->
-                        <a href="https://buy.stripe.com/28E9AV3C25ZP77J3zr3oA03" target="_blank" class="w-full mt-10 py-4 bg-white text-black hover:bg-gray-200 transition-all duration-300 text-xs font-bold tracking-widest uppercase shadow-lg shadow-white/10 block text-center rounded-full">
-                            BECOME A GUARDIAN
-                        </a>
+                        <div class="w-full mt-10 py-4 border border-white/20 text-white font-bold text-xs tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg">BECOME A GUARDIAN</div>
                     </div>
-
                 </div>
 
-                <!-- Special High Tiers -->
-                <div class="mt-24 relative">
+                <!-- High Tiers ($30k - $100k) -->
+                <div class="mt-24">
                     <div class="text-center mb-16">
-                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.3em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
-                        <h2 class="text-2xl font-light text-white mt-6 tracking-wide">Create a Legacy</h2>
+                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
+                        <h2 class="text-2xl font-cinzel font-thin text-white mt-6 tracking-wide uppercase">Create a Legacy</h2>
                     </div>
-
                     <div class="grid md:grid-cols-3 gap-8">
-                        <!-- $30k Storyteller -->
-                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 hover:border-yellow-500/30 transition-all duration-500 card-hover flex flex-col">
-                            <h3 class="text-base font-light text-white tracking-widest uppercase mb-2">Storyteller</h3>
-                            <p class="text-3xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
-                            <p class="text-xs text-gray-400 leading-relaxed mb-8 min-h-[40px]">
+                        <!-- Storyteller ($30k) -->
+                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 card-hover flex flex-col">
+                            <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Storyteller</h3>
+                            <p class="text-2xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
                                 We will produce a <strong class="text-white">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
                             </p>
-                            <ul class="space-y-3 text-xs text-gray-500 flex-grow">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> <span><strong class="text-white">A Short Documentary Production</strong></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> All "Founding Guardian" Benefits
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                    <span>Inclusion in Humanitarian Economy Partner Directory</span>
-                                </li>
+                            <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
+                                <li>✦ A Short Documentary Production</li>
+                                <li>✦ All "Founding Guardian" Benefits</li>
+                                <li>✦ Inclusion in Humanitarian Economy Partner Directory</li>
                             </ul>
-                            <a href="https://buy.stripe.com/cNi00l8Wmdsh0Jl0nf3oA02" target="_blank" class="w-full mt-8 py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase block text-center rounded-full">TELL YOUR STORY</a>
+                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60">TELL YOUR STORY</div>
                         </div>
-
-                        <!-- $50k Legacy Partner -->
-                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 hover:border-yellow-500/50 transition-all duration-500 card-hover group flex flex-col relative overflow-hidden">
-                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
-                            <h3 class="text-base font-light text-white tracking-widest uppercase mb-2">Legacy Partner</h3>
-                            <p class="text-3xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
-                            <p class="text-xs text-gray-400 leading-relaxed mb-8 min-h-[40px]">
-                                A 30min+ Documentary preserving your achievements and vision for future generations.
+                        
+                        <!-- Legacy Partner ($50k) -->
+                        <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 card-hover flex flex-col">
+                            <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Legacy Partner</h3>
+                            <p class="text-2xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
+                                A <strong class="text-white">30min+ Documentary</strong> preserving your achievements and vision for future generations.
                             </p>
-                            <ul class="space-y-3 text-xs text-gray-500 flex-grow">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                    <span><strong class="text-white">A 30min+ Documentary Production</strong></span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                    <span>All "Storyteller" Benefits</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                    <span>"Legacy Partner" Credit in Documentary</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="text-yellow-500/80 mt-0.5">✦</span> 
-                                    <span>Full Documentary Production Rights</span>
-                                </li>
+                            <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
+                                <li>✦ A 30min+ Documentary Production</li>
+                                <li>✦ All "Storyteller" Benefits</li>
+                                <li>✦ "Legacy Partner" Credit in Documentary</li>
+                                <li>✦ Full Documentary Production Rights</li>
                             </ul>
-                            <a href="https://buy.stripe.com/7sY9AV6Oe9c1fEfgmd3oA05" target="_blank" class="w-full mt-8 py-3 bg-white/5 hover:bg-white hover:text-black text-white border border-white/10 transition-all text-xs tracking-widest uppercase block text-center rounded-full">BUILD YOUR LEGACY</a>
+                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60">BUILD YOUR LEGACY</div>
                         </div>
-
-                        <!-- $100k Executive Guardian (Move from standard to special) -->
-                        <div class="bg-gradient-to-b from-yellow-900/20 to-black p-10 rounded-sm border border-yellow-500/40 hover:border-yellow-400 transition-all duration-500 card-hover group flex flex-col shadow-[0_0_50px_rgba(234,179,8,0.1)]">
-                            <h3 class="text-lg font-light text-yellow-400 tracking-widest uppercase mb-2 flex items-center gap-2">
-                                <span class="text-xl">♛</span> Executive Guardian
+                        
+                        <!-- Executive Guardian ($100k) -->
+                        <div class="bg-gradient-to-b from-yellow-900/20 to-black p-10 rounded-sm border border-yellow-500/40 card-hover flex flex-col">
+                            <h3 class="text-base text-yellow-400 tracking-widest uppercase mb-2 font-light flex items-center gap-2">
+                                <span class="text-sm">♛</span> Executive Guardian
                             </h3>
-                            <p class="text-4xl font-light text-white mt-6">$100,000<span class="text-xs font-normal text-gray-500 ml-2">USD</span></p>
-                            <p class="text-xs text-gray-300 leading-relaxed mb-8 min-h-[40px]">
+                            <p class="text-3xl font-light text-white mt-6">$100,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[11px] text-gray-200 leading-relaxed mt-4 mb-6 font-light italic">
                                 The ultimate partnership. Become an integral part of the masterpiece's creation.
                             </p>
-                            <ul class="space-y-4 text-xs text-gray-300 flex-grow">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-400 mt-0.5">✦</span> 
-                                    <span><strong class="text-white">"Executive Co-Producer" Credit</strong><br>in Feature Film & Documentary</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-400 mt-0.5">✦</span> 
-                                    <span><strong class="text-white">Full Documentary Production Rights</strong><br>(Includes Legacy Partner benefits)</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-yellow-400 mt-0.5">✦</span> 
-                                    <span>1-Year Flower Angel Production Partnership (Includes Global Strategy)</span>
-                                </li>
+                            <ul class="space-y-4 text-[10px] text-gray-300 font-light mb-8">
+                                <li>✦ <strong class="text-white">"Executive Co-Producer" Credit</strong> in Feature Film & Documentary</li>
+                                <li>✦ Full Documentary Production Rights (Includes Legacy Partner benefits)</li>
+                                <li>✦ 1-Year Flower Angel Production Partnership (Includes Global Strategy)</li>
                             </ul>
-                            <a href="https://buy.stripe.com/7sY28tfkKdsh9fRda13oA06" target="_blank" class="w-full mt-8 py-4 bg-yellow-500 text-black hover:bg-white transition-all duration-300 text-xs font-bold tracking-widest uppercase shadow-lg shadow-yellow-500/20 block text-center rounded-full">
-                            LEAD THE MOVEMENT
-                            </a>
+                            <div class="w-full mt-auto py-4 border border-yellow-500/40 text-yellow-500 font-bold text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg">LEAD THE MOVEMENT</div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Borderless Support (セクションの移動: Roadmap & Allocation の後に配置) -->
+        <!-- Payment Section -->
         <section id="payment" class="py-32 bg-black border-t border-white/5 text-center">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-2xl font-thin text-white mb-16 tracking-widest text-glow">FUEL THE LIGHT</h2>
-                
-                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-                    
-                    <!-- Row 1: Bank & Card -->
-                    <div class="w-full flex flex-col md:flex-row gap-6 md:gap-8 justify-center">
-                        <!-- Bank Transfer -->
-                        <a href="mailto:info@flowerangelhk.com?subject=Bank%20Transfer%20Inquiry" class="flex-1 bg-black border border-white/10 p-8 flex items-center justify-center gap-4 hover:border-white/30 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm group">
-                            <span class="text-3xl text-gray-500 group-hover:text-white transition-colors"><i class="fas fa-university"></i></span>
-                            <span class="text-xs font-light tracking-[0.2em] text-gray-300 group-hover:text-white uppercase transition-colors">Bank Transfer</span>
-                        </a>
-
-                        <!-- Credit Card -->
-                        <div class="flex-1 bg-black border border-white/10 p-8 flex items-center justify-center gap-4 hover:border-white/30 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm group" onclick="alert('Credit Card payment gateway coming soon. Please contact us for details.')">
-                            <span class="text-3xl text-gray-500 group-hover:text-white transition-colors"><i class="far fa-credit-card"></i></span>
-                            <span class="text-xs font-light tracking-[0.2em] text-gray-300 group-hover:text-white uppercase transition-colors">Credit Card</span>
-                        </div>
+                <h2 class="text-2xl font-cinzel font-thin text-white mb-16 tracking-widest text-glow uppercase">Fuel the Light</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <a href="mailto:info@flowerangelhk.com?subject=Bank%20Transfer%20Inquiry" class="border border-white/10 p-10 hover:bg-white hover:text-black transition-all duration-500 flex flex-col items-center gap-4 rounded-sm group">
+                        <i class="fas fa-university text-3xl text-gray-500 group-hover:text-black"></i>
+                        <span class="text-[10px] tracking-[0.2em] uppercase font-light">Bank Transfer Inquiry</span>
+                    </a>
+                    <div class="border border-yellow-600/40 p-10 hover:border-yellow-500 transition-all duration-500 flex flex-col items-center gap-4 cursor-pointer rounded-sm group" onclick="prompt('Bitcoin Wallet Address (Copy below):', '1KadySZsJ7hK82fHwLMuVD2xgUXwrUJQBn')">
+                        <i class="fab fa-bitcoin text-3xl text-yellow-600"></i>
+                        <span class="text-[10px] tracking-[0.2em] uppercase font-light text-yellow-500">Bitcoin / Crypto</span>
                     </div>
-
-                    <!-- Bottom Row: Bitcoin (Gold) -->
-                    <div class="w-full md:w-2/3">
-                        <!-- ビットコインアドレスを更新 -->
-                        <div class="bg-black border border-yellow-600/40 p-8 flex items-center justify-center gap-4 hover:border-yellow-500/80 hover:bg-yellow-900/5 transition-all duration-300 cursor-pointer min-h-[100px] rounded-sm w-full md:w-2/3 mx-auto group" onclick="prompt('Bitcoin Wallet Address (Copy below):', '1KadySZsJ7hK82fHwLMuVD2xgUXwrUJQBn')">
-                            <span class="text-3xl text-yellow-600 group-hover:text-yellow-400 transition-colors"><i class="fab fa-bitcoin"></i></span>
-                            <span class="text-xs font-light tracking-[0.2em] text-yellow-500 uppercase">Bitcoin / Crypto</span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Footer (Redesigned Final) -->
-        <footer class="bg-black py-24 border-t border-white/5 relative z-10">
-            <!-- Decorative Light Beam in Footer -->
+        <!-- Footer -->
+        <footer class="bg-black py-24 border-t border-white/5 relative">
             <div class="footer-beam"></div>
-
             <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+                <div class="flex flex-col items-center gap-1 mb-12">
+                    <span class="text-[10px] text-gray-500 uppercase tracking-[0.25em]">Produced by</span>
+                    <!-- UPDATED: Footer font matches header script style (Italianno) -->
+                    <div class="font-script text-5xl text-yellow-400 drop-shadow-lg tracking-widest pt-2">Flower Angel</div>
+                </div>
+                <h3 class="text-3xl font-cinzel font-thin text-white mb-12 tracking-widest uppercase">Nobuko Kotoyori</h3>
                 
-                <!-- Produced by (Moved from Hero) -->
-                <div class="flex flex-col items-center justify-center gap-1 mb-12 opacity-90 hover:opacity-100 transition-opacity duration-500">
-                    <span class="text-[10px] md:text-xs text-gray-500 uppercase tracking-[0.25em] mb-2">Produced by</span>
-                    <div class="font-script text-4xl md:text-5xl text-yellow-400 drop-shadow-[0_0_15px_rgba(234,179,8,0.4)] tracking-wide leading-none pt-2">
-                        Flower Angel
-                    </div>
+                <div class="max-w-xs mx-auto space-y-4 mb-16">
+                    <script>
+                        const footerTracks = [
+                            {id: 'nobukoarigato', title: 'Nobuko Arigato'},
+                            {id: 'nobukoarigatotrumpet', title: 'Nobuko Arigato (Trumpet ver)'},
+                            {id: 'nobukogodbless', title: 'Nobuko God bless you'}
+                        ];
+                        footerTracks.forEach(t => {
+                            document.write(`
+                                <div class="bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-sm transition-colors hover:bg-white/10">
+                                    <div class="flex items-center gap-3">
+                                        <button id="audio-control-${t.id}" class="audio-btn w-9 h-9 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center">
+                                            <i class="fas fa-play ml-0.5 text-xs" id="audio-icon-${t.id}"></i>
+                                        </button>
+                                        <div class="flex-grow text-left min-w-0">
+                                            <h4 class="text-white text-[10px] font-light truncate uppercase tracking-wider">${t.title}</h4>
+                                            <div class="w-full bg-white/10 h-[1.5px] mt-2 relative" id="progress-container-${t.id}">
+                                                <div class="bg-yellow-500 h-full w-0 absolute" id="progress-bar-${t.id}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <audio id="audio-track-${t.id}" src="${t.id === 'nobukoarigatotrumpet' ? t.id + '.m4a' : t.id + '.mp3'}" preload="metadata"></audio>
+                                </div>
+                            `);
+                        });
+                    </script>
                 </div>
 
-                <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase mb-8 font-medium">PRODUCER / JAPAN REPRESENTATIVE</p>
-                <!-- Nobuko Kotoyori font uses Cinzel font -->
-                <h3 class="text-3xl md:text-4xl font-cinzel text-white font-thin mb-6 tracking-widest text-glow">Nobuko Kotoyori</h3>
-                <p class="text-gray-500 text-xs uppercase tracking-[0.15em] mb-12">Contact</p>
-                
-                <div class="flex justify-center items-center gap-10 text-gray-400 text-lg mb-16">
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 hover:scale-110 transform">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <div class="flex justify-center gap-10 text-gray-400 text-lg mb-16">
+                    <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-instagram"></i></a>
                 </div>
-
-                <!-- NEW: Nobuko Arigato Audio Player (Footer) -->
-                <div class="max-w-xs mx-auto mb-4">
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <button id="audio-control-nobukoarigato" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                <i class="fas fa-play ml-1" id="audio-icon-nobukoarigato"></i>
-                            </button>
-                            <div class="flex-grow min-w-0">
-                                <div class="flex justify-between items-center mb-1">
-                                    <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nobuko Arigato</h4>
-                                    <span id="time-display-nobukoarigato" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                </div>
-                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                <!-- Progress Bar -->
-                                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nobukoarigato">
-                                    <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nobukoarigato"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <audio id="audio-track-nobukoarigato" src="nobukoarigato.mp3" preload="metadata"></audio>
-                    </div>
-                </div>
-                <!-- END NEW AUDIO PLAYER -->
-                
-                <!-- NEW: Nobuko Arigato Instrumental Trumpet ver -->
-                <div class="max-w-xs mx-auto mb-4">
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <button id="audio-control-nobukoarigatotrumpet" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                <i class="fas fa-play ml-1" id="audio-icon-nobukoarigatotrumpet"></i>
-                            </button>
-                            <div class="flex-grow min-w-0">
-                                <div class="flex justify-between items-center mb-1">
-                                    <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nobuko Arigato (Instromental trumpet ver)</h4>
-                                    <span id="time-display-nobukoarigatotrumpet" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                </div>
-                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                <!-- Progress Bar -->
-                                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nobukoarigatotrumpet">
-                                    <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nobukoarigatotrumpet"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <audio id="audio-track-nobukoarigatotrumpet" src="nobukoarigatotrumpet.m4a" preload="metadata"></audio>
-                    </div>
-                </div>
-                <!-- END NEW AUDIO PLAYER -->
-                
-                <!-- NEW: Nobuko God bless you -->
-                <div class="max-w-xs mx-auto mb-16">
-                    <div class="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md group hover:bg-white/10 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <button id="audio-control-nobukogodbless" class="audio-btn w-12 h-12 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(234,179,8,0.4)] relative z-10">
-                                <i class="fas fa-play ml-1" id="audio-icon-nobukogodbless"></i>
-                            </button>
-                            <div class="flex-grow min-w-0">
-                                <div class="flex justify-between items-center mb-1">
-                                    <h4 class="text-white text-sm font-light tracking-wide truncate pr-2">Nobuko God bless you (feat. Jowie)</h4>
-                                    <span id="time-display-nobukogodbless" class="text-[10px] text-gray-400 font-mono">0:00</span>
-                                </div>
-                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Harmony</p>
-                                <!-- Progress Bar -->
-                                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden cursor-pointer relative" id="progress-container-nobukogodbless">
-                                    <div class="bg-yellow-500 h-full w-0 transition-all duration-100 absolute top-0 left-0" id="progress-bar-nobukogodbless"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <audio id="audio-track-nobukogodbless" src="nobukogodbless.mp3" preload="metadata"></audio>
-                    </div>
-                </div>
-                <!-- END NEW AUDIO PLAYER -->
-
                 <p class="text-gray-800 text-[10px] tracking-widest uppercase">© 2025 Flower Angel / Echoes of Light Project</p>
             </div>
         </footer>
     </main>
 
     <script>
-        // 既存のオーディオプレーヤーのセットアップ関数
         function formatTime(seconds) {
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        const setupAudioPlayer = (audioTrack, playBtn, playIcon, progressBar, progressContainer, trackId) => {
-            
-            const togglePlay = () => {
-                const iconElement = document.getElementById(`audio-icon-${trackId}`);
-                if (audioTrack.paused) {
-                    // Pause all other tracks
-                    document.querySelectorAll('audio').forEach(otherTrack => {
-                        if (otherTrack !== audioTrack && !otherTrack.paused) {
-                            otherTrack.pause();
-                            // Manually update the icon of the paused track
-                            const otherId = otherTrack.id.replace('audio-track-', '');
-                            const otherIcon = document.getElementById(`audio-icon-${otherId}`);
-                            if (otherIcon) {
-                                otherIcon.classList.remove('fa-pause');
-                                otherIcon.classList.add('fa-play');
-                            }
-                        }
+        const setupAudioPlayer = (id) => {
+            const audio = document.getElementById(`audio-track-${id}`);
+            const btn = document.getElementById(`audio-control-${id}`);
+            const icon = document.getElementById(`audio-icon-${id}`);
+            const progress = document.getElementById(`progress-bar-${id}`);
+            const container = document.getElementById(`progress-container-${id}`);
+
+            if (!audio || !btn) return;
+
+            btn.addEventListener('click', () => {
+                if (audio.paused) {
+                    document.querySelectorAll('audio').forEach(a => {
+                        a.pause();
+                        const otherId = a.id.replace('audio-track-', '');
+                        const otherIcon = document.getElementById(`audio-icon-${otherId}`);
+                        if(otherIcon) otherIcon.classList.replace('fa-pause', 'fa-play');
                     });
-
-                    audioTrack.play();
-                    iconElement.classList.remove('fa-play');
-                    iconElement.classList.add('fa-pause');
+                    audio.play();
+                    icon.classList.replace('fa-play', 'fa-pause');
                 } else {
-                    audioTrack.pause();
-                    iconElement.classList.remove('fa-pause');
-                    iconElement.classList.add('fa-play');
-                }
-            };
-
-            playBtn.addEventListener('click', togglePlay);
-
-            audioTrack.addEventListener('timeupdate', () => {
-                const timeDisplay = document.getElementById(`time-display-${trackId}`);
-                const { duration, currentTime } = audioTrack;
-                const progressPercent = (currentTime / duration) * 100;
-                progressBar.style.width = `${progressPercent}%`;
-                
-                if(!isNaN(duration)) {
-                     timeDisplay.textContent = formatTime(currentTime);
+                    audio.pause();
+                    icon.classList.replace('fa-pause', 'fa-play');
                 }
             });
 
-            progressContainer.addEventListener('click', (e) => {
-                const width = progressContainer.clientWidth;
-                const clickX = e.offsetX;
-                const duration = audioTrack.duration;
-                audioTrack.currentTime = (clickX / width) * duration;
+            audio.addEventListener('timeupdate', () => {
+                if(isNaN(audio.duration)) return;
+                const percent = (audio.currentTime / audio.duration) * 100;
+                if(progress) progress.style.width = `${percent}%`;
+                const display = document.getElementById(`time-display-${id}`);
+                if(display) display.textContent = formatTime(audio.currentTime);
             });
 
-            audioTrack.addEventListener('loadedmetadata', () => {
-                const timeDisplay = document.getElementById(`time-display-${trackId}`);
-                if(!isNaN(audioTrack.duration)) {
-                    timeDisplay.textContent = formatTime(audioTrack.duration);
-                }
-            });
+            if(container) {
+                container.addEventListener('click', (e) => {
+                    if(isNaN(audio.duration)) return;
+                    const clickX = e.offsetX;
+                    const width = container.clientWidth;
+                    audio.currentTime = (clickX / width) * audio.duration;
+                });
+            }
 
-            audioTrack.addEventListener('ended', () => {
-                const iconElement = document.getElementById(`audio-icon-${trackId}`);
-                iconElement.classList.remove('fa-pause');
-                iconElement.classList.add('fa-play');
-                progressBar.style.width = '0%';
-                audioTrack.currentTime = 0; // Rewind
-                const timeDisplay = document.getElementById(`time-display-${trackId}`);
-                if(!isNaN(audioTrack.duration)) {
-                    timeDisplay.textContent = formatTime(audioTrack.duration);
-                }
+            audio.addEventListener('ended', () => {
+                icon.classList.replace('fa-pause', 'fa-play');
+                if(progress) progress.style.width = '0%';
+            });
+            
+            audio.addEventListener('loadedmetadata', () => {
+                const display = document.getElementById(`time-display-${id}`);
+                if(display) display.textContent = formatTime(audio.duration);
             });
         };
-        
-        // Music Player IDs (Project Section)
-        const projectTrackIds = [
-            'oneday', 'thankyoujapan', 'arigatojapan', 'nihonarigato', 'molmolarigato', 
-            'ilikethewayyouare', 'championsstory', 'arigatomrgofurusawa', 'thankyouforlovingjapan'
-        ];
 
-        // Music Player IDs (Footer Section)
-        const footerTrackIds = [
-            'nobukoarigato', 'nobukoarigatotrumpet', 'nobukogodbless'
-        ];
-        
         document.addEventListener('DOMContentLoaded', () => {
-            // Smooth Scroll (既存)
+            const allTracks = [
+                'motherslove', 'gogogo', 'oneday', 'thankyoujapan', 'arigatojapan', 'nihonarigato', 'molmolarigato', 
+                'ilikethewayyouare', 'championsstory', 'arigatomrgofurusawa', 'thankyouforlovingjapan',
+                'nobukoarigato', 'nobukoarigatotrumpet', 'nobukogodbless'
+            ];
+            allTracks.forEach(setupAudioPlayer);
+
             document.querySelectorAll('a[data-target]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.getElementById(this.getAttribute('data-target'))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const target = document.getElementById(this.getAttribute('data-target'));
+                    if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
-            });
-
-            // Initialize all audio players
-            const allTrackIds = [...projectTrackIds, ...footerTrackIds];
-
-            allTrackIds.forEach(id => {
-                const audioTrack = document.getElementById(`audio-track-${id}`);
-                const playBtn = document.getElementById(`audio-control-${id}`);
-                const progressBar = document.getElementById(`progress-bar-${id}`);
-                const progressContainer = document.getElementById(`progress-container-${id}`);
-
-                if (audioTrack && playBtn) {
-                    setupAudioPlayer(audioTrack, playBtn, null, progressBar, progressContainer, id);
-                }
             });
         });
     </script>
