@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.441.0/lucide.min.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Noto+Serif+JP:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Noto+Serif+JP:wght@300;400;700;900&display=swap');
 
         :root {
             --gold: #d4af37;
@@ -102,7 +102,7 @@
             display: inline-block;
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
         }
 
         .header-info-box {
@@ -116,7 +116,7 @@
             margin-bottom: 0.8rem;
         }
 
-        /* Timeline Styles with enlarged fonts */
+        /* Timeline Styles - Enlarged */
         .timeline-container {
             position: relative;
             padding-left: 24px;
@@ -148,7 +148,7 @@
             flex-shrink: 0;
             width: 60px;
             font-weight: 900;
-            font-size: 16px; /* Enlarged from 13px */
+            font-size: 16px;
             color: var(--sakura-deep);
             line-height: 1.2;
         }
@@ -210,10 +210,23 @@
             border-bottom: 1px solid var(--gold);
         }
 
+        /* Smaller Pillar Image Container */
+        .pillar-image-container {
+            position: relative;
+            width: 90%;
+            max-width: 450px; 
+            margin: 2.5rem auto 1rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(246, 135, 179, 0.15);
+            border: 3px solid white;
+        }
+
         .hidden-lang { display: none !important; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen text-center">
+    <!-- Background elements -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-pink-100/30 blur-[120px] rounded-full"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gold-light/20 blur-[120px] rounded-full"></div>
@@ -221,7 +234,7 @@
     <div id="sparkle-container" class="fixed inset-0 pointer-events-none z-20"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 flex justify-start items-center px-6 py-6 z-50 text-center">
+    <nav class="fixed top-0 left-0 right-0 flex justify-start items-center px-6 py-6 z-50">
         <div class="text-[8px] tracking-[0.2em] font-black uppercase text-gray-400 bg-white/60 backdrop-blur px-5 py-2 rounded-full border border-white/50 shadow-sm text-center">Special Free Invitation</div>
     </nav>
 
@@ -233,23 +246,23 @@
                 <span class="virtue-badge">Humanitarian Economy Access</span>
             </div>
 
-            <!-- Title: 2-line layout with padding to prevent 'E' cutoff -->
+            <!-- Title: 2-line center layout with padding to prevent cutoff -->
             <div class="hero-title mb-4 px-6 overflow-visible text-center">
                 <h1 class="font-black italic leading-none shimmer text-center overflow-visible flex flex-col items-center">
                     <span class="block text-xl md:text-3xl lg:text-4xl gold-gradient font-light tracking-[0.1em] mb-1 text-center">A Story of</span>
-                    <span class="block text-5xl md:text-[8.5rem] gold-gradient tracking-normal leading-[0.8] px-12 md:px-24 text-center">HOPE</span>
+                    <span class="block text-5xl md:text-[8.5rem] gold-gradient tracking-normal leading-[1.2] px-12 md:px-24 py-4 text-center">HOPE</span>
                 </h1>
             </div>
 
             <!-- Date Box -->
-            <div class="header-info-box text-center">
+            <div class="header-info-box">
                 <p class="text-2xl md:text-5xl tracking-widest mb-2 sakura-gradient text-center">March 27, 2026</p>
                 <div class="flex items-center justify-center gap-6 md:gap-14 border-t border-pink-100 pt-3 text-center">
-                    <div class="text-center text-center">
+                    <div class="text-center">
                         <span class="text-[7px] md:text-[9px] uppercase tracking-[0.1em] text-gray-400 block mb-0.5 text-center">Doors Open</span>
                         <span class="text-lg md:text-2xl font-black italic text-gray-600 leading-none text-center">16:00</span>
                     </div>
-                    <div class="w-[1px] h-10 bg-pink-100 text-center"></div>
+                    <div class="w-[1px] h-10 bg-pink-100"></div>
                     <div class="text-center text-center">
                         <span class="text-[7px] md:text-[9px] uppercase tracking-[0.1em] text-pink-400 block font-black mb-0.5 text-center">Concert Time</span>
                         <span class="text-lg md:text-2xl font-black italic text-pink-500 leading-none text-center">17:00 - 19:00</span>
@@ -258,7 +271,7 @@
             </div>
 
             <!-- Venue -->
-            <div class="mt-2 text-center max-w-4xl px-6 text-center text-center">
+            <div class="mt-2 text-center max-w-4xl px-6 text-center">
                 <p class="text-xl md:text-3xl text-pink-500 font-black tracking-tighter uppercase leading-none mb-1 text-center">
                     The Mactan Newtown Concert Venue
                 </p>
@@ -268,10 +281,20 @@
             </div>
 
             <!-- Introduction Quote -->
-            <div class="max-w-3xl px-6 border-t border-pink-100/50 pt-6 text-center text-center">
-                <p class="text-lg md:text-xl text-gray-500 leading-relaxed font-light italic text-center leading-relaxed text-center">
+            <div class="max-w-3xl px-6 border-t border-pink-100/50 pt-6 text-center">
+                <p class="text-lg md:text-xl text-gray-500 leading-relaxed font-light italic text-center leading-relaxed">
                     "The Story of Hope begins here in Mactan, Cebu. Echoes of Light—let us raise the Sakura Pillar of Hope together and let it resonate throughout the world."
                 </p>
+            </div>
+
+            <!-- Pillar of Hope Image Section with NEW caption -->
+            <div class="pillar-image-container">
+                <img src="pillarofhope1.jpg" alt="The Sakura Pillar of Hope" class="w-full h-auto object-cover" onerror="this.src='https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?auto=format&fit=crop&q=80&w=1200'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end justify-center pb-6">
+                    <p class="text-white text-lg md:text-2xl font-black italic tracking-widest uppercase px-4 text-center leading-tight">
+                        Let us raise the Pillar of Light together by Donation Light
+                    </p>
+                </div>
             </div>
         </div>
     </header>
@@ -279,136 +302,126 @@
     <main class="relative z-10 px-6">
         
         <!-- Lucky 10 Campaign -->
-        <section class="py-14 px-8 my-12 bg-white/60 backdrop-blur rounded-[4rem] border border-pink-100 shadow-2xl max-w-5xl mx-auto overflow-hidden relative text-center lg:text-left text-center">
-            <div class="absolute top-0 right-0 px-8 py-2 bg-pink-500 text-white text-[10px] font-black uppercase tracking-widest rounded-bl-3xl shadow-lg text-center text-center">LUCKY 10</div>
-            <div class="flex flex-col md:flex-row items-center gap-12 text-center text-center">
-                <div class="w-40 h-40 bg-pink-50 rounded-full flex flex-col items-center justify-center shrink-0 border-4 border-white shadow-xl text-center mx-auto lg:mx-0 text-center">
-                    <span class="text-5xl font-black text-pink-500 leading-none text-center">10</span>
+        <section class="py-14 px-8 my-12 bg-white/60 backdrop-blur rounded-[4rem] border border-pink-100 shadow-2xl max-w-5xl mx-auto overflow-hidden relative text-center lg:text-left">
+            <div class="absolute top-0 right-0 px-8 py-2 bg-pink-500 text-white text-[10px] font-black uppercase tracking-widest rounded-bl-3xl shadow-lg">LUCKY 10</div>
+            <div class="flex flex-col md:flex-row items-center gap-12 text-center">
+                <div class="w-40 h-40 bg-pink-50 rounded-full flex flex-col items-center justify-center shrink-0 border-4 border-white shadow-xl text-center mx-auto lg:mx-0">
+                    <span class="text-5xl font-black text-pink-500 leading-none">10</span>
                     <span class="text-[10px] font-black text-pink-300 uppercase tracking-widest mt-1 text-center">Winners</span>
                 </div>
-                <div class="flex-1 text-center lg:text-left text-center text-center">
-                    <div class="time-limit-pill mb-4 px-3 py-1 bg-pink-50 border border-pink-100 rounded-full inline-flex items-center gap-2 text-center">
-                        <i data-lucide="clock-4" class="w-3.5 h-3.5 text-pink-500 text-center"></i>
-                        <span class="text-[11px] font-bold text-pink-600 text-center">March 27 Only: 09:00 AM - 05:00 PM</span>
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="time-limit-pill mb-4 px-3 py-1 bg-pink-50 border border-pink-100 rounded-full inline-flex items-center gap-2">
+                        <i data-lucide="clock-4" class="w-3.5 h-3.5 text-pink-500"></i>
+                        <span class="text-[11px] font-bold text-pink-600">March 27 Only: 09:00 AM - 05:00 PM</span>
                     </div>
-                    <h3 class="text-3xl font-black italic mb-4 sakura-gradient leading-tight text-center lg:text-left text-center">Photogenic Morning<br><span class="text-gray-400 text-sm md:text-lg text-center">Share the Light from Cebu</span></h3>
-                    <p class="text-lg text-gray-600 font-light mb-6 leading-relaxed text-center lg:text-left text-center text-center">
+                    <h3 class="text-3xl font-black italic mb-4 sakura-gradient leading-tight text-center lg:text-left">Photogenic Morning<br><span class="text-gray-400 text-sm md:text-lg">Share the Light from Cebu</span></h3>
+                    <p class="text-lg text-gray-600 font-light mb-6 leading-relaxed">
                         Join the "Story of Hope" and share your experience. The top 10 most impactful posts with all 7 tags will receive exclusive premium Japanese goods!
                     </p>
-                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start text-center">
-                        <span class="hashtag-item text-center">#humanitarian_economy</span>
-                        <span class="hashtag-item text-center">#A_Story_of_hope</span>
-                        <span class="hashtag-item text-center">#Echoes_of_light</span>
-                        <span class="hashtag-item text-center">#UZUWORLD</span>
-                        <span class="hashtag-item text-center">#SAKURA_BLOOM_2026</span>
-                        <span class="hashtag-item text-center">#Harmony_japan</span>
-                        <span class="hashtag-item font-bold italic text-center">#Donation_Light</span>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                        <span class="hashtag-item">#humanitarian_economy</span>
+                        <span class="hashtag-item">#A_Story_of_hope</span>
+                        <span class="hashtag-item">#Echoes_of_light</span>
+                        <span class="hashtag-item">#UZUWORLD</span>
+                        <span class="hashtag-item">#SAKURA_BLOOM_2026</span>
+                        <span class="hashtag-item">#Harmony_japan</span>
+                        <span class="hashtag-item font-bold italic">#Donation_Light</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Detailed Timeline (Enlarged Fonts) -->
-        <section class="py-24 max-w-4xl mx-auto border-y border-pink-100 text-center text-center">
+        <section class="py-24 max-w-4xl mx-auto border-y border-pink-100 text-center">
             <div class="text-center mb-20 text-center">
                 <span class="text-xs font-black tracking-[0.6em] text-pink-300 uppercase italic text-center">Event Timeline</span>
                 <h3 class="text-4xl font-black mt-3 text-gray-300 uppercase tracking-tighter text-center">Day Schedule</h3>
             </div>
-            <div class="timeline-container max-w-xl mx-auto text-center">
-                <!-- 09:00 -->
+            <div class="timeline-container max-w-xl mx-auto">
                 <div class="timeline-item text-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-time">09:00</div>
-                    <div class="timeline-content">
+                    <div class="timeline-content text-left">
                         <h5 class="text-base md:text-lg font-black uppercase text-gray-600">Photogenic Booth Open</h5>
                     </div>
                 </div>
-                <!-- 15:00 -->
                 <div class="timeline-item text-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-time">15:00</div>
-                    <div class="timeline-content">
+                    <div class="timeline-content text-left">
                         <h5 class="text-base md:text-lg font-black uppercase">Sutadonya Grand Launch</h5>
-                        <p class="text-[12px] md:text-[13px] text-gray-400 uppercase font-bold tracking-widest mt-1.5 italic">Ribbon Cutting & Store Blessing</p>
+                        <p class="text-[12px] md:text-[13px] text-gray-400 uppercase font-bold tracking-widest mt-1.5 italic text-left">Ribbon Cutting & Store Blessing</p>
                     </div>
                 </div>
-                <!-- 16:00 -->
-                <div class="timeline-item text-left">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-time">16:00</div>
-                    <div class="timeline-content">
-                        <h5 class="text-base md:text-lg font-black uppercase">Doors Open / Cosplay Walking</h5>
-                        <p class="text-[12px] md:text-[13px] text-pink-400 font-black mt-1.5 uppercase leading-tight">Entrance & Mactan Expo (Right Side). Together to the venue!</p>
-                    </div>
-                </div>
-                <!-- 17:00 Main Event -->
-                <div class="timeline-item text-left">
-                    <div class="timeline-dot bg-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]"></div>
-                    <div class="timeline-time text-pink-600">17:00</div>
-                    <div class="timeline-content">
-                        <div class="mb-2"><span class="bg-pink-100 text-pink-600 text-[10px] font-black px-2.5 py-1 rounded-full uppercase">Main Event</span></div>
-                        <h5 class="text-lg md:text-xl font-black uppercase text-pink-600 leading-none">Story of Hope Concert Begins</h5>
-                        <p class="text-[12px] md:text-[13px] text-gray-400 italic mt-2.5">Special Stage next to Mactan Expo</p>
-                    </div>
-                </div>
-                <!-- 17:10 -->
-                <div class="timeline-item text-left">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-time">17:10</div>
-                    <div class="timeline-content">
-                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600">UUU Japanese Orchestra</h5>
-                        <p class="text-[12px] md:text-[13px] text-pink-400 font-bold italic mt-1">Resonating the Soul of Japan</p>
-                    </div>
-                </div>
-                <!-- 17:30 -->
-                <div class="timeline-item text-left">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-time">17:30</div>
-                    <div class="timeline-content">
-                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600">Local Singer Performance</h5>
-                        <p class="text-[12px] md:text-[13px] text-gray-400 italic mt-1">Mactan Voice Showcase</p>
-                    </div>
-                </div>
-                <!-- 18:00 -->
                 <div class="timeline-item text-left text-left">
                     <div class="timeline-dot text-left"></div>
-                    <div class="timeline-time text-left">18:00</div>
-                    <div class="timeline-content text-left">
-                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600">10,000 Meals Journey</h5>
-                        <p class="text-[12px] md:text-[13px] text-gray-400 uppercase tracking-widest font-bold italic mt-1.5">The Humanitarian Economy Project</p>
+                    <div class="timeline-time text-left">16:00</div>
+                    <div class="timeline-content text-left text-left text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase text-left">Doors Open / Cosplay Walking</h5>
+                        <p class="text-[12px] md:text-[13px] text-pink-400 font-black mt-1.5 uppercase leading-tight text-left">Entrance & Mactan Expo (Right Side). Together to the venue!</p>
                     </div>
                 </div>
-                <!-- 18:10 Harmony -->
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot bg-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.5)]"></div>
+                    <div class="timeline-time text-pink-600 text-left">17:00</div>
+                    <div class="timeline-content text-left">
+                        <div class="mb-2 text-left"><span class="bg-pink-100 text-pink-600 text-[10px] font-black px-2.5 py-1 rounded-full uppercase text-left">Main Event</span></div>
+                        <h5 class="text-lg md:text-xl font-black uppercase text-pink-600 leading-none text-left">Story of Hope Concert Begins</h5>
+                        <p class="text-[12px] md:text-[13px] text-gray-400 italic mt-2.5 text-left text-left">Special Stage next to Mactan Expo</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">17:10</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600 text-left">UUU Japanese Orchestra</h5>
+                        <p class="text-[12px] md:text-[13px] text-pink-400 font-bold italic mt-1 text-left">Resonating the Soul of Japan</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left text-left text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">17:30</div>
+                    <div class="timeline-content text-left text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600 text-left">Local Singer Performance</h5>
+                        <p class="text-[12px] md:text-[13px] text-gray-400 italic mt-1 text-left text-left">Mactan Voice Showcase</p>
+                    </div>
+                </div>
+                <div class="timeline-item text-left text-left text-left text-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-time text-left">18:00</div>
+                    <div class="timeline-content text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600 text-left">10,000 Meals Journey</h5>
+                        <p class="text-[12px] md:text-[13px] text-gray-400 uppercase tracking-widest font-bold italic mt-1.5 text-left">The Humanitarian Economy Project</p>
+                    </div>
+                </div>
                 <div class="timeline-item text-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-time text-left">18:10</div>
                     <div class="timeline-content text-left">
-                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600">Harmony: Soul Performance</h5>
-                        <p class="text-[13px] md:text-[14px] text-gray-400 italic mt-1.5 leading-relaxed">The story of hope of a man who had no ID, no parents, no family, and no dignity.</p>
+                        <h5 class="text-base md:text-lg font-black uppercase text-gray-600 text-left">Harmony: Soul Performance</h5>
+                        <p class="text-[13px] md:text-[14px] text-gray-400 italic mt-1.5 leading-relaxed text-left text-left">The story of hope of a man who had no ID, no parents, no family, and no dignity.</p>
                     </div>
                 </div>
-                <!-- 18:30 Finale -->
-                <div class="timeline-item text-left text-left">
-                    <div class="timeline-dot bg-gold shadow-[0_0_15px_var(--gold)] text-left"></div>
+                <div class="timeline-item text-left text-left text-left">
+                    <div class="timeline-dot bg-gold shadow-[0_0_15px_var(--gold)] text-left text-left"></div>
                     <div class="timeline-time text-gold font-black text-left">18:30</div>
-                    <div class="timeline-content text-left text-left">
-                        <h5 class="text-base md:text-lg font-black uppercase gold-gradient">Finale: Donation Light by J Pride</h5>
-                        <p class="text-[12px] md:text-[13px] text-gray-400 italic uppercase mt-1.5 tracking-widest font-bold">The Sakura Pillar of Hope</p>
+                    <div class="timeline-content text-left text-left text-left text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase gold-gradient text-left">Finale: Donation Light by J Pride</h5>
+                        <p class="text-[12px] md:text-[13px] text-gray-400 italic uppercase mt-1.5 tracking-widest font-bold text-left">The Sakura Pillar of Hope</p>
                     </div>
                 </div>
-                <!-- 19:00 Finish -->
-                <div class="timeline-item border-none text-left">
-                    <div class="timeline-dot bg-gray-400"></div>
-                    <div class="timeline-time text-gray-400">19:00</div>
-                    <div class="timeline-content">
-                        <h5 class="text-base md:text-lg font-black uppercase text-gray-400">Finish</h5>
+                <div class="timeline-item border-none text-left text-left text-left">
+                    <div class="timeline-dot bg-gray-400 text-left"></div>
+                    <div class="timeline-time text-gray-400 text-left text-left text-left">19:00</div>
+                    <div class="timeline-content text-left text-left">
+                        <h5 class="text-base md:text-lg font-black uppercase text-gray-400 text-left">Finish</h5>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission Guide Section -->
-        <section class="py-24 max-w-6xl mx-auto px-6 text-center text-center text-center">
+        <!-- Mission Guide Section (One-by-One Layout) -->
+        <section class="py-24 max-w-6xl mx-auto px-6 text-center">
             <div class="mb-16 text-center text-center">
                 <h4 class="text-3xl font-black italic mb-4 gold-gradient tracking-tighter uppercase text-center text-center">Give First</h4>
                 <p class="text-lg text-gray-500 font-light max-w-3xl mx-auto leading-relaxed mb-12 text-center text-center text-center">
@@ -416,33 +429,34 @@
                     Share your action of "Tokuzumi" as part of the 10,000 stories of hope.
                 </p>
                 
-                <div class="flex flex-col gap-6 max-w-2xl mx-auto text-center text-center text-center">
-                    <div class="mission-card text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center">Love (愛)</span>
+                <div class="flex flex-col gap-6 max-w-2xl mx-auto text-center">
+                    <div class="mission-card">
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2">Love (愛)</span>
                         <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center">Show gratitude to family or friends and bring a smile to their faces. Caring for those close to you is the first step to healing the world.</p>
                     </div>
-                    <div class="mission-card text-center text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center">Connection (繋)</span>
-                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center">Spread this circle of hope via SNS or by inviting friends. Your voice becomes the bridge that connects hearts.</p>
+                    <div class="mission-card">
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2">Connection (繋)</span>
+                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center">Spread this circle of hope via SNS or by inviting friends. Your voice becomes the bridge that connects hearts.</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2">Creativity (創)</span>
+                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center text-center">Help with event setup or enliven the venue through song or dance. Experience the joy of sharing your talents.</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2">Purity (清)</span>
+                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center text-center text-center text-center">Pick up trash and polish the mirror that is our Earth. Purifying the venue is an act of respect for your own heart and the planet.</p>
                     </div>
                     <div class="mission-card text-center text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center">Creativity (創)</span>
-                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center">Help with event setup or enliven the venue through song or dance. Experience the joy of sharing your talents.</p>
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center">Prayer (祈)</span>
+                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center text-center">Offer a minute of silence and write down your "Life Mission." Find peace in the silence that restores dignity.</p>
                     </div>
-                    <div class="mission-card text-center text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center text-center">Purity (清)</span>
-                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center text-center">Pick up trash and polish the mirror that is our Earth. Purifying the venue is an act of respect for your own heart and the planet.</p>
+                    <div class="mission-card">
+                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2">Wisdom (学)</span>
+                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center text-center">Explore Japanese traditional culture and history at the KIZUNA Exhibition. A compass for opening the future.</p>
                     </div>
-                    <div class="mission-card text-center text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center text-center">Prayer (祈)</span>
-                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center">Offer a minute of silence and write down your "Life Mission." Find peace in the silence that restores dignity.</p>
-                    </div>
-                    <div class="mission-card text-center text-center text-center">
-                        <span class="text-pink-500 font-black text-xs uppercase tracking-widest block mb-2 text-center text-center text-center">Wisdom (学)</span>
-                        <p class="text-[13px] text-gray-600 leading-relaxed font-light text-left text-center text-center">Explore Japanese traditional culture and history at the KIZUNA Exhibition. A compass for opening the future.</p>
-                    </div>
-                    <div class="mission-card border-gold bg-gold/5 shadow-inner text-center text-center text-center">
-                        <span class="gold-gradient font-black text-xs uppercase tracking-widest block mb-2 text-center text-center text-center">Pay It Forward (送)</span>
+                    <!-- Pay It Forward (Gold Gradient) -->
+                    <div class="mission-card border-gold bg-gold/5 shadow-inner">
+                        <span class="gold-gradient font-black text-xs uppercase tracking-widest block mb-2">Pay It Forward (送)</span>
                         <p class="text-[13px] gold-gradient leading-relaxed font-black text-left text-center">Donate for the next person's meal. A form of economy where abundance continues to circulate across borders.</p>
                     </div>
                 </div>
@@ -451,7 +465,7 @@
 
         <!-- Admission Protocol -->
         <div class="premium-glass p-14 md:p-20 rounded-[4rem] border-pink-200 shadow-2xl max-w-4xl mx-auto mt-24 text-center relative overflow-hidden text-center text-center">
-            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-pink-300 to-transparent text-center text-center"></div>
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
             <h4 class="text-3xl font-black mb-8 sakura-gradient tracking-tighter text-center">Admission Protocol</h4>
             
             <div class="space-y-6 mb-12 text-center text-center">
@@ -459,8 +473,8 @@
                     This concert is part of the <span class="font-bold text-gray-700 underline decoration-pink-300">Humanitarian Economy</span>, where "Tokuzumi" (Deeds of Kindness from the Mission Guide above) serves as your ticket. Please show your kind action or SNS post at the entrance.
                 </p>
                 <div class="bg-pink-50/50 p-6 rounded-3xl mt-6 border border-pink-100 text-center text-center">
-                    <p class="text-pink-600 font-black text-xl mb-2 text-center text-center text-center">Enjoy a FREE Sutadonya bowl as our gift!</p>
-                    <p class="text-[11px] text-pink-400 font-bold italic uppercase leading-relaxed max-w-md mx-auto text-center">
+                    <p class="text-pink-600 font-black text-xl mb-2 text-center text-center">Enjoy a FREE Sutadonya bowl as our gift!</p>
+                    <p class="text-[11px] text-pink-400 font-bold italic uppercase leading-relaxed max-w-md mx-auto text-center text-center">
                         (Receive a voucher at the venue. After the concert, visit SUTADON Cebu to get your stamp or share your post on SNS to redeem.)
                     </p>
                 </div>
@@ -468,19 +482,19 @@
 
             <!-- VIP Section -->
             <div class="vip-premium-card text-center text-center text-center">
-                <div class="flex flex-col items-center text-center text-center text-center">
+                <div class="flex flex-col items-center">
                     <span class="text-yellow-200 font-black text-[10px] uppercase tracking-[0.4em] mb-4 text-center">Filipino Only Premium Access</span>
-                    <h5 class="text-white text-2xl font-black uppercase tracking-widest mb-1 text-center text-center">BUY VIP Ticket</h5>
-                    <div class="w-16 h-0.5 bg-gold mx-auto mb-4 opacity-50 text-center text-center"></div>
+                    <h5 class="text-white text-2xl font-black uppercase tracking-widest mb-1 text-center">BUY VIP Ticket</h5>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-4 opacity-50"></div>
                     
-                    <div class="space-y-2 text-center text-center">
-                        <p class="text-white text-xl font-bold tracking-wider text-center text-center">10,000 PHP VIP Seat & VIP Dinner</p>
+                    <div class="space-y-2 text-center">
+                        <p class="text-white text-xl font-bold tracking-wider text-center">10,000 PHP VIP Seat & VIP Dinner</p>
                         <p class="text-yellow-200 text-sm italic font-black uppercase tracking-widest text-center">
                             at Mactan Newtown Beach (19:00-22:00)
                         </p>
-                        <div class="pt-4 border-t border-white/10 mt-4 text-center text-center">
+                        <div class="pt-4 border-t border-white/10 mt-4 text-center">
                             <p class="text-gray-300 text-[13px] leading-relaxed max-w-sm text-center">
-                                <i data-lucide="sparkles" class="inline-block w-3 h-3 mr-2 text-gold text-center text-center"></i>
+                                <i data-lucide="sparkles" class="inline-block w-3 h-3 mr-2 text-gold"></i>
                                 Exclusive networking opportunity with VIPs from Japan.
                             </p>
                         </div>
@@ -491,23 +505,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-24 px-10 border-t border-pink-100 bg-white/40 backdrop-blur mt-48 text-center text-center text-center text-center">
-        <div class="max-w-7xl mx-auto flex flex-col items-center gap-16 text-center text-center text-center text-center text-center">
+    <footer class="py-24 px-10 border-t border-pink-100 bg-white/40 backdrop-blur mt-48 text-center text-center text-center">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-16 text-center text-center">
             
-            <!-- Artist Lineup Link -->
-            <div class="flex flex-col items-center gap-4 text-center text-center text-center">
+            <!-- Artist Lineup Link (Gold Gradient) -->
+            <div class="flex flex-col items-center gap-4 text-center">
                 <span class="text-[10px] font-black uppercase tracking-[0.3em] text-pink-400 text-center">Complete Festival Information</span>
-                <a href="https://echoes-of-light.jp/sakurabloom2026" target="_blank" class="text-lg font-black gold-gradient hover:opacity-80 transition-all underline decoration-gold decoration-2 underline-offset-8 text-center text-center text-center">
+                <a href="https://echoes-of-light.jp/sakurabloom2026" target="_blank" class="text-lg font-black gold-gradient hover:opacity-80 transition-all underline decoration-gold decoration-2 underline-offset-8 text-center">
                     SAKURA BLOOM 2026 Full Event Artist Lineup
                 </a>
             </div>
 
             <!-- Follow and Contact Section -->
-            <div class="flex flex-col items-center gap-6 text-center text-center text-center text-center">
-                <div class="flex flex-col items-center gap-4 text-center text-center text-center text-center text-center text-center">
-                    <span class="text-[12px] font-black uppercase tracking-[0.4em] text-pink-500 text-center text-center text-center text-center">Follow and Contact</span>
-                    <p class="text-sm font-bold text-gray-600 uppercase tracking-widest mb-1 text-center text-center text-center">Flower Angel</p>
-                    <div class="flex flex-wrap gap-6 justify-center text-center text-center text-center text-center text-center text-center">
+            <div class="flex flex-col items-center gap-6">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <span class="text-[12px] font-black uppercase tracking-[0.4em] text-pink-500 text-center">Follow and Contact</span>
+                    <p class="text-sm font-bold text-gray-600 uppercase tracking-widest mb-1 text-center">Flower Angel</p>
+                    <div class="flex flex-wrap gap-6 justify-center text-center">
                         <a href="https://www.youtube.com/@flower_angel_japan" target="_blank" class="sns-text-link">YouTube</a>
                         <a href="https://www.facebook.com/profile.php?id=61584970334658" target="_blank" class="sns-text-link">Facebook</a>
                         <a href="https://www.instagram.com/flower_angel_japan/" target="_blank" class="sns-text-link">Instagram</a>
@@ -517,12 +531,12 @@
             </div>
 
             <!-- Project Identity -->
-            <div class="text-center flex flex-col gap-3 text-center text-center text-center text-center text-center text-center text-center text-center">
-                <span class="text-3xl font-black uppercase tracking-[0.4em] sakura-gradient text-center text-center text-center">SAKURA BLOOM 2026</span>
+            <div class="text-center flex flex-col gap-3 text-center text-center">
+                <span class="text-3xl font-black uppercase tracking-[0.4em] sakura-gradient text-center">SAKURA BLOOM 2026</span>
                 <span class="text-xl font-bold gold-gradient italic uppercase tracking-[0.3em] text-center text-center">- A Story of Hope -</span>
-                <span class="text-xs text-gray-400 uppercase tracking-widest font-light mt-4 text-center text-center text-center text-center text-center">The Mactan Newtown, Cebu, Philippines</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-light mt-4 text-center">The Mactan Newtown, Cebu, Philippines</span>
                 
-                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold opacity-70 mt-10 text-center text-center text-center text-center text-center">
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold opacity-70 mt-10 text-center text-center">
                     © 2026 Echoes of Light Produced by Flower Angel
                 </p>
             </div>
