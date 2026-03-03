@@ -28,6 +28,7 @@
         .font-script { font-family: 'Italianno', cursive; }
         .font-cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.1em; }
         .audio-btn:active { transform: scale(0.95); }
+        .audio-error { color: #ef4444; font-size: 8px; margin-top: 2px; display: none; }
     </style>
 </head>
 <body class="font-sans text-gray-200 leading-relaxed antialiased relative">
@@ -37,13 +38,11 @@
     <!-- Header / Engagement Bar -->
     <header class="sticky top-0 z-50 bg-black/95 border-b border-white/5 w-full">
         <nav class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between relative">
-            <!-- Branding Font: Italianno (font-script) -->
             <div class="flex items-center gap-3 flex-shrink-0 z-20">
                 <span class="text-yellow-400 text-xl leading-none">✦</span>
                 <span class="text-3xl font-script font-normal tracking-wide text-white leading-none pt-1">Echoes of Light</span>
             </div>
             
-            <!-- Navigation Links -->
             <div class="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
                 <a href="#home" data-target="home" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Home</a>
                 <a href="#projects" data-target="projects" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Projects</a>
@@ -70,7 +69,6 @@
                         Flower Angel
                     </div>
                 </div>
-                <!-- Main Branding -->
                 <h1 class="text-5xl md:text-7xl font-cinzel font-thin text-white tracking-tight mb-8 text-glow opacity-95">
                     Echoes <span class="text-gray-500 font-thin italic tracking-normal mx-1">of</span> Light
                 </h1>
@@ -111,7 +109,7 @@
             </div>
         </section>
 
-        <!-- Philosophy Section (UPDATED IMAGE SRC) -->
+        <!-- Philosophy Section -->
         <section id="philosophy" class="py-32 relative">
             <div class="max-w-3xl mx-auto px-6 text-center">
                 <h2 class="text-2xl md:text-3xl font-cinzel font-thin text-white mb-16 tracking-[0.15em] text-glow uppercase">Harmony from Japan</h2>
@@ -129,20 +127,17 @@
                             
                             <h3 class="text-2xl text-yellow-400 font-cinzel font-thin tracking-widest block mb-6 uppercase">Flower Angel</h3>
                             
-                            <!-- Flower Angel Philosophy -->
                             <p class="text-gray-300 mb-10 text-sm leading-relaxed font-light text-left md:text-center">
-                                Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the <strong class="text-white">"circulation of the light of peace"</strong>: drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally. This powerful cultural exchange ensures our vision transcends borders and creates lasting impact.
+                                Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the <strong class="text-white font-medium text-glow">"circulation of the light of peace"</strong>: drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally. This powerful cultural exchange ensures our vision transcends borders and creates lasting impact.
                             </p>
                             
                             <div class="text-center pt-8 border-t border-white/10 flex flex-col items-center">
-                                <!-- IMAGE UPDATED: nobukopic.jpg -->
                                 <img src="nobukopic.jpg" alt="Nobuko Kotoyori" class="w-24 h-24 object-cover rounded-lg border-2 border-yellow-500/70 mb-6 shadow-lg" onerror="this.src='https://placehold.co/120x120/222/FFF?text=Nobuko+Photo'">
                                 
                                 <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-medium mb-1 whitespace-nowrap">Producer / Japan Representative</p>
                                 <h4 class="text-xl font-cinzel font-thin text-white tracking-widest mb-4 uppercase">Nobuko Kotoyori</h4>
                                 
-                                <!-- Nobuko Kotoyori Introduction -->
-                                <p class="text-gray-400 text-xs leading-relaxed font-light max-w-lg">
+                                <p class="text-gray-400 text-xs leading-relaxed font-light max-w-lg text-center">
                                     Nobuko Kotoyori, a seasoned producer based in Japan, guides the project with a philosophy centered on global harmony and equity. Her dedication ensures the 'Echoes of Light' vision translates into meaningful artistic and humanitarian outcomes, bridging cultures and funding essential phases like the Africa expedition and global sales preparation.
                                 </p>
                             </div>
@@ -188,18 +183,18 @@
                                     <div>
                                         <p class="text-[10px] font-bold uppercase tracking-wide text-gray-300 mb-2">Key Achievements & Awards</p>
                                         <ul class="text-gray-500 text-[10px] space-y-1 font-light leading-relaxed">
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2011 <strong class="text-gray-400">Record of the Future</strong> (Dir/Screenwriter/DOP) Torino Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">Bagmati River</strong> Best Pitch Award</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">Fragile</strong> (DOP) Tokyo International Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2018 <strong class="text-gray-400">The Sower</strong> (DOP/Lead Actor) Thessaloniki International Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2019 <strong class="text-gray-400">Noise</strong> (DOP/Actor) Raindance Film Festival / Montreal World Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2019 <strong class="text-gray-400">Passage of Life</strong> (DOP) Tokyo International Film Festival / Best Picture Award</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2020 <strong class="text-gray-400">HAMMOCK</strong> (Dir/Screenwriter/DOP) Osaka Asian Film Festival / Best Short Film Award</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2021 <strong class="text-gray-400">Suzuki-san</strong> (DOP) Tokyo International Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2022 <strong class="text-gray-400">Along the Sea</strong> (DOP) San Sebastián Int'l Film Festival / Nagisa Oshima Award</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto Int'l Film Festival / Audience Award</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">Winny</strong> (Screenwriter/DOP) Shanghai International Film Festival</li>
-                                            <li><span class="text-yellow-700/60 mr-1">・</span>2023 <strong class="text-gray-400">The Road to Love</strong> (DOP) Osaka Asian Film Festival</li>
+                                            <li>・ 2011 <strong class="text-gray-400 font-medium">Record of the Future</strong> (Dir/Screenwriter/DOP) Torino Film Festival</li>
+                                            <li>・ 2018 <strong class="text-gray-400 font-medium">Bagmati River</strong> Best Pitch Award</li>
+                                            <li>・ 2018 <strong class="text-gray-400 font-medium">Fragile</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li>・ 2018 <strong class="text-gray-400 font-medium">The Sower</strong> (DOP/Lead Actor) Thessaloniki International Film Festival</li>
+                                            <li>・ 2019 <strong class="text-gray-400 font-medium">Noise</strong> (DOP/Actor) Raindance Film Festival / Montreal World Film Festival</li>
+                                            <li>・ 2019 <strong class="text-gray-400 font-medium">Passage of Life</strong> (DOP) Tokyo International Film Festival / Best Picture Award</li>
+                                            <li>・ 2020 <strong class="text-gray-400 font-medium">HAMMOCK</strong> (Dir/Screenwriter/DOP) Osaka Asian Film Festival / Best Short Film Award</li>
+                                            <li>・ 2021 <strong class="text-gray-400 font-medium">Suzuki-san</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li>・ 2022 <strong class="text-gray-400 font-medium">Along the Sea</strong> (DOP) San Sebastián Int'l Film Festival / Nagisa Oshima Award</li>
+                                            <li>・ 2023 <strong class="text-gray-400 font-medium">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto Int'l Film Festival / Audience Award</li>
+                                            <li>・ 2023 <strong class="text-gray-400 font-medium">Winny</strong> (Screenwriter/DOP) Shanghai International Film Festival</li>
+                                            <li>・ 2023 <strong class="text-gray-400 font-medium">The Road to Love</strong> (DOP) Osaka Asian Film Festival</li>
                                         </ul>
                                     </div>
                                     
@@ -236,9 +231,9 @@
                             </div>
 
                             <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6">
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Feature Documentary</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Social Justice</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Total Budget: $600k</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Feature Documentary</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Social Justice</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Total Budget: $600k</span>
                             </div>
                         </div>
                     </div>
@@ -294,6 +289,7 @@
                                                         <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden relative" id="progress-container-${t.id}">
                                                             <div class="bg-yellow-500 h-full w-0 absolute top-0 left-0" id="progress-bar-${t.id}"></div>
                                                         </div>
+                                                        <div id="audio-error-${t.id}" class="audio-error">File not found. Please check URL.</div>
                                                     </div>
                                                 </div>
                                                 <audio id="audio-track-${t.id}" src="${t.id}.mp3" preload="metadata"></audio>
@@ -304,7 +300,9 @@
                             </div>
 
                             <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6 mt-8">
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Music Humanity Global Movement</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Music</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Humanity</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Global Movement</span>
                                 <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Harmony</span>
                             </div>
                         </div>
@@ -313,7 +311,7 @@
             </div>
         </section>
 
-        <!-- Roadmap & Allocation Section -->
+        <!-- Roadmap & Allocation Section (UPDATED: Refined Content) -->
         <section id="support" class="py-32 bg-black relative border-t border-white/5">
             <div class="max-w-5xl mx-auto px-6 text-center">
                 <div class="mb-16">
@@ -326,25 +324,29 @@
                         <p class="text-white font-cinzel font-thin text-2xl tracking-wider">$100,000 <span class="text-xs text-gray-600">USD</span></p>
                     </div>
                     <div class="grid md:grid-cols-4 gap-8 text-xs text-left">
+                        <!-- Phase 01: Event Management -->
                         <div class="border-l border-blue-500/30 pl-4">
                             <span class="text-blue-500/80 font-mono text-xs block mb-1">01</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Africa Expedition</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Harmony Recording & Documentary filming</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Event & Concert Management</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Production of "SAKURA BLOOM 2026" & "A Story of Hope" Live Concerts.</p>
                         </div>
+                        <!-- Phase 02: Philippines Production -->
                         <div class="border-l border-yellow-500/30 pl-4">
                             <span class="text-yellow-500/80 font-mono text-xs block mb-1">02</span>
                             <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Philippines Production</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">"A Sacred Lie" Pre-production & Making-of</p>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">"A Sacred Lie" Pre-production & Making-of Filming.</p>
                         </div>
+                        <!-- Phase 03: Music & Creative Fusion (Refined) -->
                         <div class="border-l border-gray-500/30 pl-4">
                             <span class="text-gray-500/80 font-mono text-xs block mb-1">03</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Music & Editing</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Orchestration & Promotional content editing</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Harmonic Orchestration & Media Alchemy</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Refining the "Sound of Prayer" and crafting visionary global narratives.</p>
                         </div>
+                        <!-- Phase 04: World Sales (Refined West) -->
                         <div class="border-l border-yellow-700/30 pl-4">
                             <span class="text-yellow-700/80 font-mono text-xs block mb-1">04</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">World Sales</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Global distribution across Japan, ASEAN, Asia, and West</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Global Distribution & Strategy</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Expanding influence across Japan, ASEAN, Asia, North America, and Europe.</p>
                         </div>
                     </div>
                 </div>
@@ -376,7 +378,7 @@
                             <li>✦ Name mentioned in Feature Documentary End Credits</li>
                             <li>✦ Short Thank You Message & Song Video Gift from Harmony</li>
                         </ul>
-                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60">BECOME A SUPPORTER</div>
+                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60 font-light">BECOME A SUPPORTER</div>
                     </div>
                     <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 card-hover flex flex-col h-auto">
                         <h3 class="text-base font-light text-gray-400 tracking-widest uppercase">MOVEMENT SUPPORTER</h3>
@@ -386,7 +388,7 @@
                             <li>✦ Opportunity to get involved with the Promotional Video Making process</li>
                             <li>✦ Regular digital updates on project milestones</li>
                         </ul>
-                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60">AMPLIFY THE ECHOES</div>
+                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60 font-light">AMPLIFY THE ECHOES</div>
                     </div>
                     <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 md:-translate-y-6 shadow-2xl flex flex-col">
                         <h3 class="text-lg font-light text-white tracking-widest uppercase flex items-center gap-3">
@@ -399,7 +401,7 @@
                             <li>✦ Invitation to VIP Premiere Screenings (Tokyo or ASEAN)</li>
                             <li>✦ Exclusive "Making-of" Photobook (Digital Copy)</li>
                         </ul>
-                        <div class="w-full mt-10 py-4 border border-white/20 text-white font-bold text-xs tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg">BECOME A GUARDIAN</div>
+                        <div class="w-full mt-10 py-4 border border-white/20 text-white font-bold text-xs tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg font-light">BECOME A GUARDIAN</div>
                     </div>
                 </div>
 
@@ -409,28 +411,28 @@
                         <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
                         <h2 class="text-2xl font-cinzel font-thin text-white mt-6 tracking-wide uppercase">Create a Legacy</h2>
                     </div>
-                    <div class="grid md:grid-cols-3 gap-8">
+                    <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
                         <!-- Storyteller ($30k) -->
                         <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 card-hover flex flex-col">
                             <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Storyteller</h3>
-                            <p class="text-2xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-2xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
                             <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
-                                We will produce a <strong class="text-white">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
+                                We will produce a <strong class="text-white font-medium">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
                             </p>
                             <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
                                 <li>✦ A Short Documentary Production</li>
                                 <li>✦ All "Founding Guardian" Benefits</li>
                                 <li>✦ Inclusion in Humanitarian Economy Partner Directory</li>
                             </ul>
-                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60">TELL YOUR STORY</div>
+                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 font-light">TELL YOUR STORY</div>
                         </div>
                         
                         <!-- Legacy Partner ($50k) -->
                         <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 card-hover flex flex-col">
                             <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Legacy Partner</h3>
-                            <p class="text-2xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-2xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
                             <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
-                                A <strong class="text-white">30min+ Documentary</strong> preserving your achievements and vision for future generations.
+                                A <strong class="text-white font-medium">30min+ Documentary</strong> preserving your achievements and vision for future generations.
                             </p>
                             <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
                                 <li>✦ A 30min+ Documentary Production</li>
@@ -438,24 +440,24 @@
                                 <li>✦ "Legacy Partner" Credit in Documentary</li>
                                 <li>✦ Full Documentary Production Rights</li>
                             </ul>
-                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60">BUILD YOUR LEGACY</div>
+                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 font-light">BUILD YOUR LEGACY</div>
                         </div>
                         
                         <!-- Executive Guardian ($100k) -->
                         <div class="bg-gradient-to-b from-yellow-900/20 to-black p-10 rounded-sm border border-yellow-500/40 card-hover flex flex-col">
-                            <h3 class="text-base text-yellow-400 tracking-widest uppercase mb-2 font-light flex items-center gap-2">
+                            <h3 class="text-base text-yellow-400 tracking-widest uppercase mb-2 font-light flex items-center justify-center md:justify-start gap-2">
                                 <span class="text-sm">♛</span> Executive Guardian
                             </h3>
-                            <p class="text-3xl font-light text-white mt-6">$100,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-3xl font-light text-white mt-6">$100,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
                             <p class="text-[11px] text-gray-200 leading-relaxed mt-4 mb-6 font-light italic">
                                 The ultimate partnership. Become an integral part of the masterpiece's creation.
                             </p>
                             <ul class="space-y-4 text-[10px] text-gray-300 font-light mb-8">
-                                <li>✦ <strong class="text-white">"Executive Co-Producer" Credit</strong> in Feature Film & Documentary</li>
+                                <li>✦ <strong class="text-white font-medium">"Executive Co-Producer" Credit</strong> in Feature Film & Documentary</li>
                                 <li>✦ Full Documentary Production Rights (Includes Legacy Partner benefits)</li>
                                 <li>✦ 1-Year Flower Angel Production Partnership (Includes Global Strategy)</li>
                             </ul>
-                            <div class="w-full mt-auto py-4 border border-yellow-500/40 text-yellow-500 font-bold text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg">LEAD THE MOVEMENT</div>
+                            <div class="w-full mt-auto py-4 border border-yellow-500/40 text-yellow-500 font-bold text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg font-light">LEAD THE MOVEMENT</div>
                         </div>
                     </div>
                 </div>
@@ -485,12 +487,11 @@
             <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
                 <div class="flex flex-col items-center gap-1 mb-12">
                     <span class="text-[10px] text-gray-500 uppercase tracking-[0.25em]">Produced by</span>
-                    <!-- Footer font matches header script style (Italianno) -->
-                    <div class="font-script text-5xl text-yellow-400 drop-shadow-lg tracking-widest pt-2">Flower Angel</div>
+                    <div class="font-script text-5xl text-yellow-400 drop-shadow-lg tracking-widest pt-2 uppercase">Flower Angel</div>
                 </div>
                 <h3 class="text-3xl font-cinzel font-thin text-white mb-12 tracking-widest uppercase">Nobuko Kotoyori</h3>
                 
-                <div class="max-w-xs mx-auto space-y-4 mb-16">
+                <div class="max-w-xs mx-auto space-y-4 mb-16 text-left">
                     <script>
                         const footerTracks = [
                             {id: 'nobukoarigato', title: 'Nobuko Arigato'},
@@ -509,9 +510,10 @@
                                             <div class="w-full bg-white/10 h-[1.5px] mt-2 relative" id="progress-container-${t.id}">
                                                 <div class="bg-yellow-500 h-full w-0 absolute" id="progress-bar-${t.id}"></div>
                                             </div>
+                                            <div id="audio-error-${t.id}" class="audio-error">File not found.</div>
                                         </div>
                                     </div>
-                                    <audio id="audio-track-${t.id}" src="${t.id === 'nobukoarigatotrumpet' ? t.id + '.m4a' : t.id + '.mp3'}" preload="metadata"></audio>
+                                    <audio id="audio-track-${t.id}" src="${t.id}.mp3" preload="metadata"></audio>
                                 </div>
                             `);
                         });
@@ -520,7 +522,7 @@
 
                 <div class="flex justify-center gap-10 text-gray-400 text-lg mb-16">
                     <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/nobuko.kotoyori-63889129/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-instagram"></i></a>
                 </div>
                 <p class="text-gray-800 text-[10px] tracking-widest uppercase">© 2025 Flower Angel / Echoes of Light Project</p>
@@ -529,7 +531,10 @@
     </main>
 
     <script>
+        const BASE_AUDIO_URL = ""; 
+
         function formatTime(seconds) {
+            if (!seconds || isNaN(seconds)) return "0:00";
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
@@ -541,6 +546,7 @@
             const icon = document.getElementById(`audio-icon-${id}`);
             const progress = document.getElementById(`progress-bar-${id}`);
             const container = document.getElementById(`progress-container-${id}`);
+            const errorMsg = document.getElementById(`audio-error-${id}`);
 
             if (!audio || !btn) return;
 
@@ -552,8 +558,17 @@
                         const otherIcon = document.getElementById(`audio-icon-${otherId}`);
                         if(otherIcon) otherIcon.classList.replace('fa-pause', 'fa-play');
                     });
-                    audio.play();
-                    icon.classList.replace('fa-play', 'fa-pause');
+                    
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            icon.classList.replace('fa-play', 'fa-pause');
+                            if(errorMsg) errorMsg.style.display = 'none';
+                        }).catch(error => {
+                            console.error("Audio play failed:", error);
+                            if(errorMsg) errorMsg.style.display = 'block';
+                        });
+                    }
                 } else {
                     audio.pause();
                     icon.classList.replace('fa-pause', 'fa-play');
@@ -582,9 +597,8 @@
                 if(progress) progress.style.width = '0%';
             });
             
-            audio.addEventListener('loadedmetadata', () => {
-                const display = document.getElementById(`time-display-${id}`);
-                if(display) display.textContent = formatTime(audio.duration);
+            audio.addEventListener('error', () => {
+                if(errorMsg) errorMsg.style.display = 'block';
             });
         };
 
