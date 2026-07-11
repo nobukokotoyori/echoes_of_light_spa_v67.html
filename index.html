@@ -28,29 +28,26 @@
         .font-script { font-family: 'Italianno', cursive; }
         .font-cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.1em; }
         .audio-btn:active { transform: scale(0.95); }
-        .audio-error { color: #ef4444; font-size: 8px; margin-top: 2px; display: none; }
     </style>
 </head>
 <body class="font-sans text-gray-200 leading-relaxed antialiased relative">
 
     <div class="ambient-light"></div>
 
-    <!-- Header / Engagement Bar -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 bg-black/95 border-b border-white/5 w-full">
-        <nav class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between relative">
-            <div class="flex items-center gap-3 flex-shrink-0 z-20">
-                <span class="text-yellow-400 text-xl leading-none">✦</span>
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <span class="text-yellow-400 text-2xl leading-none transform translate-y-[-1px]">✦</span>
                 <span class="text-3xl font-script font-normal tracking-wide text-white leading-none pt-1">Echoes of Light</span>
             </div>
-            
             <div class="hidden md:flex items-center gap-10 absolute left-1/2 transform -translate-x-1/2">
-                <a href="#home" data-target="home" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Home</a>
-                <a href="#projects" data-target="projects" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Projects</a>
-                <a href="#tiers" data-target="tiers" class="text-xs text-gray-400 hover:text-white tracking-[0.3em] transition-colors duration-200 uppercase font-light">Energy Flow</a>
+                <a href="#home" data-target="home" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">HOME</a>
+                <a href="#projects" data-target="projects" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">PROJECTS</a>
+                <a href="#tiers" data-target="tiers" class="text-sm text-gray-400 hover:text-white tracking-widest transition-colors duration-200">ENERGY FLOW</a>
             </div>
-            
-            <div class="flex items-center z-20">
-                <a href="#payment" data-target="payment" class="hidden md:inline-block px-6 py-2.5 bg-[#222]/60 hover:bg-[#333] text-white text-[10px] font-light rounded-full border border-white/10 transition-all duration-300 tracking-[0.3em] uppercase">
+            <div class="flex items-center">
+                <a href="#payment" data-target="payment" class="hidden md:inline-block px-6 py-2.5 bg-[#222] hover:bg-[#333] text-white text-sm font-normal rounded-full border border-white/10 transition-all duration-300 tracking-wide uppercase">
                     Fuel the Light
                 </a>
             </div>
@@ -78,41 +75,21 @@
                 </p>
                 <div class="mt-16 flex flex-col md:flex-row gap-6 justify-center items-center">
                     <a href="#philosophy" data-target="philosophy" class="group bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-200 transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)]">
-                        <span class="tracking-wider text-sm font-light uppercase">Read the Vision</span>
+                        <span class="tracking-wider text-sm">Read the Vision</span>
                         <span class="group-hover:translate-x-1 transition-transform">→</span>
                     </a>
-                    <a href="#tiers" data-target="tiers" class="text-gray-400 hover:text-white text-xs tracking-widest border-b border-transparent hover:border-white/50 pb-1 transition-all duration-300 uppercase font-light">
+                    <a href="#tiers" data-target="tiers" class="text-gray-400 hover:text-white text-sm tracking-widest border-b border-transparent hover:border-white/50 pb-1 transition-all duration-300">
                         Light the Echoes
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- LATEST UPDATES -->
-        <section id="updates" class="py-16 bg-white/[0.02] border-y border-white/5">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row gap-12 items-center justify-between">
-                    <div class="flex-1 space-y-5 text-center md:text-left">
-                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold">Upcoming Event</span>
-                        <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white tracking-[0.1em] leading-tight">SAKURA BLOOM 2026</h2>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed max-w-md mx-auto md:mx-0">March 21-28, 2026. A celebration of renewal and global harmony.</p>
-                        <a href="https://echoes-of-light.jp/sakurabloom2026" target="_blank" class="inline-block text-[10px] text-yellow-500 hover:text-white border-b border-yellow-500/30 transition-all uppercase tracking-[0.3em] pb-1">Visit Event Page</a>
-                    </div>
-                    <div class="w-px h-24 bg-white/10 hidden md:block"></div>
-                    <div class="flex-1 space-y-5 text-center md:text-left">
-                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] font-bold">Live Performance</span>
-                        <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white tracking-[0.1em] leading-tight uppercase">A Story of Hope Concert</h2>
-                        <p class="text-gray-400 text-sm font-light">17:00-19:00 March 27, 2026 @The Mactan Newtown</p>
-                        <a href="https://echoes-of-light.jp/a_story_of_hope" target="_blank" class="inline-block text-[10px] text-yellow-500 hover:text-white border-b border-yellow-500/30 transition-all uppercase tracking-[0.3em] pb-1">Concert Details</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Philosophy Section -->
-        <section id="philosophy" class="py-32 relative">
+        <section id="philosophy" class="py-32 border-t border-white/5 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
             <div class="max-w-3xl mx-auto px-6 text-center">
-                <h2 class="text-2xl md:text-3xl font-cinzel font-thin text-white mb-16 tracking-[0.15em] text-glow uppercase">Harmony from Japan</h2>
+                <h2 class="text-2xl md:text-3xl font-extralight text-white mb-16 tracking-[0.1em] text-glow">Harmony from Japan</h2>
                 <div class="space-y-12 text-base md:text-lg text-gray-400 leading-loose font-light">
                     <p>
                         In an era of division and isolation,<br>
@@ -120,25 +97,27 @@
                     </p>
                     <div class="py-12 relative">
                         <div class="absolute left-1/2 -translate-x-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent"></div>
-                        <div class="bg-black/60 border border-white/5 p-10 rounded-lg relative z-10 backdrop-blur-sm max-w-2xl mx-auto shadow-2xl">
+                        <div class="bg-black/60 border border-white/5 p-8 rounded-lg relative z-10 backdrop-blur-sm max-w-xl mx-auto shadow-2xl">
                             <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black p-2 border border-white/10 rounded-full">
                                 <svg class="w-3 h-3 text-yellow-500/80" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" /></svg>
                             </div>
-                            
-                            <!-- Header matches font-script for Flower Angel -->
-                            <h3 class="text-4xl text-yellow-400 font-script font-normal tracking-widest block mb-6">Flower Angel</h3>
-                            
-                            <p class="text-gray-300 mb-10 text-sm leading-relaxed font-light text-left md:text-center">
-                                Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the <strong class="text-white font-medium text-glow">"circulation of the light of peace"</strong>: drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally. This powerful cultural exchange ensures our vision transcends borders and creates lasting impact.
+                            <p class="text-gray-300 mb-8 text-lg font-light leading-relaxed">
+                                <span class="text-2xl text-yellow-400/90 font-normal tracking-wide block mb-4">Flower Angel</span>
+                                We have guided "Angels" destined to bloom billions of flowers.
                             </p>
-                            
-                            <div class="text-center pt-8 border-t border-white/10 flex flex-col items-center">
-                                <img src="nobukopic.jpg" alt="Nobuko Kotoyori" class="w-24 h-24 object-cover rounded-lg border-2 border-yellow-500/70 mb-6 shadow-lg" onerror="this.src='https://placehold.co/120x120/222/FFF?text=Nobuko+Photo'">
-                                
-                                <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-medium mb-1 whitespace-nowrap">Producer / Japan Representative</p>
-                                <h4 class="text-xl font-cinzel font-thin text-white tracking-widest mb-4 uppercase">Nobuko Kotoyori</h4>
-                                
-                                <p class="text-gray-400 text-xs leading-relaxed font-light max-w-lg text-center">
+                            <p class="text-gray-500 text-sm leading-relaxed tracking-wide uppercase mb-8">
+                                Upholding "World peace in equity",<br>
+                                we serve as a "Divine Guidance" from above,<br>
+                                to bring the flower of harmony to this world.
+                            </p>
+                            <div class="text-left pt-6 border-t border-white/10 flex flex-col items-center">
+                                <p class="text-gray-500 text-xs leading-relaxed font-light text-center mb-4">
+                                    Flower Angel is rooted in a history of successfully promoting Japanese companies and humanitarian efforts globally. We leverage this professional foundation to pursue the higher mission of the Echoes of Light project. Our new focus emphasizes the "circulation of the light of peace": drawing inspiration and harmony from the world to Japan, and subsequently radiating the unique Japanese spirit back out globally.
+                                </p>
+                                <img src="nobukopic.jpg" alt="Nobuko Kotoyori" class="w-24 h-24 object-cover rounded-lg border-2 border-yellow-500/70 mb-4 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/96x96/222/FFF?text=Nobuko+Photo'">
+                                <p class="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-medium mb-1 whitespace-nowrap">Producer / Japan Representative</p>
+                                <h4 class="text-lg font-light text-white tracking-widest mb-3">Nobuko Kotoyori</h4>
+                                <p class="text-gray-500 text-xs leading-relaxed font-light text-center mt-2">
                                     Nobuko Kotoyori, a seasoned producer based in Japan, guides the project with a philosophy centered on global harmony and equity. Her dedication ensures the 'Echoes of Light' vision translates into meaningful artistic and humanitarian outcomes, bridging cultures and funding essential phases like the Africa expedition and global sales preparation.
                                 </p>
                             </div>
@@ -148,61 +127,97 @@
             </div>
         </section>
 
+        <!-- ECHOES OF LIGHT (Core Concept Section) -->
+        <section id="about-project" class="py-24 bg-gradient-to-b from-black via-[#080810] to-black border-t border-white/5 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <span class="text-yellow-500 text-[10px] uppercase tracking-[0.35em] border border-yellow-500/20 px-4 py-1.5 rounded-full bg-yellow-950/20">
+                    The Sacred Essence
+                </span>
+                
+                <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white tracking-wider mt-8 mb-6 text-glow">
+                    Echoes of Light
+                </h2>
+                
+                <div class="space-y-6 text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-light">
+                    <p>
+                        <strong class="text-white font-medium">Echoes of Light</strong> is a divine peace movement that leverages the ultimate atmospheric elements of <span class="text-yellow-400/90 font-medium">Film & Visuals</span> and <span class="text-yellow-400/90 font-medium">Music (Sound)</span> to radiate the essence of hope and global unity. We believe that moving images carry raw light, and authentic human resonance carries raw sound, breaking through geopolitical division, deep isolation, and long-held silences.
+                    </p>
+                    <p>
+                        Our mission is to translate authentic human stories into majestic artistic artifacts, sending these vibrations to cross oceans, touch souls, and heal marginalized communities. We circulate the light of harmony from the world into Japan, and radiate the unique Japanese spirit of "Wa" (Harmony) back out to the world.
+                    </p>
+                </div>
+
+                <!-- SAKURA BLOOM 2026 Online Archive Integration -->
+                <div class="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 max-w-xl mx-auto backdrop-blur-sm">
+                    <span class="text-[10px] text-yellow-500 font-bold tracking-[0.2em] uppercase block mb-2">The SAKURA BLOOM 2026 Milestone</span>
+                    <p class="text-gray-400 text-xs leading-relaxed font-light mb-4">
+                        Even for those who could not journey to our live peace event in Mactan Newtown in person, we shared the experience by screening sacred visuals and playing healing melodies at the venue and online, allowing hearts to connect under the same light.
+                    </p>
+                    <a href="https://echoes-of-light.jp/sakurbloom2026" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 text-xs text-yellow-400 hover:text-yellow-300 font-medium tracking-wider transition-colors duration-300">
+                        <span><i class="fas fa-globe-asia mr-1"></i> SAKURA BLOOM 2026 Official Archive</span>
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
-        <section id="projects" class="py-32 bg-black/40 relative">
-            <div class="max-w-7xl mx-auto px-6">
+        <section id="projects" class="py-32 bg-black/40 relative border-t border-white/5">
+            <div class="max-w-5xl mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-3xl md:text-4xl font-cinzel font-thin text-white mb-4 text-glow uppercase">Featured Echoes</h2>
-                    <p class="text-gray-600 uppercase tracking-[0.2em] text-xs">The Two Pillars of Light</p>
+                    <h2 class="text-3xl md:text-4xl font-thin text-white mb-4 text-glow">Featured Echoes</h2>
+                    <p class="text-gray-600 uppercase tracking-[0.2em] text-xs">The Two Echoes of Light</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-16">
-                    <!-- Pillar A: Documentary Film -->
-                    <div class="flex flex-col">
+                <div class="space-y-32">
+                    
+                    <!-- Echo 1: Documentary Film -->
+                    <div class="flex flex-col max-w-4xl mx-auto">
                         <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
-                            <h3 class="text-xl font-cinzel font-thin text-white tracking-widest uppercase">DOCUMENTARY FILM</h3>
-                            <span class="text-xs text-gray-500 uppercase tracking-wider">Project 01</span>
+                            <h3 class="text-2xl font-light text-white tracking-widest uppercase">DOCUMENTARY FILM</h3>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Echo 01</span>
                         </div>
-                        <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative group">
+                        <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] mb-8 relative group w-full">
                             <iframe src="https://player.vimeo.com/video/1128199118?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="A Sacred Lie"></iframe>
                         </div>
-                        <div>
-                            <div class="flex flex-col items-start mb-2">
-                                <div class="text-[10px] text-yellow-200/80 bg-yellow-900/20 border border-yellow-500/20 px-3 py-1 rounded-full tracking-widest uppercase mb-2">
+                        <div class="space-y-6">
+                            <div class="flex flex-col items-start gap-2">
+                                <div class="text-[10px] text-yellow-200/80 bg-yellow-900/20 border border-yellow-500/20 px-3 py-1 rounded-full tracking-widest uppercase mb-1">
                                     Tokyo International Film Festival 2025
                                 </div>
-                                <h3 class="text-3xl font-cinzel font-thin text-white leading-tight">A Sacred Lie</h3>
+                                <h3 class="text-4xl font-extralight text-white leading-tight">A Sacred Lie</h3>
                             </div>
-                            <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+                            <p class="text-yellow-600 text-xs font-bold uppercase tracking-[0.2em] mb-4">
                                 A Film by <a href="https://k-zone.tokyo/" target="_blank" class="hover:text-yellow-400 border-b border-transparent hover:border-yellow-400 transition-colors duration-300">MR. KENTARO KISHI</a>
                             </p>
                             
-                            <div class="mb-6 border border-white/5 p-4 rounded-lg bg-gray-900/10">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3 tracking-[0.1em]">MR. KENTARO KISHI'S PROFILE</h4>
-                                <div class="space-y-4">
-                                    <p class="text-gray-400 text-[11px] leading-relaxed font-light"><strong class="text-white">Professional Profile:</strong><br>Kentaro Kishi is a Tokyo-based actor, cinematographer, screenwriter and director, actively working across film and theatre with experiencing shooting in all over the world.</p>
+                            <div class="border border-white/5 p-6 rounded-lg bg-gray-900/10">
+                                <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 tracking-[0.1em]">MR. KENTARO KISHI'S PROFILE</h4>
+                                <div class="space-y-6">
+                                    <p class="text-gray-400 text-sm leading-relaxed font-light"><strong class="text-white">Professional Profile:</strong><br>Kentaro Kishi is a Tokyo-based actor, cinematographer, screenwriter and director, actively working across film and theatre with experiencing shooting in all over the world.</p>
                                     <div>
-                                        <p class="text-[10px] font-bold uppercase tracking-wide text-gray-300 mb-2">Key Achievements & Awards</p>
-                                        <ul class="text-gray-500 text-[10px] space-y-1 font-light leading-relaxed">
-                                            <li>・ 2011 <strong class="text-gray-400 font-medium">Record of the Future</strong> (Dir/Screenwriter/DOP) Torino Film Festival</li>
-                                            <li>・ 2018 <strong class="text-gray-400 font-medium">Bagmati River</strong> Best Pitch Award</li>
-                                            <li>・ 2018 <strong class="text-gray-400 font-medium">Fragile</strong> (DOP) Tokyo International Film Festival</li>
-                                            <li>・ 2018 <strong class="text-gray-400 font-medium">The Sower</strong> (DOP/Lead Actor) Thessaloniki International Film Festival</li>
-                                            <li>・ 2019 <strong class="text-gray-400 font-medium">Noise</strong> (DOP/Actor) Raindance Film Festival / Montreal World Film Festival</li>
-                                            <li>・ 2019 <strong class="text-gray-400 font-medium">Passage of Life</strong> (DOP) Tokyo International Film Festival / Best Picture Award</li>
-                                            <li>・ 2020 <strong class="text-gray-400 font-medium">HAMMOCK</strong> (Dir/Screenwriter/DOP) Osaka Asian Film Festival / Best Short Film Award</li>
-                                            <li>・ 2021 <strong class="text-gray-400 font-medium">Suzuki-san</strong> (DOP) Tokyo International Film Festival</li>
-                                            <li>・ 2022 <strong class="text-gray-400 font-medium">Along the Sea</strong> (DOP) San Sebastián Int'l Film Festival / Nagisa Oshima Award</li>
-                                            <li>・ 2023 <strong class="text-gray-400 font-medium">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto Int'l Film Festival / Audience Award</li>
-                                            <li>・ 2023 <strong class="text-gray-400 font-medium">Winny</strong> (Screenwriter/DOP) Shanghai International Film Festival</li>
-                                            <li>・ 2023 <strong class="text-gray-400 font-medium">The Road to Love</strong> (DOP) Osaka Asian Film Festival</li>
+                                        <p class="text-xs font-bold uppercase tracking-wide text-gray-300 mb-3">Key Achievements & Awards</p>
+                                        <ul class="text-gray-400 text-xs space-y-2 font-light leading-relaxed">
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2011 <strong class="text-gray-300">Record of the Future</strong> (Dir/Screenwriter/DOP) Torino Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2018 <strong class="text-gray-300">Bagmati River</strong> Best Pitch Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2018 <strong class="text-gray-300">Fragile</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2018 <strong class="text-gray-300">The Sower</strong> (DOP/Lead Actor) Thessaloniki International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2019 <strong class="text-gray-300">Noise</strong> (DOP/Actor) Raindance Film Festival / Montreal World Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2019 <strong class="text-gray-300">Passage of Life</strong> (DOP) Tokyo International Film Festival / Best Picture Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2020 <strong class="text-gray-300">HAMMOCK</strong> (Dir/Screenwriter/DOP) Osaka Asian Film Festival / Best Short Film Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2021 <strong class="text-gray-300">Suzuki-san</strong> (DOP) Tokyo International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2022 <strong class="text-gray-300">Along the Sea</strong> (DOP) San Sebastián Int'l Film Festival / Nagisa Oshima Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2023 <strong class="text-gray-300">Detective Mariko and the Sorrowful Sky</strong> (DOP) Porto Int'l Film Festival / Audience Award</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2023 <strong class="text-gray-300">Winny</strong> (Screenwriter/DOP) Shanghai International Film Festival</li>
+                                            <li><span class="text-yellow-700/60 mr-1.5">・</span>2023 <strong class="text-gray-300">The Road to Love</strong> (DOP) Osaka Asian Film Festival</li>
                                         </ul>
                                     </div>
                                     
+                                    <!-- Recent Accolades -->
                                     <div class="mt-4 pt-4 border-t border-white/10">
-                                        <p class="text-[10px] font-bold uppercase tracking-widest text-yellow-500 mb-3">Recent Accolades (2025)</p>
+                                        <p class="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-3">Recent Accolades (2025)</p>
                                         <div class="space-y-4">
-                                            <div class="flex flex-col gap-1 text-[10px]">
+                                            <div class="flex flex-col gap-1 text-xs">
                                                 <span class="text-gray-200 font-medium leading-relaxed">Soundscape Association of Japan - Encouragement Award</span>
                                                 <p class="text-gray-500 leading-relaxed font-light italic">For the installation work "Listening to the Sound of Prayer" (祈りの音を聴く).</p>
                                                 <div class="flex gap-3 mt-1">
@@ -210,19 +225,19 @@
                                                     <a href="https://drive.google.com/file/d/1HY9PEfUDAFmCdRqCuHzVH_jnFTIp375c/view?usp=sharing" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30">Speech Video</a>
                                                 </div>
                                             </div>
-                                            <div class="flex flex-col gap-1 text-[10px]">
+                                            <div class="flex flex-col gap-1 text-xs">
                                                 <span class="text-gray-200 font-medium leading-relaxed">Asian TELEVISION AWARDS - Best Original Digital Drama Series</span>
                                                 <p class="text-gray-500 leading-relaxed font-light italic">"The Transparent Us" (透明なわたしたち), for which Mr. Kishi served as DOP, became the first Japanese production to win this top prize.</p>
-                                                <a href="https://www.cyberagent.co.jp/news/detail/id=32778" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30 w-fit">News Detail</a>
+                                                <a href="https://www.cyberagent.co.jp/news/detail/id=32778" target="_blank" class="text-yellow-700 hover:text-yellow-500 transition-colors border-b border-yellow-700/30">News Detail</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="bg-white/5 border border-white/10 p-5 rounded-lg mb-6 shadow-inner">
+                            <div class="bg-white/5 border border-white/10 p-6 rounded-lg mb-6 shadow-inner">
                                 <p class="text-yellow-400 text-xs font-bold uppercase tracking-wider mb-4">Message from the director, MR. KENTARO KISHI</p>
-                                <div class="text-gray-400 text-[11px] leading-relaxed space-y-4 font-light italic">
+                                <div class="text-gray-400 text-sm leading-relaxed space-y-4 font-light italic">
                                     <p>We can only see the world within the reach of light. And cinema, to me, is the act of quietly carrying light and sound into the dark— of making the voices within silence visible once more.</p>
                                     <p>Yet there are those who cannot receive that light, and those who cannot hear its sound. Each time I make a film, I find myself asking, How can I deliver light? How can I hand over sound? That question has shaped not only my work, but also my path—my way of learning how to reconnect with the world.</p>
                                     <p>Through film screenings and museum installations, I have explored different ways of sharing moving images. How can sound be conveyed to those who cannot hear it? How can images be shared with those who cannot see? Each small attempt has been a quiet experiment— a way for light and sound to cross time and space and reach another person’s heart.</p>
@@ -231,121 +246,191 @@
                                 </div>
                             </div>
 
+                            <a href="asacredlieen.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs text-gray-300 hover:text-white border border-white/10 bg-white/5 hover:bg-white/10 px-5 py-3 rounded transition-all duration-300 mb-8 uppercase tracking-widest">
+                                <i class="fas fa-file-pdf text-yellow-500"></i> View Film Pitch Deck (PDF)
+                            </a>
+
                             <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6">
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Feature Documentary</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Social Justice</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Total Budget: $600k</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Feature Documentary</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Social Justice</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5">Total Budget: $600k</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Pillar B: Music Movement -->
-                    <div class="flex flex-col">
+                    <!-- Echo 2: Music Movement -->
+                    <div class="flex flex-col max-w-4xl mx-auto">
                         <div class="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
-                            <h3 class="text-xl font-cinzel font-thin text-white tracking-widest uppercase">MUSIC MOVEMENT</h3>
-                            <span class="text-xs text-gray-500 uppercase tracking-wider">Project 02</span>
+                            <h3 class="text-2xl font-light text-white tracking-widest uppercase">MUSIC MOVEMENT</h3>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Echo 02</span>
                         </div>
-                        
-                        <!-- Recent Movement Videos -->
-                        <div class="space-y-6 mb-8">
-                            <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-2xl relative group">
-                                <iframe src="https://www.youtube.com/embed/2Yq0ycPNgdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mother's love by Harmony"></iframe>
-                            </div>
-                            <div class="bg-gray-900/30 aspect-video rounded overflow-hidden border border-white/5 shadow-2xl relative group">
-                                <iframe src="https://www.youtube.com/embed/65fbOndnbrE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Go Go Go.... by Harmony feat. Jowie"></iframe>
+
+                        <!-- Harmony Official Visual Integration (harmonypic.jpg) -->
+                        <div class="flex flex-col md:flex-row gap-6 mb-8 items-center bg-white/5 p-6 rounded-xl border border-white/10">
+                            <img src="harmonypic.jpg" alt="Harmony Artist Photo" class="w-32 h-32 object-cover rounded-xl border-2 border-yellow-500/50 shadow-2xl shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/300x300/222/FFF?text=Harmony'">
+                            <div>
+                                <h4 class="text-yellow-400 font-cinzel text-xl tracking-wider">Harmony</h4>
+                                <p class="text-gray-500 text-xs uppercase tracking-widest font-mono mt-1">Singer-Songwriter / Uganda</p>
+                                <p class="text-gray-300 text-sm mt-3 leading-relaxed font-light">
+                                    A divine, healing resonance connecting Uganda, ASEAN, and Japan. Rescued from extreme Middle Eastern airspace lockdowns into the peace-shining sanctuary of Cebu, Philippines.
+                                </p>
                             </div>
                         </div>
 
                         <div>
-                            <h3 class="text-2xl font-cinzel font-thin text-white leading-tight mb-2 uppercase">The Spirit of Harmony</h3>
+                            <h3 class="text-3xl font-extralight text-white leading-tight mb-2">The Spirit of Harmony</h3>
                             <p class="text-yellow-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Harmony Feat. Jowie & Global Artists</p>
                             
-                            <div class="space-y-3">
-                                <script>
-                                    const projectTracks = [
-                                        {id: 'motherslove', title: "Mother's love"},
-                                        {id: 'gogogo', title: "Go Go Go...."},
-                                        {id: 'oneday', title: 'One day'},
-                                        {id: 'thankyoujapan', title: 'Thank you Japan'},
-                                        {id: 'arigatojapan', title: 'Arigato Japan'},
-                                        {id: 'nihonarigato', title: 'Nihon Arigato'},
-                                        {id: 'molmolarigato', title: 'Mol Mol Arigato'},
-                                        {id: 'ilikethewayyouare', title: 'I like the way you are'},
-                                        {id: 'championsstory', title: "Champion's Story (feat. Jowie)"},
-                                        {id: 'arigatomrgofurusawa', title: 'Arigato Mr. Go Furusawa'},
-                                        {id: 'thankyouforlovingjapan', title: 'Thank you for loving Japan'}
-                                    ];
-                                    projectTracks.forEach(t => {
-                                        document.write(`
-                                            <div class="bg-white/5 border border-white/10 rounded-lg p-3 backdrop-blur-md transition-colors hover:bg-white/10">
-                                                <div class="flex items-center gap-4">
-                                                    <button id="audio-control-${t.id}" class="audio-btn w-10 h-10 flex-shrink-0 rounded-full bg-yellow-500 text-black flex items-center justify-center shadow-lg">
-                                                        <i class="fas fa-play ml-0.5" id="audio-icon-${t.id}"></i>
-                                                    </button>
-                                                    <div class="flex-grow min-w-0">
-                                                        <div class="flex justify-between items-center mb-1">
-                                                            <h4 class="text-white text-[11px] font-light truncate uppercase tracking-wider">${t.title}</h4>
-                                                            <span id="time-display-${t.id}" class="text-[9px] text-gray-500 font-mono">0:00</span>
-                                                        </div>
-                                                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden relative" id="progress-container-${t.id}">
-                                                            <div class="bg-yellow-500 h-full w-0 absolute top-0 left-0" id="progress-bar-${t.id}"></div>
-                                                        </div>
-                                                        <div id="audio-error-${t.id}" class="audio-error">File not found. Please check URL.</div>
-                                                    </div>
-                                                </div>
-                                                <audio id="audio-track-${t.id}" src="${t.id}.mp3" preload="metadata"></audio>
-                                            </div>
-                                        `);
-                                    });
-                                </script>
+                            <div class="text-gray-400 mb-8 font-light leading-relaxed text-sm space-y-4">
+                                <p>An inspiring story of Harmony, a singer-songwriter from Uganda who was once an orphan with no name, birthright, or social status. Rescued from absolute geopolitical crisis in the Middle East—where flight routes were entirely shut down by conflict—his resonance with our producer secured his miraculous VIP journey to Cebu, Philippines.</p>
+                                
+                                <!-- The July 7th Human Music Triumph over AI Scrutiny Story -->
+                                <div class="border border-yellow-500/30 bg-yellow-500/5 rounded-xl p-6 my-6">
+                                    <span class="text-xs text-yellow-400 font-bold uppercase tracking-widest block mb-2">The July 7th Miracle of Human Craftsmanship</span>
+                                    <p class="text-gray-300 leading-relaxed font-light text-sm">
+                                        Never knowing his biological birth date, a sacred promise bestowed upon him the date of <strong class="text-white">July 7th, Tanabata</strong> as his milestone birthday. Stepping into adulthood as he turned 20, his album faced rigorous vetting from global distributors enforcing extremely strict barriers against AI-generated music. 
+                                    </p>
+                                    <p class="text-gray-400 mt-3 italic text-sm leading-relaxed">
+                                        On July 7th, 2026, the album was officially cleared. Vetting confirmed that every key, voicing, synthesizer parameter, and intricate synth arrangement was meticulously crafted entirely from scratch—100% human-created, proving the divine nature of authentic human artistry. Having conquered the strict global regulatory system on his birthday, <strong>SAKURA BLOOM 2026</strong> launched globally on July 8th.
+                                    </p>
+                                </div>
+
+                                <p class="border-l-2 border-yellow-500/40 pl-4 italic">
+                                    This album serves as an ultimate "Thank You" to the partners at The Mactan Newtown charity event on March 27, 2026. This journey also includes the ahead-of-schedule release of <strong>"Mother's love" on June 22, 2026</strong>, tying his story of universal devotion with coral reef restoration aid in Bohol Island and local food relief initiatives (delivering over 10,000 bowls to underprivileged children).
+                                </p>
                             </div>
 
-                            <div class="flex flex-wrap items-center gap-3 mb-6 border-t border-white/5 pt-6 mt-8">
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Music</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Humanity</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Global Movement</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-400 border border-white/5 uppercase">Harmony</span>
+                            <!-- Promise of Monthly Sacred Launch -->
+                            <div class="border border-yellow-500/30 bg-yellow-500/5 rounded-xl p-6 mb-8 text-sm leading-relaxed font-light">
+                                <span class="text-xs text-yellow-400 font-bold uppercase tracking-widest block mb-2">A Sacred Promise: The 27th Monthly Flow</span>
+                                <p class="text-gray-300">
+                                    In honor of the historic concert milestone on March 27, we swear a sacred commitment: <strong class="text-white">On the 27th of every single month</strong> leading all the way up to SAKURA BLOOM 2027, we will launch a new divine spark. 
+                                </p>
+                                <p class="text-gray-400 mt-3 italic">
+                                    While the upcoming titles, projects, and special collaborations remain closely guarded treasures—to be disclosed only when the stars align—a continuous wave of resonance (be it new tracks, videos, or raw chronicles) will launch like clockwork on the 27th, circulating the light of peace across the globe.
+                                </p>
+                            </div>
+
+                            <!-- Videos Playlist -->
+                            <div class="space-y-8 mt-6">
+                                <!-- Video 1: Salamat Mactan Newtown -->
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-xs text-yellow-500 uppercase tracking-widest font-mono">01. Official Tribute Song</span>
+                                        <span class="text-[10px] text-gray-500">Mactan Newtown Event</span>
+                                    </div>
+                                    <div class="aspect-video w-full rounded-lg overflow-hidden border border-white/5 shadow-2xl relative mb-4">
+                                        <iframe src="https://www.youtube.com/embed/eJregMnqSuk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full" title="Salamat Mactan Newtown - Harmony"></iframe>
+                                    </div>
+                                    <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-2">Salamat Mactan Newtown</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">Vocal, Lyrics & Composed by Harmony. Born from the historic SAKURA BLOOM 2026 concert in Cebu, Philippines.</p>
+                                </div>
+
+                                <!-- Video 2: Mother's Love (Updated Description) -->
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-xs text-yellow-500 uppercase tracking-widest font-mono">02. Universal Prayer</span>
+                                        <span class="text-[10px] text-gray-500">Marine & Coral Restoration</span>
+                                    </div>
+                                    <div class="aspect-video w-full rounded-lg overflow-hidden border border-white/5 shadow-2xl relative mb-4">
+                                        <iframe src="https://www.youtube.com/embed/2Yq0ycPNgdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full" title="Mother's love - Harmony"></iframe>
+                                    </div>
+                                    <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-2">Mother's love</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">Released globally on June 22, 2026. This is the very first monumental song he created upon touching and experiencing a mother's warm love for the first time in his life, dedicated additionally to ocean restoration in Bohol Island.</p>
+                                </div>
+
+                                <!-- Video 3: Go Go Go... -->
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <span class="text-xs text-yellow-500 uppercase tracking-widest font-mono">03. Tribute to Hidden Heroes</span>
+                                        <span class="text-[10px] text-gray-500">Harmony feat. Jowie</span>
+                                    </div>
+                                    <div class="aspect-video w-full rounded-lg overflow-hidden border border-white/5 shadow-2xl relative mb-4">
+                                        <iframe src="https://www.youtube.com/embed/65fbOndnbrE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full" title="Go Go Go.... - Harmony feat. Jowie"></iframe>
+                                    </div>
+                                    <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-2">Go Go Go....</h4>
+                                    <p class="text-xs text-gray-500 leading-relaxed">Dedicated to the silent guardians of Japan who build invisible bridges connecting Japan and the world.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Roadmap & Allocation Section -->
+        <!-- Co-Creation & Energy Circulation Section -->
         <section id="support" class="py-32 bg-black relative border-t border-white/5">
-            <div class="max-w-5xl mx-auto px-6 text-center">
-                <div class="mb-16">
-                    <h2 class="text-xl md:text-2xl font-cinzel font-thin text-white mb-3 tracking-widest uppercase">Roadmap & Allocation</h2>
-                    <p class="text-gray-500 text-xs tracking-widest uppercase font-light">Realizing the Vision</p>
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-xl md:text-2xl font-cinzel text-white mb-3 tracking-widest uppercase">The Cycle of Energy Circulation</h2>
+                    <p class="text-gray-500 text-xs tracking-widest uppercase font-light">Fuelling Active Global Milestones</p>
                 </div>
-                <div class="bg-gradient-to-b from-gray-900/40 to-black border border-white/5 p-10 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm shadow-2xl">
+                <div class="bg-gradient-to-b from-gray-900/40 to-black border border-white/5 p-10 rounded-2xl max-w-4xl mx-auto backdrop-blur-sm shadow-2xl relative">
+                    <!-- Subtle decorative light dot -->
+                    <div class="absolute top-0 right-0 w-12 h-12 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+
+                    <!-- PHASE 1: ACTIVE ENERGY FLOW -->
                     <div class="text-center mb-10 border-b border-white/5 pb-8">
-                        <p class="text-gray-400 text-xs uppercase tracking-[0.2em] mb-2">Phase 1 Ignition Goal</p>
-                        <p class="text-white font-cinzel font-thin text-2xl tracking-wider">$100,000 <span class="text-xs text-gray-600">USD</span></p>
+                        <p class="text-yellow-500/80 text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">PHASE 1 ENERGY FLOW TARGET</p>
+                        <p class="text-white font-light text-2xl tracking-wider">$100,000 <span class="text-xs text-gray-600 font-mono">USD</span></p>
+                        <p class="text-gray-500 text-[10px] mt-2 max-w-lg mx-auto font-light leading-relaxed">
+                            Rather than simple fundraising, this volume represents the vital life-force currency needed to circulate our active, self-sustaining humanitarian structures back to communities.
+                        </p>
                     </div>
-                    <div class="grid md:grid-cols-4 gap-8 text-xs text-left">
+
+                    <!-- Phase 1 Grid Details -->
+                    <div class="grid md:grid-cols-4 gap-8 text-xs mb-12">
                         <div class="border-l border-blue-500/30 pl-4">
                             <span class="text-blue-500/80 font-mono text-xs block mb-1">01</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Event & Concert Management</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Production of "SAKURA BLOOM 2026" & "A Story of Hope" Live Concerts.</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Food Aid (10,000 Bowls)</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Expanding the active food-delivery infrastructure and kitchen resources for kids in marginalized areas.</p>
                         </div>
                         <div class="border-l border-yellow-500/30 pl-4">
                             <span class="text-yellow-500/80 font-mono text-xs block mb-1">02</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Philippines Production</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">"A Sacred Lie" Pre-production & Making-of Filming.</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Bohol Reef Restoration</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Funding the marine conservation efforts to rebuild ecosystems linked directly with the song "Mother's love".</p>
                         </div>
                         <div class="border-l border-gray-500/30 pl-4">
                             <span class="text-gray-500/80 font-mono text-xs block mb-1">03</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Harmonic Orchestration & Media Alchemy</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Mastering the "Echoes of Light" soundscape and weaving visionary global narratives of humanitarian peace.</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">Film & Media Production</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Securing post-production resources for Kishi's masterpiece to act as a profound cultural vehicle.</p>
                         </div>
                         <div class="border-l border-yellow-700/30 pl-4">
                             <span class="text-yellow-700/80 font-mono text-xs block mb-1">04</span>
-                            <h4 class="text-base text-gray-200 font-light tracking-wide uppercase">Global Distribution & Strategy</h4>
-                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Expanding influence across Japan, ASEAN, Asia, North America, and Europe.</p>
+                            <h4 class="text-base text-gray-200 font-light tracking-wide">SAKURA BLOOM 2027</h4>
+                            <p class="text-gray-600 text-[10px] mt-2 leading-relaxed">Laying the active ground frameworks for the next historic peace and art gathering in ASEAN, powered by the 27th Monthly Secret Launch.</p>
                         </div>
                     </div>
+
+                    <!-- Divider -->
+                    <div class="my-10 border-t border-white/10"></div>
+
+                    <!-- PHASE 2: CINEMATIC MASTERPIECE VISION -->
+                    <div class="text-center mb-8">
+                        <p class="text-yellow-500/80 text-[10px] uppercase tracking-[0.25em] mb-2 font-semibold">PHASE 2 NEXT HORIZON</p>
+                        <h3 class="text-2xl font-cinzel text-white font-thin tracking-wider">Feature Film Project: "One day - Dawn of Harmony"</h3>
+                        <p class="text-gray-500 text-[10px] uppercase tracking-widest mt-1 block font-light">映画「One day - Harmonyの夜明け - 」制作</p>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto bg-black/40 border border-white/5 p-6 rounded-xl text-center backdrop-blur-sm shadow-xl relative overflow-hidden">
+                        <!-- Tiny visual highlight -->
+                        <div class="absolute -top-12 -left-12 w-24 h-24 bg-yellow-500/5 rounded-full blur-xl pointer-events-none"></div>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed font-light mb-6">
+                            A highly anticipated cinematic undertaking engineered to project Harmony's miraculous reality onto the silver screen. Translating more than <strong class="text-yellow-400/90 font-medium">90% of his real-life biography</strong> into breathtaking visual art, this project exists as the ultimate culmination of the Echoes of Light movement.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 text-[10px] uppercase tracking-[0.15em] text-gray-500">
+                            <span class="px-4 py-1.5 bg-white/5 rounded-md border border-white/5 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-500 rounded-full animate-pulse"></span>
+                                90%+ Authentic Journey
+                            </span>
+                            <span class="px-4 py-1.5 bg-white/5 rounded-md border border-white/5 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                                Format: Live-Action / Animation (Under Discussion)
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -354,7 +439,7 @@
         <section id="tiers" class="py-32 bg-black/80 relative border-t border-white/5">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
-                    <h2 class="text-2xl font-cinzel font-thin text-white mb-4 text-glow tracking-widest uppercase">Energy Flow</h2>
+                    <h2 class="text-2xl font-light text-white mb-4 text-glow tracking-widest">ENERGY FLOW</h2>
                     <p class="text-gray-500 text-xs tracking-widest uppercase">Become a First Believer</p>
                 </div>
                 
@@ -366,95 +451,81 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8 items-end mb-24">
-                    <!-- Standard Tiers -->
+                    <!-- Global Supporter -->
                     <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 card-hover flex flex-col h-auto">
                         <h3 class="text-base font-light text-gray-400 tracking-widest uppercase">Global Supporter</h3>
                         <p class="text-3xl font-light text-white mt-6">$500<span class="text-xs text-gray-600 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light leading-relaxed">
-                            <li>✦ Electronic Thank you Letter</li>
-                            <li>✦ Name mentioned in Feature Documentary End Credits</li>
-                            <li>✦ Short Thank You Message & Song Video Gift from Harmony</li>
+                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light font-sans">
+                            <li>✦ Thank you Letter</li>
                         </ul>
-                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60 font-light tracking-widest">BECOME A SUPPORTER</div>
+                        <!-- MAILTO FOR GLOBAL SUPPORTER -->
+                        <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Global Supporter ($500)&body=Hello Nobuko,%0D%0A%0D%0AI would like to support the Echoes of Light project as a Global Supporter ($500 USD~). Please provide me with the transfer details.%0D%0A%0D%0ABest regards," class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase text-center rounded-full">BECOME A SUPPORTER</a>
                     </div>
+                    <!-- Movement Supporter -->
                     <div class="bg-gray-900/20 p-10 rounded-sm border border-white/5 card-hover flex flex-col h-auto">
                         <h3 class="text-base font-light text-gray-400 tracking-widest uppercase">MOVEMENT SUPPORTER</h3>
                         <p class="text-3xl font-light text-white mt-6">$3,000<span class="text-xs text-gray-600 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light leading-relaxed">
-                            <li>✦ Company Logo or Individual Name in Documentary End Credits</li>
-                            <li>✦ Opportunity to get involved with the Promotional Video Making process</li>
-                            <li>✦ Regular digital updates on project milestones</li>
+                        <ul class="mt-10 space-y-4 text-[11px] text-gray-500 flex-grow font-light">
+                            <li>✦ Logo / Name in End Credits</li>
+                            <li>✦ Involved with Promo Video Making process</li>
                         </ul>
-                        <div class="w-full mt-10 py-3 border border-white/10 text-gray-400 text-xs tracking-widest uppercase text-center rounded-full opacity-60 font-light tracking-widest">AMPLIFY THE ECHOES</div>
+                        <!-- MAILTO FOR MOVEMENT SUPPORTER -->
+                        <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Movement Supporter ($3,000)&body=Hello Nobuko,%0D%0A%0D%0AI would like to support the Echoes of Light project as a Movement Supporter ($3,000 USD~). Please provide me with the transfer details.%0D%0A%0D%0ABest regards," class="w-full mt-10 py-3 border border-white/10 text-gray-400 hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase text-center rounded-full">AMPLIFY THE ECHOES</a>
                     </div>
+                    <!-- Founding Guardian -->
                     <div class="bg-gradient-to-b from-white/10 to-black p-10 rounded-sm border border-yellow-500/20 md:-translate-y-6 shadow-2xl flex flex-col">
                         <h3 class="text-lg font-light text-white tracking-widest uppercase flex items-center gap-3">
                             <span class="text-yellow-400 text-sm">✦</span> Founding Guardian
                         </h3>
                         <p class="text-4xl font-light text-white mt-6">$10,000<span class="text-xs text-gray-500 ml-2">USD~</span></p>
-                        <ul class="mt-10 space-y-5 text-[11px] text-gray-300 flex-grow font-light leading-relaxed">
-                            <li class="text-yellow-400 font-bold italic">★ LIMITED: Original song gift from Harmony for the first 3 supporters!</li>
-                            <li>✦ Prominent "Founding Guardian" Credit in Feature Documentary</li>
-                            <li>✦ Invitation to VIP Premiere Screenings (Tokyo or ASEAN)</li>
-                            <li>✦ Exclusive "Making-of" Photobook (Digital Copy)</li>
+                        <ul class="mt-10 space-y-5 text-[11px] text-gray-300 flex-grow font-light">
+                            <li class="text-yellow-400 font-bold font-sans">★ LIMITED: Original song gift from Harmony for the first 3!</li>
+                            <li>✦ "Founding Guardian" Credit in Documentary</li>
                         </ul>
-                        <div class="w-full mt-10 py-4 border border-white/20 text-white font-bold text-xs tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg tracking-widest">BECOME A GUARDIAN</div>
+                        <!-- MAILTO FOR FOUNDING GUARDIAN -->
+                        <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Founding Guardian ($10,000)&body=Hello Nobuko,%0D%0A%0D%0AI would like to support the Echoes of Light project as a Founding Guardian ($10,000 USD~). Please provide me with the transfer details.%0D%0A%0D%0ABest regards," class="w-full mt-10 py-4 bg-white text-black font-bold text-xs tracking-widest uppercase text-center rounded-full shadow-xl">BECOME A GUARDIAN</a>
                     </div>
                 </div>
 
-                <!-- High Tiers ($30k - $100k) -->
+                <!-- Special High Tiers -->
                 <div class="mt-24">
                     <div class="text-center mb-16">
-                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.4em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
-                        <h2 class="text-2xl font-cinzel font-thin text-white mt-6 tracking-wide uppercase">Create a Legacy</h2>
+                        <span class="text-yellow-500 text-[10px] uppercase tracking-[0.3em] border border-yellow-500/30 px-4 py-1 rounded-full bg-yellow-900/10">Special Tiers</span>
+                        <h2 class="text-2xl font-light text-white mt-6 tracking-wide">Create a Legacy</h2>
                     </div>
-                    <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                        <!-- Storyteller ($30k) -->
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Storyteller -->
                         <div class="bg-gray-900/30 p-10 rounded-sm border border-white/5 card-hover flex flex-col">
                             <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Storyteller</h3>
-                            <p class="text-2xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
-                            <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
-                                We will produce a <strong class="text-white font-medium">Short Documentary</strong> about your life or philosophy, created by the Flower Angel creative team.
-                            </p>
-                            <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
-                                <li>✦ A Short Documentary Production</li>
-                                <li>✦ All "Founding Guardian" Benefits</li>
-                                <li>✦ Inclusion in Humanitarian Economy Partner Directory</li>
+                            <p class="text-2xl font-light text-yellow-100 mb-6">$30,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[10px] text-gray-400 leading-relaxed mb-6 font-light">We will produce a short documentary about your life, philosophy, or company.</p>
+                            <ul class="text-[10px] text-yellow-400/90 space-y-2 mb-6 font-light">
+                                <li>★ <strong class="text-white font-medium">Custom Song Purchase</strong>: Includes 1 customized original song composed and performed by Harmony specifically for you or your brand, with <span class="underline">full Master Rights (原盤権) ownership</span> transferred to you.</li>
                             </ul>
-                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 font-light">TELL YOUR STORY</div>
+                            <!-- MAILTO FOR STORYTELLER -->
+                            <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Storyteller Legacy ($30,000)&body=Hello Nobuko,%0D%0A%0D%0AI would like to partner with the Echoes of Light project as a Storyteller ($30,000 USD). Please let me know how to proceed with the arrangements and details for the Custom Song and Master Rights (原盤権) ownership transfer.%0D%0A%0D%0ABest regards," class="w-full mt-auto py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase text-center rounded-full">TELL YOUR STORY</a>
                         </div>
-                        
-                        <!-- Legacy Partner ($50k) -->
+                        <!-- Legacy Partner -->
                         <div class="bg-gray-900/30 p-10 rounded-sm border border-white/10 card-hover flex flex-col">
                             <h3 class="text-base text-white tracking-widest uppercase mb-2 font-light">Legacy Partner</h3>
-                            <p class="text-2xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
-                            <p class="text-[11px] text-gray-300 leading-relaxed mb-6 font-light">
-                                A <strong class="text-white font-medium">30min+ Documentary</strong> preserving your achievements and vision for future generations.
-                            </p>
-                            <ul class="space-y-3 text-[10px] text-gray-400 font-light mb-8">
-                                <li>✦ A 30min+ Documentary Production</li>
-                                <li>✦ All "Storyteller" Benefits</li>
-                                <li>✦ "Legacy Partner" Credit in Documentary</li>
-                                <li>✦ Full Documentary Production Rights</li>
+                            <p class="text-2xl font-light text-yellow-300 mb-6">$50,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[10px] text-gray-400 leading-relaxed mb-6 font-light">30min+ Documentary preserving your achievements for future generations.</p>
+                            <ul class="text-[10px] text-yellow-400/90 space-y-2 mb-6 font-light">
+                                <li>★ <strong class="text-white font-medium">Custom Song Purchase</strong>: Includes 1 customized original song composed and performed by Harmony specifically for you or your brand, with <span class="underline">full Master Rights (原盤権) ownership</span> transferred to you.</li>
                             </ul>
-                            <div class="w-full mt-auto py-3 border border-white/20 text-white text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 font-light">BUILD YOUR LEGACY</div>
+                            <!-- MAILTO FOR LEGACY PARTNER -->
+                            <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Legacy Partner ($50,000)&body=Hello Nobuko,%0D%0A%0D%0AI would like to partner with the Echoes of Light project as a Legacy Partner ($50,000 USD). Please let me know how to proceed with the arrangements and details for the Custom Song and Master Rights (原盤権) ownership transfer.%0D%0A%0D%0ABest regards," class="w-full mt-auto py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all text-xs tracking-widest uppercase text-center rounded-full">BUILD YOUR LEGACY</a>
                         </div>
-                        
-                        <!-- Executive Guardian ($100k) -->
+                        <!-- Executive Guardian -->
                         <div class="bg-gradient-to-b from-yellow-900/20 to-black p-10 rounded-sm border border-yellow-500/40 card-hover flex flex-col">
-                            <h3 class="text-base text-yellow-400 tracking-widest uppercase mb-2 font-light flex items-center justify-center md:justify-start gap-2">
-                                <span class="text-sm">♛</span> Executive Guardian
-                            </h3>
-                            <p class="text-3xl font-light text-white mt-6">$100,000<span class="text-xs text-gray-500 ml-2 font-light">USD</span></p>
-                            <p class="text-[11px] text-gray-200 leading-relaxed mt-4 mb-6 font-light italic">
-                                The ultimate partnership. Become an integral part of the masterpiece's creation.
-                            </p>
-                            <ul class="space-y-4 text-[10px] text-gray-300 font-light mb-8">
-                                <li>✦ <strong class="text-white font-medium">"Executive Co-Producer" Credit</strong> in Feature Film & Documentary</li>
-                                <li>✦ Full Documentary Production Rights (Includes Legacy Partner benefits)</li>
-                                <li>✦ 1-Year Flower Angel Production Partnership (Includes Global Strategy)</li>
+                            <h3 class="text-base text-yellow-400 tracking-widest uppercase mb-2 font-light">Executive Guardian</h3>
+                            <p class="text-3xl font-light text-white mt-6">$100,000<span class="text-xs text-gray-500 ml-2">USD</span></p>
+                            <p class="text-[10px] text-gray-300 leading-relaxed mt-4 mb-6 font-light">"Executive Co-Producer" Credit in Feature Film & Documentary.</p>
+                            <ul class="text-[10px] text-yellow-400/90 space-y-2 mb-6 font-light">
+                                <li>★ <strong class="text-white font-medium">Premium Custom Song Purchase</strong>: Includes 1 customized original song composed and performed by Harmony specifically for you or your brand, with <span class="underline">full Master Rights (原盤権) ownership</span> transferred to you.</li>
                             </ul>
-                            <div class="w-full mt-auto py-4 border border-yellow-500/40 text-yellow-500 font-bold text-[10px] tracking-widest uppercase text-center rounded-full opacity-60 shadow-lg font-light">LEAD THE MOVEMENT</div>
+                            <!-- MAILTO FOR EXECUTIVE GUARDIAN -->
+                            <a href="mailto:nobuko@flowerangel.org?subject=Support Inquiry: Executive Guardian ($100,000)&body=Hello Nobuko,%0D%0A%0D%0AI would like to join the Echoes of Light project as an Executive Guardian ($100,000 USD). Please let me know how to proceed with the arrangements and details for the Custom Song and Master Rights (原盤権) ownership transfer.%0D%0A%0D%0ABest regards," class="w-full mt-auto py-4 bg-yellow-500 text-black font-bold text-xs tracking-widest uppercase text-center rounded-full shadow-lg">LEAD THE MOVEMENT</a>
                         </div>
                     </div>
                 </div>
@@ -464,17 +535,20 @@
         <!-- Payment Section -->
         <section id="payment" class="py-32 bg-black border-t border-white/5 text-center">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-2xl font-cinzel font-thin text-white mb-16 tracking-widest text-glow uppercase">Fuel the Light</h2>
+                <h2 class="text-2xl font-thin text-white mb-16 tracking-widest text-glow uppercase">Fuel the Light</h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                    <a href="mailto:info@flowerangelhk.com?subject=Bank%20Transfer%20Inquiry" class="border border-white/10 p-10 hover:bg-white hover:text-black transition-all duration-500 flex flex-col items-center gap-4 rounded-sm group">
+                    <!-- Bank Inquiry -->
+                    <a href="mailto:nobuko@flowerangel.org?subject=Bank%20Transfer%20Inquiry" class="border border-white/10 p-10 hover:bg-white hover:text-black transition-all duration-500 flex flex-col items-center gap-4 rounded-sm group">
                         <i class="fas fa-university text-3xl text-gray-500 group-hover:text-black"></i>
                         <span class="text-[10px] tracking-[0.2em] uppercase font-light">Bank Transfer Inquiry</span>
                     </a>
+                    <!-- Bitcoin Copy tool -->
                     <div class="border border-yellow-600/40 p-10 hover:border-yellow-500 transition-all duration-500 flex flex-col items-center gap-4 cursor-pointer rounded-sm group" onclick="prompt('Bitcoin Wallet Address (Copy below):', '1KadySZsJ7hK82fHwLMuVD2xgUXwrUJQBn')">
                         <i class="fab fa-bitcoin text-3xl text-yellow-600"></i>
                         <span class="text-[10px] tracking-[0.2em] uppercase font-light text-yellow-500">Bitcoin / Crypto</span>
                     </div>
                 </div>
+                <div class="mt-12 text-gray-700 text-[10px] tracking-widest uppercase font-light">For all payment and partnership inquiries, click above to mail Nobuko</div>
             </div>
         </section>
 
@@ -484,12 +558,23 @@
             <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
                 <div class="flex flex-col items-center gap-1 mb-12">
                     <span class="text-[10px] text-gray-500 uppercase tracking-[0.25em]">Produced by</span>
-                    <!-- Footer font matches header script style (Italianno) -->
-                    <div class="font-script text-5xl text-yellow-400 drop-shadow-lg tracking-widest pt-2 uppercase">Flower Angel</div>
+                    <div class="font-script text-4xl text-yellow-400 drop-shadow-lg">Flower Angel</div>
                 </div>
-                <h3 class="text-3xl font-cinzel font-thin text-white mb-12 tracking-widest uppercase">Nobuko Kotoyori</h3>
+                <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase mb-4 font-medium">PRODUCER / JAPAN REPRESENTATIVE</p>
+                <h3 class="text-3xl font-cinzel text-white font-thin mb-2 tracking-widest text-glow">Nobuko Kotoyori</h3>
                 
-                <div class="max-w-xs mx-auto space-y-4 mb-16 text-left">
+                <!-- SEO & AI Search optimization helper: Kanji name linking -->
+                <p class="text-gray-500/80 text-[11px] tracking-[0.2em] font-light mb-12">琴寄 暢子</p>
+                
+                <!-- SNS Links (Now placed directly under Nobuko Kotoyori) -->
+                <div class="flex justify-center gap-10 text-gray-400 text-lg mb-16">
+                    <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <!-- Nobuko Tribute Audio Playlist (Now placed after SNS links) -->
+                <div class="max-w-xs mx-auto space-y-4 mb-16">
                     <script>
                         const footerTracks = [
                             {id: 'nobukoarigato', title: 'Nobuko Arigato'},
@@ -508,65 +593,49 @@
                                             <div class="w-full bg-white/10 h-[1.5px] mt-2 relative" id="progress-container-${t.id}">
                                                 <div class="bg-yellow-500 h-full w-0 absolute" id="progress-bar-${t.id}"></div>
                                             </div>
-                                            <div id="audio-error-${t.id}" class="audio-error">File not found.</div>
                                         </div>
                                     </div>
-                                    <audio id="audio-track-${t.id}" src="${t.id}.mp3" preload="metadata"></audio>
+                                    <audio id="audio-track-${t.id}" src="${t.id === 'nobukoarigatotrumpet' ? t.id + '.m4a' : t.id + '.mp3'}" preload="metadata"></audio>
                                 </div>
                             `);
                         });
                     </script>
                 </div>
 
-                <div class="flex justify-center gap-10 text-gray-400 text-lg mb-16">
-                    <a href="https://www.facebook.com/nobuko.kotoyori" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/nobuko-kotoyori-63889129/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/nobuko.kotoyori/" target="_blank" class="hover:text-white transition-all transform hover:scale-110"><i class="fab fa-instagram"></i></a>
-                </div>
                 <p class="text-gray-800 text-[10px] tracking-widest uppercase">© 2025 Flower Angel / Echoes of Light Project</p>
             </div>
         </footer>
     </main>
 
     <script>
-        const BASE_AUDIO_URL = ""; 
-
+        // Formatter helper
         function formatTime(seconds) {
-            if (!seconds || isNaN(seconds)) return "0:00";
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
+        // Core Audio Setup
         const setupAudioPlayer = (id) => {
             const audio = document.getElementById(`audio-track-${id}`);
             const btn = document.getElementById(`audio-control-${id}`);
             const icon = document.getElementById(`audio-icon-${id}`);
             const progress = document.getElementById(`progress-bar-${id}`);
             const container = document.getElementById(`progress-container-${id}`);
-            const errorMsg = document.getElementById(`audio-error-${id}`);
 
             if (!audio || !btn) return;
 
             btn.addEventListener('click', () => {
                 if (audio.paused) {
+                    // Turn off all other tracks across the entire app
                     document.querySelectorAll('audio').forEach(a => {
                         a.pause();
                         const otherId = a.id.replace('audio-track-', '');
                         const otherIcon = document.getElementById(`audio-icon-${otherId}`);
                         if(otherIcon) otherIcon.classList.replace('fa-pause', 'fa-play');
                     });
-                    
-                    const playPromise = audio.play();
-                    if (playPromise !== undefined) {
-                        playPromise.then(_ => {
-                            icon.classList.replace('fa-play', 'fa-pause');
-                            if(errorMsg) errorMsg.style.display = 'none';
-                        }).catch(error => {
-                            console.error("Audio play failed:", error);
-                            if(errorMsg) errorMsg.style.display = 'block';
-                        });
-                    }
+                    audio.play();
+                    icon.classList.replace('fa-play', 'fa-pause');
                 } else {
                     audio.pause();
                     icon.classList.replace('fa-pause', 'fa-play');
@@ -595,19 +664,20 @@
                 if(progress) progress.style.width = '0%';
             });
             
-            audio.addEventListener('error', () => {
-                if(errorMsg) errorMsg.style.display = 'block';
+            audio.addEventListener('loadedmetadata', () => {
+                const display = document.getElementById(`time-display-${id}`);
+                if(display) display.textContent = formatTime(audio.duration);
             });
         };
 
+        // DOM initialization
         document.addEventListener('DOMContentLoaded', () => {
             const allTracks = [
-                'motherslove', 'gogogo', 'oneday', 'thankyoujapan', 'arigatojapan', 'nihonarigato', 'molmolarigato', 
-                'ilikethewayyouare', 'championsstory', 'arigatomrgofurusawa', 'thankyouforlovingjapan',
                 'nobukoarigato', 'nobukoarigatotrumpet', 'nobukogodbless'
             ];
             allTracks.forEach(setupAudioPlayer);
 
+            // Smooth scrolls binding
             document.querySelectorAll('a[data-target]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
